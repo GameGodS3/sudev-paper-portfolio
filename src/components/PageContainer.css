@@ -1,0 +1,4 @@
+.PageContainer>div {
+    min-height: 100vh;
+    background: inherit;
+}

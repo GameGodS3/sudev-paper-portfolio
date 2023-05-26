@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("../static/fonts/GothamMedium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../static/fonts/Gotham-Light.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "InkFree";
+  src: url("../static/fonts/Inkfree.ttf");
+}
+
+@font-face {
+  font-family: "There Brat";
+  src: url("../static/fonts/There\ Brat.otf");
+}

@@ -1,0 +1,32 @@
+.sticky-note-parent {
+    position: absolute;
+    z-index: 10;
+    width: 16rem;
+    height: 16rem;
+    filter: drop-shadow(0 0 10px rgba(255, 204, 102, 0.5));
+    right: 10%;
+    bottom: 10%;
+    transform: rotate(14deg);
+
+}
+
+.sticky-note-body {
+    background-color: #FFFF99;
+    color: #816212;
+    width: 16rem;
+    height: 16rem;
+    padding: 32px;
+    font-size: 28px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 60% 100%, 0% 100%);
+}
+
+.sticky-note-corner {
+    background-color: #FFCC66;
+    width: 16rem;
+    height: 16rem;
+    padding: 32px;
+    clip-path: polygon(100% 75%, 60% 75%, 60% 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

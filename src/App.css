@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background: url("../static/images/notebook-bg.jpg");
+  background-size: 100%;
+  background-repeat: repeat-y;
+  min-height: 100vh;
+}
