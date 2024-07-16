@@ -10,3 +10,12 @@
   background-repeat: repeat-y;
   min-height: 100vh;
 }
+
+.section-header {
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  background-color: red;
+}

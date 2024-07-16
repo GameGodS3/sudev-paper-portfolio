@@ -2,11 +2,15 @@ import React from "react";
 
 import "./Button.css";
 
-function Button({ text }) {
+function Button({ text, type = "primary" }) {
   return (
     <div className="button">
-      <div className="button-body">{text}</div>
-      <div className="button-body button-shadow">{text}</div>
+      {type === "primary" ? (
+        <div className="button-body-primary">{text}</div>
+      ) : (
+        <div className="button-body-secondary">{text}</div>
+      )}{" "}
+      <div className="button-body-primary button-shadow">{text}</div>
     </div>
   );
 }

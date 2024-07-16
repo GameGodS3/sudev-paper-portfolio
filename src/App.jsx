@@ -3,9 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Landing from "./pages/Landing";
-import About from "./pages/About.jsx";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import PageContainer from "./components/PageContainer";
-import Navbar from "./components/Navbar";
+import SideBar from "./components/SideBar";
 import { landingAnimation } from "./animation/LandingAnimation";
 
 import "./App.css";
@@ -37,10 +38,11 @@ function App() {
 
   return (
     <div className="App" ref={rootRef}>
-      <Navbar />
+      <SideBar />
       <PageContainer>
         <Landing />
         <About />
+        <Contact />
       </PageContainer>
     </div>
   );

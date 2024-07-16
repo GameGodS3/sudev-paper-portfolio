@@ -2,9 +2,9 @@ import React from "react";
 
 import { Icon } from "@iconify/react";
 
-import "./Navbar.css";
+import "./Sidebar.css";
 
-function Navbar() {
+function SideBar() {
   return (
     <div
       style={{
@@ -18,6 +18,7 @@ function Navbar() {
         gap: 16,
         zIndex: 1000,
       }}
+      className="navbar"
     >
       <div className="iconGroup">
         <Icon
@@ -30,6 +31,9 @@ function Navbar() {
             zIndex: 2,
             borderRadius: 100,
           }}
+          onClick={() =>
+            (window.location.href = "mailto:sudevssuresh@gmail.com")
+          }
         />
         <a href="mailto:sudevssuresh@gmail.com" className="iconText">
           sudevssuresh@gmail.com
@@ -46,6 +50,9 @@ function Navbar() {
             zIndex: 2,
             borderRadius: 100,
           }}
+          onClick={() =>
+            (window.location.href = "https://linkedin.com/in/sudevssuresh")
+          }
         />
         <a href="https://linkedin.com/in/sudevssuresh" className="iconText">
           sudevssuresh
@@ -62,6 +69,9 @@ function Navbar() {
             zIndex: 2,
             borderRadius: 100,
           }}
+          onClick={() =>
+            (window.location.href = "https://instagram.com/card.shark.11")
+          }
         />
         <a href="https://instagram.com/card.shark.11" className="iconText">
           @card.shark.11
@@ -78,6 +88,9 @@ function Navbar() {
             zIndex: 2,
             borderRadius: 100,
           }}
+          onClick={() =>
+            (window.location.href = "https://github.com/GameGodS3")
+          }
         />
         <a href="https://github.com/GameGodS3" className="iconText">
           GameGodS3
@@ -87,4 +100,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default SideBar;

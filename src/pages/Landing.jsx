@@ -48,7 +48,14 @@ function Landing() {
           Sudev Suresh Sreedevi
         </div>
       </div>
-      <Button text={"My Resume"} />
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <Button text={"My Resume"} />
+        <Button text={"Get in Touch"} type={"secondary"} />
+      </div>
       <StickyNote text={"< UI/UX Designer & Web Developer />"} />
     </div>
   );
