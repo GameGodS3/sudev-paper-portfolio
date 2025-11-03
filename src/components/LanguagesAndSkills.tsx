@@ -25,7 +25,7 @@ const technicalSkills = [
 
 export function LanguagesAndSkills() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
+    <section className="py-16 px-8 max-w-6xl mx-auto drop-shadow-sm bg-white/10 backdrop-blur-[2px]">
       <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
         Languages & Skills
       </h2>

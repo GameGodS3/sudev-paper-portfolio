@@ -184,11 +184,7 @@ function Frame2() {
 }
 
 function MaskGroup() {
-  return (
-    <div className="absolute contents left-0 top-0" data-name="Mask group">
-      <Frame2 />
-    </div>
-  );
+  return null;
 }
 
 function Group2() {
@@ -204,8 +200,10 @@ function Group2() {
 
 function Shadow() {
   return (
-    <div className="absolute bottom-0 left-[3.37%] right-0 top-[9.84%]" data-name="Shadow">
-      <Group2 />
+    <div className="absolute inset-0 pointer-events-none" data-name="Shadow">
+      <div className="translate-x-[6px] translate-y-[8px] transition-transform duration-200 ease-out group-hover:translate-x-[10px] group-hover:translate-y-[12px] group-active:translate-x-[3px] group-active:translate-y-[4px]">
+        <Group2 />
+      </div>
     </div>
   );
 }
@@ -220,7 +218,7 @@ function ButtonBody() {
 
 function Button() {
   return (
-    <div className="absolute h-[61px] left-[625px] top-[545px] w-[178px]" data-name="Button">
+    <div className="group absolute h-[61px] left-[625px] top-[545px] w-[178px]" data-name="Button">
       <Shadow />
       <ButtonBody />
     </div>

@@ -51,7 +51,7 @@ const experiences: Experience[] = [
 
 export function WorkExperience() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
+    <section className="py-16 px-8 max-w-6xl mx-auto drop-shadow-sm bg-white/10 backdrop-blur-[2px]">
       <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
         Work Experience
       </h2>
@@ -64,7 +64,7 @@ export function WorkExperience() {
       <div className="relative space-y-12">
         {/* Timeline line */}
         <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-300 -z-10 md:left-1/2 md:-ml-px" />
-        
+
         {experiences.map((exp, index) => (
           <div
             key={index}
@@ -85,11 +85,11 @@ export function WorkExperience() {
                     <Star className="inline-block ml-2 w-5 h-5 fill-red-600 text-red-600" />
                   )}
                 </h3>
-                
+
                 <div className="font-['Patrick_Hand',_cursive] text-[20px] text-black mb-1">
                   {exp.company}
                 </div>
-                
+
                 <div className="flex flex-wrap gap-3 mb-4 font-['Indie_Flower',_cursive] text-[16px] text-gray-600">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" strokeWidth={1.5} />

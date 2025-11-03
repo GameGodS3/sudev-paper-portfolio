@@ -9,11 +9,8 @@ const imgDsc0057Edited21 = sudevProfilePic;
 function Frame() {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-0 top-0 w-full">
-      <div className="h-[1024px] relative shrink-0 w-full" data-name="v602-nunoon-32-rippednotes 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover object-left opacity-50 pointer-events-none size-full" src={notebookBg} />
-      </div>
-      <div className="h-[1024px] relative shrink-0 w-full" data-name="v602-nunoon-32-rippednotes 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover object-left opacity-50 pointer-events-none size-full" src={notebookBg} />
+      <div className="h-[100vh] relative shrink-0 w-full" data-name="v602-nunoon-32-rippednotes 1">
+        {/* <img alt="" className="absolute inset-0 max-w-none object-cover object-left opacity-50 pointer-events-none size-full" src={notebookBg} /> */}
       </div>
     </div>
   );
@@ -137,9 +134,9 @@ function IconoirGithubCircle() {
   );
 }
 
-function Frame1() {
+function SocialLinkIcons() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-[5%] top-[413px]">
+    <div className="absolute content-stretch flex flex-row md:flex-col gap-[16px] items-center justify-center left-1/2 -translate-x-1/2 top-[68vh] md:left-[5%] md:translate-x-0 md:top-[40%]">
       <IconoirAtSignCircle />
       <IconoirLinkedin />
       <IconoirInstagram />
@@ -175,29 +172,22 @@ function Frame2() {
   );
 }
 
-function MaskGroup() {
-  return (
-    <div className="absolute contents left-0 top-0" data-name="Mask group">
-      <Frame2 />
-    </div>
-  );
-}
-
 function Group2() {
   return (
     <div className="absolute contents left-0 top-0">
-      <MaskGroup />
-      <div className="absolute h-[55px] left-0 rounded-[8px] top-0 w-[172px]">
+      <div className="absolute h-[48px] left-0 rounded-[8px] top-0 w-[144px]">
         <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[8px]" />
       </div>
     </div>
   );
 }
 
-function Shadow() {
+function ButtonShadow() {
   return (
-    <div className="absolute bottom-0 left-[3.37%] right-0 top-[9.84%]" data-name="Shadow">
-      <Group2 />
+    <div className="absolute inset-0 pointer-events-none" data-name="Shadow">
+      <div className="translate-x-[6px] translate-y-[6px] transition-transform duration-200 ease-out group-hover:translate-x-[10px] group-hover:translate-y-[12px] group-active:translate-x-[3px] group-active:translate-y-[4px]">
+        <Group2 />
+      </div>
     </div>
   );
 }
@@ -205,15 +195,15 @@ function Shadow() {
 function ButtonBody() {
   return (
     <div className="absolute bg-black bottom-[9.84%] box-border content-stretch flex flex-col gap-[10px] items-start left-0 overflow-clip p-[16px] right-[3.37%] rounded-[8px] top-0" data-name="ButtonBody">
-      <p className="font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[24px] text-center text-nowrap text-white whitespace-pre">My Resume</p>
+      <p className="font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-center text-nowrap text-white whitespace-pre select-none">My Resume</p>
     </div>
   );
 }
 
 function Button() {
   return (
-    <div className="relative h-[61px] w-[178px]" data-name="Button">
-      <Shadow />
+    <div className="group relative h-[54px] w-[150px] cursor-pointer" data-name="Button">
+      <ButtonShadow />
       <ButtonBody />
     </div>
   );
@@ -221,7 +211,7 @@ function Button() {
 
 function EmailAddressLink() {
   return (
-    <div className="relative" data-name="email-vertical" style={{ transform: 'rotate(90deg)', transformOrigin: 'left top' }}>
+    <div className="relative md:rotate-90 md:origin-bottom-left" data-name="email-vertical">
       <a href="mailto:sudevssuresh@gmail.com" className="font-['Indie_Flower',_cursive] text-[14px] text-black whitespace-nowrap hover:text-blue-700 transition-colors">
         sudevssuresh@gmail.com
       </a>
@@ -246,22 +236,22 @@ function Frame3() {
 function Landing() {
   return (
     <div className="absolute h-[1024px] left-0 overflow-clip top-0 w-full" data-name="Landing">
-      <div className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-[54px] w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))]" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
-        <div className="flex-none rotate-[344.058deg]">
+      <div className="absolute flex h-[40vh] md:h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-0 md:top-[54px] w-[60vw] md:w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))]" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
+        <div className="flex-none rotate-[344.058deg] scale-[80%] md:scale-100">
           <Dp />
         </div>
       </div>
-      <p className="absolute font-['There_Brat:Regular',_sans-serif] leading-[normal] left-1/2 not-italic text-[60px] text-black text-center text-nowrap top-[449px] translate-x-[-50%] whitespace-pre">Sudev Suresh Sreedevi</p>
-      <Frame1 />
-      <p className="absolute font-['Ink_Free:Regular',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I'm</p>
-      <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '545px' }}>
+      <p className="absolute font-['Ink_Free',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[36vh] md:top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I'm</p>
+      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[40vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap">Sudev Suresh Sreedevi</p>
+      <SocialLinkIcons />
+      <div className="absolute left-1/2 -translate-x-1/2 top-[56vh] md:top-[555px] scale-[80%] md:scale-100">
         <Button />
       </div>
-      <div className="absolute right-[67px]" style={{ top: '473px' }}>
+      <div className="absolute left-1/2 -translate-x-1/2 top-[64vh] md:top-[40%] md:left-auto md:right-0 md:translate-x-0">
         <EmailAddressLink />
       </div>
-      <div className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.3680700957775116)+(var(--transform-inner-height)*0.9297979474067688)))] items-center justify-center right-[5%] md:right-[20%] top-[606px] w-[calc(1px*((var(--transform-inner-height)*0.3680700957775116)+(var(--transform-inner-width)*0.9297979474067688)))]" style={{ "--transform-inner-width": "218.78125", "--transform-inner-height": "218.78125" } as React.CSSProperties}>
-        <div className="flex-none rotate-[21.597deg]">
+      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.3680700957775116)+(var(--transform-inner-height)*0.9297979474067688)))] items-center justify-center right-[10%] md:right-[20%] top-[70vh] md:top-[606px] w-[50vw] md:w-[calc(1px*((var(--transform-inner-height)*0.3680700957775116)+(var(--transform-inner-width)*0.9297979474067688)))]" style={{ "--transform-inner-width": "218.78125", "--transform-inner-height": "218.78125" } as React.CSSProperties}>
+        <div className="flex-none rotate-[21.597deg] scale-[60%] md:scale-100">
           <Frame3 />
         </div>
       </div>
@@ -271,7 +261,7 @@ function Landing() {
 
 export default function Desktop() {
   return (
-    <div className="bg-white relative size-full" data-name="Desktop - 1">
+    <div className="relative size-full" data-name="Desktop - 1">
       <Frame />
       <Landing />
     </div>

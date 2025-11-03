@@ -19,24 +19,11 @@ export default function App() {
 
     return (
         <div className="bg-white min-h-screen">
-            {/* Landing Section */}
-            <div className="h-screen relative overflow-hidden">
-                <Desktop />
-
-                {/* Scroll Indicator */}
-                <button
-                    onClick={scrollToContent}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer bg-white border-2 border-black p-2 rounded-full hover:bg-gray-100 transition-colors"
-                    aria-label="Scroll to content"
-                >
-                    <ChevronDown className="w-6 h-6" strokeWidth={2} />
-                </button>
-            </div>
 
             {/* Content Sections with Notebook Background */}
             <div className="relative">
                 {/* Repeating notebook background */}
-                <div className="fixed inset-0 pointer-events-none z-0" style={{ top: "100vh" }}>
+                <div className="fixed inset-0 pointer-events-none z-0">
                     <div className="absolute inset-0 opacity-50">
                         <img
                             src={notebookBg}
@@ -52,6 +39,23 @@ export default function App() {
 
                 {/* Actual content */}
                 <div className="relative z-10 bg-transparent">
+                    {/* Landing Section */}
+                    <div className="h-screen relative overflow-hidden z-0">
+                        <Desktop />
+
+                        {/* Scroll Indicator */}
+                        <div className="absolute bottom-8 inset-x-0 flex justify-center">
+                            <button
+                                onClick={scrollToContent}
+                                className="animate-bounce cursor-pointer bg-white border-2 border-black p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                aria-label="Scroll to content"
+                            >
+                                <ChevronDown className="w-6 h-6" strokeWidth={2} />
+                            </button>
+                        </div>
+                    </div>
+
+
                     <WorkExperience />
 
                     <div className="border-t-2 border-dashed border-gray-300 my-4" />

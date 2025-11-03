@@ -1,8 +1,26 @@
+/* Import handwriting fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
+
+/* Import custom fonts */
+@font-face {
+  font-family: 'There Brat';
+  src: url('../assets/fonts/THERE BRAT.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ink Free';
+  src: url('../assets/fonts/INKFREE.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --font-size: 16px;
@@ -193,9 +211,6 @@
 html {
   font-size: var(--font-size);
 }
-
-/* Import handwriting fonts */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Indie+Flower&display=swap');
 
 /* Sticky note CSS-only folded corner */
 .sticky-note-parent {
