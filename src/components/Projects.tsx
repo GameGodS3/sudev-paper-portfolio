@@ -42,7 +42,7 @@ const projects: Project[] = [
 export function Projects() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto drop-shadow-sm bg-white/10 backdrop-blur-[2px]">
-      <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Projects
       </h2>
       <div className="text-center mb-12">
@@ -62,7 +62,7 @@ export function Projects() {
           >
             {/* Underline effect */}
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-            
+
             <div className="flex flex-col gap-4 items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">

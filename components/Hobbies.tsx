@@ -49,7 +49,7 @@ const hobbies: Hobby[] = [
 export function Hobbies() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Hobbies & Interests
       </h2>
       <div className="text-center mb-12">
@@ -68,31 +68,29 @@ export function Hobbies() {
             }}
           >
             <div className="text-center">
-              <div 
-                className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${
-                  hobby.color === 'blue' ? 'bg-blue-100 text-blue-700' :
-                  hobby.color === 'red' ? 'bg-red-100 text-red-600' :
-                  'bg-gray-100 text-black'
-                }`}
+              <div
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${hobby.color === 'blue' ? 'bg-blue-100 text-blue-700' :
+                    hobby.color === 'red' ? 'bg-red-100 text-red-600' :
+                      'bg-gray-100 text-black'
+                  }`}
               >
                 {hobby.icon}
               </div>
-              
+
               <h3 className="font-['Caveat',_cursive] text-[28px] text-black mb-2">
                 {hobby.name}
               </h3>
-              
+
               <p className="font-['Patrick_Hand',_cursive] text-[17px] text-gray-700">
                 {hobby.description}
               </p>
 
               {/* Decorative arrow or line */}
               <div className="mt-4 flex justify-center">
-                <div className={`w-12 h-0.5 ${
-                  hobby.color === 'blue' ? 'bg-blue-700' :
-                  hobby.color === 'red' ? 'bg-red-600' :
-                  'bg-black'
-                }`} />
+                <div className={`w-12 h-0.5 ${hobby.color === 'blue' ? 'bg-blue-700' :
+                    hobby.color === 'red' ? 'bg-red-600' :
+                      'bg-black'
+                  }`} />
               </div>
             </div>
           </div>

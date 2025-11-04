@@ -136,7 +136,7 @@ function IconoirGithubCircle() {
 
 function SocialLinkIcons() {
   return (
-    <div className="absolute content-stretch flex flex-row md:flex-col gap-[16px] items-center justify-center left-1/2 -translate-x-1/2 top-[68vh] md:left-[5%] md:translate-x-0 md:top-[40%]">
+    <div className="absolute content-stretch flex flex-row md:flex-col gap-[16px] items-center justify-center left-1/2 -translate-x-1/2 top-[64vh] md:left-[5%] md:translate-x-0 md:top-[40%] z-10">
       <IconoirAtSignCircle />
       <IconoirLinkedin />
       <IconoirInstagram />
@@ -236,21 +236,21 @@ function Frame3() {
 function Landing() {
   return (
     <div className="absolute h-[1024px] left-0 overflow-clip top-0 w-full" data-name="Landing">
-      <div className="absolute flex h-[40vh] md:h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-0 md:top-[54px] w-[60vw] md:w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))]" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
-        <div className="flex-none rotate-[344.058deg] scale-[80%] md:scale-100">
+      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-0 md:top-[54px] w-[60vw] md:w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))]" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
+        <div className="flex-none rotate-[344.058deg] scale-[70%] md:scale-100">
           <Dp />
         </div>
       </div>
-      <p className="absolute font-['Ink_Free',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[36vh] md:top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I'm</p>
-      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[40vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap">Sudev Suresh Sreedevi</p>
+      <p className="absolute font-['Ink_Free',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[32vh] md:top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I'm</p>
+      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[36vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap">Sudev Suresh Sreedevi</p>
       <SocialLinkIcons />
-      <div className="absolute left-1/2 -translate-x-1/2 top-[56vh] md:top-[555px] scale-[80%] md:scale-100">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[52vh] md:top-[555px] scale-[80%] md:scale-100">
         <Button />
       </div>
-      <div className="absolute left-1/2 -translate-x-1/2 top-[64vh] md:top-[40%] md:left-auto md:right-0 md:translate-x-0">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[60vh] md:top-[40%] md:left-auto md:right-0 md:translate-x-0 z-10">
         <EmailAddressLink />
       </div>
-      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.3680700957775116)+(var(--transform-inner-height)*0.9297979474067688)))] items-center justify-center right-[10%] md:right-[20%] top-[70vh] md:top-[606px] w-[50vw] md:w-[calc(1px*((var(--transform-inner-height)*0.3680700957775116)+(var(--transform-inner-width)*0.9297979474067688)))]" style={{ "--transform-inner-width": "218.78125", "--transform-inner-height": "218.78125" } as React.CSSProperties}>
+      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.3680700957775116)+(var(--transform-inner-height)*0.9297979474067688)))] items-center justify-center right-[10%] md:right-[20%] top-[62vh] md:top-[606px] w-[50vw] md:w-[calc(1px*((var(--transform-inner-height)*0.3680700957775116)+(var(--transform-inner-width)*0.9297979474067688)))]" style={{ "--transform-inner-width": "218.78125", "--transform-inner-height": "218.78125" } as React.CSSProperties}>
         <div className="flex-none rotate-[21.597deg] scale-[60%] md:scale-100">
           <Frame3 />
         </div>

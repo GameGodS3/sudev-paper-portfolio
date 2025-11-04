@@ -265,7 +265,7 @@ function Landing() {
           <Dp />
         </div>
       </div>
-      <p className="absolute font-['There_Brat:Regular',_sans-serif] leading-[normal] left-[720.5px] not-italic text-[60px] text-black text-center text-nowrap top-[449px] translate-x-[-50%] whitespace-pre">Sudev Suresh Sreedevi</p>
+      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-[720.5px] not-italic text-[60px] text-black text-center text-nowrap top-[449px] translate-x-[-50%] whitespace-pre">Sudev Suresh Sreedevi</p>
       <Frame1 />
       <p className="absolute font-['Ink_Free:Regular',_sans-serif] leading-[normal] left-[721px] not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I’m</p>
       <Button />

@@ -40,7 +40,7 @@ const certifications = [
 export function Education() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Education
       </h2>
       <div className="text-center mb-12">
@@ -58,7 +58,7 @@ export function Education() {
             <div className="absolute left-0 top-2">
               <GraduationCap className="w-8 h-8 text-blue-700" strokeWidth={1.5} />
             </div>
-            
+
             <h3 className="font-['Caveat',_cursive] text-[30px] text-black mb-1">
               {edu.degree}
             </h3>
@@ -69,7 +69,7 @@ export function Education() {
               <Calendar className="w-4 h-4" strokeWidth={1.5} />
               {edu.period}
             </div>
-            
+
             {edu.details && (
               <ul className="space-y-1">
                 {edu.details.map((detail, i) => (
@@ -91,11 +91,11 @@ export function Education() {
             Certifications
           </h3>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {certifications.map((cert, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex gap-2 items-start font-['Patrick_Hand',_cursive] text-[18px] text-gray-700"
             >
               <CheckCircle2 className="w-5 h-5 text-blue-700 mt-1 flex-shrink-0" strokeWidth={2} />

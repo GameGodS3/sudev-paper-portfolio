@@ -44,7 +44,7 @@ export default function App() {
                         <Desktop />
 
                         {/* Scroll Indicator */}
-                        <div className="absolute bottom-8 inset-x-0 flex justify-center">
+                        <div className="absolute bottom-20 md:bottom-8 inset-x-0 flex justify-center z-10">
                             <button
                                 onClick={scrollToContent}
                                 className="animate-bounce cursor-pointer bg-white border-2 border-black p-2 rounded-full hover:bg-gray-100 transition-colors"

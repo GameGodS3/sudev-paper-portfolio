@@ -26,7 +26,7 @@ const technicalSkills = [
 export function LanguagesAndSkills() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Languages & Skills
       </h2>
       <div className="text-center mb-12">
@@ -44,7 +44,7 @@ export function LanguagesAndSkills() {
               Spoken Languages
             </h3>
           </div>
-          
+
           <div className="space-y-4">
             {spokenLanguages.map((lang, index) => (
               <div
@@ -70,7 +70,7 @@ export function LanguagesAndSkills() {
               Technical Skills
             </h3>
           </div>
-          
+
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {technicalSkills.map((skill, index) => (
               <div key={index} className="inline-block">

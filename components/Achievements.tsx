@@ -68,7 +68,7 @@ export function Achievements() {
 
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat:Regular',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Achievements
       </h2>
       <div className="text-center mb-12 flex items-center justify-center gap-2">
@@ -96,11 +96,11 @@ export function Achievements() {
                   {achievement.year}
                 </span>
               </div>
-              
+
               <h3 className="font-['Caveat',_cursive] text-[24px] text-black mb-2 leading-tight">
                 {achievement.title}
               </h3>
-              
+
               <p className="font-['Patrick_Hand',_cursive] text-[16px] text-gray-700">
                 {achievement.description}
               </p>
@@ -120,7 +120,7 @@ export function Achievements() {
             Quick Highlights
           </h3>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-6">
           {highlights.map((highlight, index) => (
             <div key={index}>
