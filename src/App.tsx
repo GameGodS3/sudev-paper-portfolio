@@ -8,8 +8,13 @@ import { Achievements } from "./components/Achievements";
 import { Hobbies } from "./components/Hobbies";
 import { ChevronDown } from "lucide-react";
 import notebookBg from "./assets/notebook-bg.jpg";
+import { useEffect, useState } from "react";
 
 export default function App() {
+    const [progress, setProgress] = useState(0);
+    const [isExiting, setIsExiting] = useState(false);
+    const [hideOverlay, setHideOverlay] = useState(false);
+
     const scrollToContent = () => {
         window.scrollTo({
             top: window.innerHeight,
@@ -17,8 +22,94 @@ export default function App() {
         });
     };
 
+    useEffect(() => {
+        let isWindowLoaded = document.readyState === "complete";
+        let intervalId: number | undefined;
+
+        // Fake incremental progress until the window load event.
+        intervalId = window.setInterval(() => {
+            setProgress((prev) => {
+                if (isWindowLoaded) return prev; // will be set to 100 below
+                const next = prev + Math.max(1, Math.floor((100 - prev) * 0.03));
+                return Math.min(next, 90);
+            });
+        }, 60);
+
+        const finishLoading = () => {
+            isWindowLoaded = true;
+            setProgress(100);
+            // Allow the 100% text to render, then start exit animation
+            requestAnimationFrame(() => setIsExiting(true));
+        };
+
+        if (isWindowLoaded) {
+            finishLoading();
+        } else {
+            const onLoad = () => finishLoading();
+            window.addEventListener("load", onLoad, { once: true });
+            // Safety timeout in case load never fires due to caching quirks
+            const safety = window.setTimeout(finishLoading, 4000);
+            return () => {
+                window.removeEventListener("load", onLoad);
+                clearTimeout(safety);
+                if (intervalId) clearInterval(intervalId);
+            };
+        }
+
+        return () => {
+            if (intervalId) clearInterval(intervalId);
+        };
+    }, []);
+
+    // Lock scroll while the loading overlay is visible
+    useEffect(() => {
+        const preventDefault = (e: Event) => {
+            if (!hideOverlay) {
+                e.preventDefault();
+            }
+        };
+
+        if (!hideOverlay) {
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+            window.addEventListener("touchmove", preventDefault, { passive: false });
+            window.addEventListener("wheel", preventDefault, { passive: false });
+        } else {
+            document.documentElement.style.overflow = "";
+            document.body.style.overflow = "";
+            window.removeEventListener("touchmove", preventDefault as EventListener);
+            window.removeEventListener("wheel", preventDefault as EventListener);
+        }
+
+        return () => {
+            window.removeEventListener("touchmove", preventDefault as EventListener);
+            window.removeEventListener("wheel", preventDefault as EventListener);
+            document.documentElement.style.overflow = "";
+            document.body.style.overflow = "";
+        };
+    }, [hideOverlay]);
+
     return (
         <div className="bg-white min-h-screen">
+            {!hideOverlay && (
+                <div
+                    className={
+                        "fixed inset-0 z-[10000] bg-white flex items-center justify-center " +
+                        "transition-all duration-500 ease-out " +
+                        (isExiting ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100")
+                    }
+                    onTransitionEnd={() => {
+                        if (isExiting) setHideOverlay(true);
+                    }}
+                    style={{
+                        fontFamily: 'Ink Free, "InkFree", "Ink Free Regular", system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                    }}
+                >
+                    <span className="select-none" style={{ fontSize: "64px", lineHeight: 1 }}>
+                        {progress}%
+                    </span>
+                </div>
+            )}
 
             {/* Content Sections with Notebook Background */}
             <div className="relative">

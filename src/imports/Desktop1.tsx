@@ -172,39 +172,33 @@ function Frame2() {
   );
 }
 
-function Group2() {
-  return (
-    <div className="absolute contents left-0 top-0">
-      <div className="absolute h-[48px] left-0 rounded-[8px] top-0 w-[144px]">
-        <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[8px]" />
-      </div>
-    </div>
-  );
-}
-
 function ButtonShadow() {
   return (
     <div className="absolute inset-0 pointer-events-none" data-name="Shadow">
-      <div className="translate-x-[6px] translate-y-[6px] transition-transform duration-200 ease-out group-hover:translate-x-[10px] group-hover:translate-y-[12px] group-active:translate-x-[3px] group-active:translate-y-[4px]">
-        <Group2 />
+      <div className="absolute inset-0 translate-x-[6px] translate-y-[6px] transition-transform duration-200 ease-out group-hover:translate-x-[10px] group-hover:translate-y-[12px] group-active:translate-x-[3px] group-active:translate-y-[4px]">
+        <div className="absolute inset-0">
+          <div className="absolute h-full left-0 rounded-[8px] top-0 w-full">
+            <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[8px]" />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function ButtonBody() {
+function ButtonBody({ text, secondary }: { text: string, secondary?: boolean }) {
   return (
-    <div className="absolute bg-black bottom-[9.84%] box-border content-stretch flex flex-col gap-[10px] items-start left-0 overflow-clip p-[16px] right-[3.37%] rounded-[8px] top-0" data-name="ButtonBody">
-      <p className="font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-center text-nowrap text-white whitespace-pre select-none">My Resume</p>
+    <div className={`relative ${secondary ? 'bg-white border-2 border-black' : 'bg-black border-2 border-transparent'} box-border flex flex-col gap-[10px] items-start overflow-clip px-[16px] py-[12px] rounded-[8px] min-h-[54px] z-10`} data-name="ButtonBody">
+      <p className={`font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-center ${secondary ? 'text-black' : 'text-white'} whitespace-normal select-none`}>{text}</p>
     </div>
   );
 }
 
-function Button() {
+function Button({ text, secondary }: { text: string, secondary?: boolean }) {
   return (
-    <div className="group relative h-[54px] w-[150px] cursor-pointer" data-name="Button">
+    <div className="group relative inline-block cursor-pointer max-w-[300px]" data-name="Button">
       <ButtonShadow />
-      <ButtonBody />
+      <ButtonBody text={text} secondary={secondary} />
     </div>
   );
 }
@@ -223,9 +217,9 @@ function Frame3() {
   return (
     <div className="sticky-note-parent overflow-visible relative size-[218.786px]">
       <div className="sticky-note-body">
-        <div className="absolute font-['Handlee:Regular',_sans-serif] leading-[normal] left-[13.14px] not-italic text-[#816212] text-[25px] top-[22.44px] w-[164px]">
-          <p className="mb-0">{`< UI/UX Designer`}</p>
-          <p>{`Web Developer />`}</p>
+        <div className="absolute font-['Handlee:Regular',_sans-serif] leading-[normal] left-[13.14px] not-italic text-[#816212] text-[24px] top-[22.44px] w-[170px]">
+          <p className="mb-0">{`< AI Product Manager `}</p>
+          <p>{`& Developer />`}</p>
         </div>
       </div>
       <div className="sticky-note-corner" />
@@ -245,7 +239,10 @@ function Landing() {
       <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[36vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap">Sudev Suresh Sreedevi</p>
       <SocialLinkIcons />
       <div className="absolute left-1/2 -translate-x-1/2 top-[52vh] md:top-[555px] scale-[80%] md:scale-100">
-        <Button />
+        <div className="grid grid-cols-2 gap-4">
+          <Button text="My Resume" />
+          <Button text="Contact Me" secondary={true} />
+        </div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[60vh] md:top-[40%] md:left-auto md:right-0 md:translate-x-0 z-10">
         <EmailAddressLink />
