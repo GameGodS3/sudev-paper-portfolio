@@ -8,12 +8,14 @@ import { Achievements } from "./components/Achievements";
 import { Hobbies } from "./components/Hobbies";
 import { ChevronDown } from "lucide-react";
 import notebookBg from "./assets/notebook-bg.jpg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useDesktopLandingAnimation } from "./animation/DesktopAnimation";
 
 export default function App() {
     const [progress, setProgress] = useState(0);
     const [isExiting, setIsExiting] = useState(false);
     const [hideOverlay, setHideOverlay] = useState(false);
+    const landingScopeRef = useRef<HTMLDivElement>(null);
 
     const scrollToContent = () => {
         window.scrollTo({
@@ -22,6 +24,7 @@ export default function App() {
         });
     };
 
+    // Loading screen
     useEffect(() => {
         let isWindowLoaded = document.readyState === "complete";
         let intervalId: number | undefined;
@@ -89,6 +92,9 @@ export default function App() {
         };
     }, [hideOverlay]);
 
+    // Landing entrance animation (start only after loading overlay fully hides)
+    useDesktopLandingAnimation(landingScopeRef, hideOverlay);
+
     return (
         <div className="bg-white min-h-screen">
             {!hideOverlay && (
@@ -131,7 +137,7 @@ export default function App() {
                 {/* Actual content */}
                 <div className="relative z-10 bg-transparent">
                     {/* Landing Section */}
-                    <div className="h-screen relative overflow-hidden z-0">
+                    <div className="h-screen relative overflow-hidden z-0" ref={landingScopeRef}>
                         <Desktop />
 
                         {/* Scroll Indicator */}

@@ -1,6 +1,6 @@
 import svgPaths from "./svg-0v38ne8dkp";
-import { imgFrame2 } from "./svg-ssrkz";
-import notebookBg from "../assets/notebook-bg.jpg";
+// import { imgFrame2 } from "./svg-ssrkz";
+// import notebookBg from "../assets/notebook-bg.jpg";
 import sudevProfilePic from "../assets/sudev_profile_pic.jpg";
 
 // Placeholder image for profile photo - replace with actual image when available
@@ -57,7 +57,7 @@ function Group() {
 
 function IconoirAtSignCircle() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px]" data-name="iconoir:at-sign-circle">
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:at-sign-circle">
       <Group />
     </div>
   );
@@ -80,7 +80,7 @@ function Group1() {
 
 function IconoirLinkedin() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px]" data-name="iconoir:linkedin">
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:linkedin">
       <Group1 />
     </div>
   );
@@ -104,7 +104,7 @@ function Group3() {
 
 function IconoirInstagram() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px]" data-name="iconoir:instagram">
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:instagram">
       <Group3 />
     </div>
   );
@@ -128,7 +128,7 @@ function Group4() {
 
 function IconoirGithubCircle() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px]" data-name="iconoir:github-circle">
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:github-circle">
       <Group4 />
     </div>
   );
@@ -145,32 +145,32 @@ function SocialLinkIcons() {
   );
 }
 
-function Frame2() {
-  return (
-    <div className="absolute h-[52.317px] left-[-34px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[34px_-3px] mask-size-[172px_55px] top-[3px] w-[261.566px]" style={{ maskImage: `url('${imgFrame2}')` }}>
-      <div className="absolute bottom-0 left-0 right-[-0.57%] top-[-2.57%]">
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 264 54">
-          <g id="Frame 2">
-            <line id="Line 10" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 0 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 1" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 15.6833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 2" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 31.3665 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 3" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 47.0498 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 4" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 62.7331 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 5" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 78.4163 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 6" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 94.0996 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 7" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 109.783 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 12" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 125.466 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 9" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 141.149 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 13" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 156.833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 14" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 172.516 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 15" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 188.199 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-            <line id="Line 16" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 203.882 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-          </g>
-        </svg>
-      </div>
-    </div>
-  );
-}
+// function Frame2() {
+//   return (
+//     <div className="absolute h-[52.317px] left-[-34px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[34px_-3px] mask-size-[172px_55px] top-[3px] w-[261.566px]" style={{ maskImage: `url('${imgFrame2}')` }}>
+//       <div className="absolute bottom-0 left-0 right-[-0.57%] top-[-2.57%]">
+//         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 264 54">
+//           <g id="Frame 2">
+//             <line id="Line 10" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 0 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 1" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 15.6833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 2" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 31.3665 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 3" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 47.0498 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 4" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 62.7331 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 5" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 78.4163 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 6" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 94.0996 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 7" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 109.783 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 12" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 125.466 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 9" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 141.149 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 13" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 156.833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 14" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 172.516 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 15" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 188.199 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//             <line id="Line 16" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 203.882 1.34362)" x2="77.8743" y1="-1" y2="-1" />
+//           </g>
+//         </svg>
+//       </div>
+//     </div>
+//   );
+// }
 
 function ButtonShadow() {
   return (
@@ -188,7 +188,7 @@ function ButtonShadow() {
 
 function ButtonBody({ text, secondary }: { text: string, secondary?: boolean }) {
   return (
-    <div className={`relative ${secondary ? 'bg-white border-2 border-black' : 'bg-black border-2 border-transparent'} box-border flex flex-col gap-[10px] items-start overflow-clip px-[16px] py-[12px] rounded-[8px] min-h-[54px] z-10`} data-name="ButtonBody">
+    <div className={`relative ${secondary ? 'bg-white border-2 border-black' : 'bg-black border-2 border-transparent'} box-border flex flex-col items-center gap-[10px] items-start overflow-clip px-[16px] py-[12px] rounded-[8px] min-h-[54px] z-10`} data-name="ButtonBody">
       <p className={`font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-center ${secondary ? 'text-black' : 'text-white'} whitespace-normal select-none`}>{text}</p>
     </div>
   );
@@ -196,7 +196,7 @@ function ButtonBody({ text, secondary }: { text: string, secondary?: boolean }) 
 
 function Button({ text, secondary }: { text: string, secondary?: boolean }) {
   return (
-    <div className="group relative inline-block cursor-pointer max-w-[300px]" data-name="Button">
+    <div className="group relative inline-block cursor-pointer max-w-[300px] button" data-name="Button">
       <ButtonShadow />
       <ButtonBody text={text} secondary={secondary} />
     </div>
@@ -205,7 +205,7 @@ function Button({ text, secondary }: { text: string, secondary?: boolean }) {
 
 function EmailAddressLink() {
   return (
-    <div className="relative md:rotate-90 md:origin-bottom-left" data-name="email-vertical">
+    <div className="relative md:rotate-90 md:origin-bottom-left email-address" data-name="email-vertical">
       <a href="mailto:sudevssuresh@gmail.com" className="font-['Indie_Flower',_cursive] text-[14px] text-black whitespace-nowrap hover:text-blue-700 transition-colors">
         sudevssuresh@gmail.com
       </a>
@@ -229,17 +229,17 @@ function Frame3() {
 
 function Landing() {
   return (
-    <div className="absolute h-[1024px] left-0 overflow-clip top-0 w-full" data-name="Landing">
-      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-0 md:top-[54px] w-[60vw] md:w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))]" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
+    <div className="absolute h-[1024px] left-0 overflow-clip top-0 w-full Landing" data-name="Landing">
+      <div className="absolute flex h-[30vh] md:h-[calc(1px*((var(--transform-inner-width)*0.2746579945087433)+(var(--transform-inner-height)*0.961542010307312)))] items-center justify-center left-1/2 -translate-x-1/2 md:left-[20%] md:translate-x-0 top-0 md:top-[54px] w-[60vw] md:w-[calc(1px*((var(--transform-inner-height)*0.2746579945087433)+(var(--transform-inner-width)*0.961542010307312)))] profile-pic" style={{ "--transform-inner-width": "292", "--transform-inner-height": "349" } as React.CSSProperties}>
         <div className="flex-none rotate-[344.058deg] scale-[70%] md:scale-100">
           <Dp />
         </div>
       </div>
-      <p className="absolute font-['Ink_Free',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[32vh] md:top-[417px] translate-x-[-50%] whitespace-pre">Hello there, I'm</p>
-      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[36vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap">Sudev Suresh Sreedevi</p>
+      <p className="absolute font-['Ink_Free',_sans-serif] leading-[normal] left-1/2 not-italic text-[#1245c9] text-[24px] text-center text-nowrap top-[32vh] md:top-[417px] translate-x-[-50%] whitespace-pre sub-intro">Hello there, I'm</p>
+      <p className="absolute font-['There_Brat',_sans-serif] leading-[normal] left-1/2 not-italic text-[48px] md:text-[72px] text-black text-center top-[36vh] md:top-[449px] translate-x-[-50%] w-[80vw] max-w-[80vw] whitespace-normal md:whitespace-pre md:text-nowrap fullname">Sudev Suresh Sreedevi</p>
       <SocialLinkIcons />
-      <div className="absolute left-1/2 -translate-x-1/2 top-[52vh] md:top-[555px] scale-[80%] md:scale-100">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[52vh] md:top-[555px] scale-[80%] md:scale-100 w-full md:w-auto">
+        <div className="grid justify-center grid-cols-2 gap-4">
           <Button text="My Resume" />
           <Button text="Contact Me" secondary={true} />
         </div>

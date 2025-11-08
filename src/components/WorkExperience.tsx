@@ -11,10 +11,10 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Senior UI/UX Designer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "Jan 2022 - Present",
+    title: "Product Manager",
+    company: "Inflection.io",
+    location: "Bengaluru, KA, India",
+    period: "Aug 2023 - Sept 2025",
     description: [
       "Led design team of 5 designers on multiple high-impact projects",
       "Redesigned core product interface, improving user engagement by 40%",
