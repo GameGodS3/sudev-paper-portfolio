@@ -9,24 +9,27 @@ interface EducationItem {
 
 const education: EducationItem[] = [
   {
-    degree: "Master of Computer Science",
-    institution: "University of Technology",
-    period: "2016 - 2018",
+    degree: "Bachelor of Technology: Computer Science & Engineering",
+    institution: "College of Engineering Trivandrum, Kerala, India",
+    period: "2019 - 2023",
     details: [
-      "Specialization in Human-Computer Interaction",
-      "GPA: 3.8/4.0",
-      "Thesis: User Experience in Mobile Applications",
+      "GPA: 8.0/10",
+      "Final Year Project: Blockchain-Based Disaster Management System",
     ],
   },
   {
-    degree: "Bachelor of Science in Information Technology",
-    institution: "State University",
-    period: "2012 - 2016",
+    degree: "Higher Secondary Education: Science Stream",
+    institution: "Christ Nagar Higher Secondary School, Kerala, India",
+    period: "2017 - 2019",
     details: [
-      "Focus on Web Development and Design",
-      "Dean's List all semesters",
-      "President of Tech Club",
+      "12th Grade Percentage: 100%",
+      "Founded the School Radio Club",
     ],
+  },
+  {
+    degree: "High School",
+    institution: "Our Own English High School, Sharjah, UAE",
+    period: "2004 - 2017",
   },
 ];
 
@@ -84,7 +87,7 @@ export function Education() {
         ))}
       </div>
 
-      <div className="mt-12">
+      {/* <div className="mt-12">
         <div className="flex items-center gap-3 mb-6 justify-center">
           <Award className="w-7 h-7 text-red-600" strokeWidth={1.5} />
           <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
@@ -103,7 +106,7 @@ export function Education() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

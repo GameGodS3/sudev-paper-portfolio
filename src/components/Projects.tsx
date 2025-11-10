@@ -11,32 +11,41 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce application with payment integration, inventory management, and admin dashboard. Built with modern web technologies for optimal performance.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Hyperpersonalised email generator",
+    description: "LLM-based platform for crafting highly personalized outbound emails, utilizing full recipient business context to optimize performance for massive enterprise B2B SaaS marketing initiatives.",
+    technologies: ["ChatGPT", "Spark Java", "MongoDB", "SingleStore"],
     link: "https://example.com",
-    github: "https://github.com",
+    // github: "https://github.com",
     featured: true,
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management tool with real-time updates, team collaboration features, and project tracking capabilities.",
-    technologies: ["TypeScript", "Firebase", "Tailwind CSS"],
+    title: "Website Tracking System",
+    description: "In-house website tracking system for B2B SaaS platforms, enabling real-time event processing, user behavior analytics, and seamless integration with marketing automation tools.",
+    technologies: ["Spark Java", "Apache Flink", "Fastly CDN", "SingleStore"],
     link: "https://example.com",
-    github: "https://github.com",
+    // github: "https://github.com",
+    featured: true,
   },
   {
-    title: "Portfolio Template",
-    description: "Modern, responsive portfolio template for creative professionals. Features smooth animations and customizable themes.",
-    technologies: ["Next.js", "Framer Motion", "CSS"],
-    github: "https://github.com",
+    title: "DropPoint",
+    description: "An open-source (GPLv3), cross-platform desktop utility application for macOS, Windows, and Linux that simplifies drag-and-drop file transfers by eliminating the need for side-by-side windows, a tool supported by over 40K+ downloads and 1K+ GitHub stars.",
+    technologies: ["Electron.JS"],
+    link: "https://example.com",
+    github: "https://github.com/GameGodS3/DropPoint",
   },
   {
-    title: "Weather Dashboard",
-    description: "Real-time weather dashboard with forecasts, interactive maps, and location-based alerts. Clean and intuitive interface.",
-    technologies: ["React", "API Integration", "Chart.js"],
-    link: "https://example.com",
+    title: "Project Mudrika",
+    description: "Blockchain-based infrastructure designed for the National Disaster Management Authority of India to streamline supply chains and improve community incentives during disaster relief operations.",
+    technologies: ["Solidity", "Next.js", "Django", "PostgreSQL"],
+    link: "https://1drv.ms/b/c/dbf4e6a6d4cc8b1f/EUiAymYqjnRBv746RzRcSxABi7XnIS_0yFp6c1SUbirkBg?e=kBxTMR",
+    // github: "https://github.com",
   },
+  // {
+  //   title: "Dhwani CET Official Website",
+  //   description: "Real-time weather dashboard with forecasts, interactive maps, and location-based alerts. Clean and intuitive interface.",
+  //   technologies: ["React", "API Integration", "Chart.js"],
+  //   link: "https://example.com",
+  // },
 ];
 
 export function Projects() {
@@ -97,7 +106,7 @@ export function Projects() {
                       className="flex items-center gap-1 text-blue-700 hover:underline"
                     >
                       <ExternalLink className="w-4 h-4" strokeWidth={2} />
-                      Live Demo
+                      Learn More
                     </a>
                   )}
                   {project.github && (

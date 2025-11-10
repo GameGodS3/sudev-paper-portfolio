@@ -113,7 +113,7 @@ export function Achievements() {
       </div>
 
       {/* Highlights on Sticky Notes */}
-      <div className="mt-16">
+      {/* <div className="mt-16">
         <div className="flex items-center justify-center gap-2 mb-8">
           <Target className="w-6 h-6 text-blue-700" strokeWidth={2} />
           <h3 className="font-['Caveat',_cursive] text-[28px] text-black">
@@ -133,7 +133,7 @@ export function Achievements() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

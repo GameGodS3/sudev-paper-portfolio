@@ -2,26 +2,63 @@ import { StickyNote } from "./StickyNote";
 import { Languages, Code2 } from "lucide-react";
 
 const spokenLanguages = [
-  { name: "English", level: "Native" },
-  { name: "Spanish", level: "Fluent" },
-  { name: "French", level: "Intermediate" },
-  { name: "German", level: "Basic" },
+  { name: "English", level: "Fluent" },
+  { name: "Hindi", level: "Fluent" },
+  { name: "Malayalam", level: "Native" },
+  { name: "Arabic", level: "Basic" },
+  { name: "Tamil", level: "Conversational" },
+];
+
+const coreStrengths = [
+  "Product Strategy",
+  "Systems Thinking",
+  "Rapid Prototyping",
+  "Analytical Thinking",
+  "User-Centered Design",
+  "Effective Communication",
+  "Team Leadership",
+  "Cross-functional Alignment",
+  "Agile Methodology",
+  "Problem Solving",
+  "Structured Writing",
 ];
 
 const technicalSkills = [
-  "React & Next.js",
-  "TypeScript",
-  "Node.js",
+
   "Python",
-  "Figma",
-  "Adobe XD",
-  "Tailwind CSS",
-  "MongoDB",
-  "Git & GitHub",
+  "JavaScript",
+  "Java",
+  "C",
+  "C#",
+  "Model Context Protocol (MCP)",
+  "Agentic AI Design",
   "REST APIs",
-  "UI/UX Design",
-  "Responsive Web",
+  "Snowflake",
+  "SQL",
+  "MongoDB",
+  "Neo4j",
+
 ];
+
+const toolsAndFrameworks = [
+  "React.js",
+  "Node.js",
+  "Flask",
+  "FastAPI",
+  ".NET",
+  "Express.js",
+  "Segment",
+  "Mixpanel",
+  "Amplitude",
+  "Git",
+  "Linux",
+  "Figma",
+  "Adobe Suite",
+  "ChatGPT",
+  "Claude",
+];
+
+
 
 export function LanguagesAndSkills() {
   return (
@@ -62,6 +99,26 @@ export function LanguagesAndSkills() {
           </div>
         </div>
 
+        {/* Core Strengths - Sticky Notes */}
+        <div>
+          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+            <Code2 className="w-7 h-7 text-green-600" strokeWidth={1.5} />
+            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+              Core Strengths
+            </h3>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            {coreStrengths.map((strength, index) => (
+              <div key={index} className="inline-block">
+                <StickyNote rotation={Math.random() * 6 - 3}>
+                  <p className="text-[17px] text-center whitespace-nowrap">{strength}</p>
+                </StickyNote>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Technical Skills - Sticky Notes */}
         <div>
           <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
@@ -74,8 +131,28 @@ export function LanguagesAndSkills() {
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             {technicalSkills.map((skill, index) => (
               <div key={index} className="inline-block">
-                <StickyNote rotation={Math.random() * 6 - 3}>
+                <StickyNote rotation={Math.random() * 6 - 3} color="#CCCCFF">
                   <p className="text-[17px] text-center whitespace-nowrap">{skill}</p>
+                </StickyNote>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tools & Frameworks - Sticky Notes */}
+        <div>
+          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
+            <Code2 className="w-7 h-7 text-purple-600" strokeWidth={1.5} />
+            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+              Tools & Frameworks
+            </h3>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            {toolsAndFrameworks.map((tool, index) => (
+              <div key={index} className="inline-block">
+                <StickyNote rotation={Math.random() * 6 - 3} color="#FFD1DC">
+                  <p className="text-[17px] text-center whitespace-nowrap">{tool}</p>
                 </StickyNote>
               </div>
             ))}

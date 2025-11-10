@@ -161,17 +161,17 @@ export default function App() {
 
                     <div className="border-t-2 border-dashed border-gray-300 my-4" />
 
-                    <Education />
-
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
-
                     <LanguagesAndSkills />
 
                     <div className="border-t-2 border-dashed border-gray-300 my-4" />
 
-                    <Volunteering />
+                    <Education />
 
                     <div className="border-t-2 border-dashed border-gray-300 my-4" />
+
+                    {/* <Volunteering />
+
+                    <div className="border-t-2 border-dashed border-gray-300 my-4" /> */}
 
                     <Achievements />
 
