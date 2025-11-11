@@ -57,8 +57,24 @@ function Group() {
 
 function IconoirAtSignCircle() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:at-sign-circle">
-      <Group />
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon group" data-name="iconoir:at-sign-circle">
+      <GroupWithHover />
+    </div>
+  );
+}
+
+function GroupWithHover() {
+  return (
+    <div className="absolute inset-[8.333%]" data-name="Group">
+      <div className="absolute inset-[-3.75%]">
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 22">
+          <g id="Group">
+            <path d={svgPaths.p2ebe7d80} id="Vector" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p23666700} id="Vector_2" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p2abb04c0} id="Vector_3" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 }
@@ -80,8 +96,23 @@ function Group1() {
 
 function IconoirLinkedin() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:linkedin">
-      <Group1 />
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon group" data-name="iconoir:linkedin">
+      <Group1WithHover />
+    </div>
+  );
+}
+
+function Group1WithHover() {
+  return (
+    <div className="absolute inset-[12.5%]" data-name="Group">
+      <div className="absolute inset-[-4.167%]">
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
+          <g id="Group">
+            <path d={svgPaths.p153484f0} id="Vector" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p2103fbe0} id="Vector_2" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 }
@@ -104,8 +135,24 @@ function Group3() {
 
 function IconoirInstagram() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:instagram">
-      <Group3 />
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon group" data-name="iconoir:instagram">
+      <Group3WithHover />
+    </div>
+  );
+}
+
+function Group3WithHover() {
+  return (
+    <div className="absolute inset-[12.5%]" data-name="Group">
+      <div className="absolute inset-[-4.167%]">
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
+          <g id="Group">
+            <path d={svgPaths.p30cc2000} id="Vector" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p168375f0} id="Vector_2" stroke="var(--stroke-0, black)" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d="M15.25 4.26L15.26 4.249" id="Vector_3" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 }
@@ -128,8 +175,24 @@ function Group4() {
 
 function IconoirGithubCircle() {
   return (
-    <div className="overflow-clip relative shrink-0 size-[24px] social-icon" data-name="iconoir:github-circle">
-      <Group4 />
+    <div className="overflow-clip relative shrink-0 size-[24px] social-icon group" data-name="iconoir:github-circle">
+      <Group4WithHover />
+    </div>
+  );
+}
+
+function Group4WithHover() {
+  return (
+    <div className="absolute inset-[8.333%]" data-name="Group">
+      <div className="absolute inset-[-3.75%]">
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 22">
+          <g id="Group">
+            <path d={svgPaths.p3a2cb8f0} id="Vector" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p3613e100} id="Vector_2" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+            <path d={svgPaths.p1b0955c4} id="Vector_3" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" className="transition-colors duration-200 group-hover:stroke-[#1245c9]" />
+          </g>
+        </svg>
+      </div>
     </div>
   );
 }
@@ -137,10 +200,18 @@ function IconoirGithubCircle() {
 function SocialLinkIcons() {
   return (
     <div className="absolute content-stretch flex flex-row md:flex-col gap-[16px] items-center justify-center left-1/2 -translate-x-1/2 top-[64vh] md:left-[5%] md:translate-x-0 md:top-[40%] z-10">
-      <IconoirAtSignCircle />
-      <IconoirLinkedin />
-      <IconoirInstagram />
-      <IconoirGithubCircle />
+      <a href="mailto:sudevssuresh@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+        <IconoirAtSignCircle />
+      </a>
+      <a href="https://linkedin.com/in/sudevssuresh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <IconoirLinkedin />
+      </a>
+      <a href="https://instagram.com/they.call.me.sudev" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <IconoirInstagram />
+      </a>
+      <a href="https://github.com/GameGodS3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <IconoirGithubCircle />
+      </a>
     </div>
   );
 }
@@ -240,8 +311,25 @@ function Landing() {
       <SocialLinkIcons />
       <div className="absolute left-1/2 -translate-x-1/2 top-[52vh] md:top-[555px] scale-[80%] md:scale-100 w-full md:w-auto">
         <div className="grid justify-center grid-cols-2 gap-4">
-          <Button text="My Resume" />
-          <Button text="Contact Me" secondary={true} />
+          <a
+            href="https://drive.google.com/file/d/1dCxQPgzDM4TKncP1FjeuqByIoLHVRMU_/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'none' }}
+          >
+            <Button text="My Resume" />
+          </a>
+          <div
+            onClick={() => {
+              const el = document.getElementById("contact-form");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <Button text="Contact Me" secondary={true} />
+          </div>
         </div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[60vh] md:top-[40%] md:left-auto md:right-0 md:translate-x-0 z-10">

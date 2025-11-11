@@ -9,41 +9,29 @@ interface Achievement {
 }
 
 const achievements: Achievement[] = [
+  // {
+  //   title: "Speaker at FossMeet'24",
+  //   description: "Presented an intro session to FastAPI and building APIs with Python",
+  //   year: "2024",
+  //   type: "milestone",
+  // },
   {
-    title: "Best UI/UX Design Award",
-    description: "Received top honors at the Annual Design Conference for innovative mobile app interface",
-    year: "2023",
+    title: "Runner up at GE Healthcare All-India Hackathon",
+    description: "Secured runner-up for developing an ML-assisted system that automates medical equipment servicing.",
+    year: "2022",
     type: "award",
   },
   {
-    title: "Employee of the Year",
-    description: "Recognized for outstanding contributions and leadership in product development",
-    year: "2022",
-    type: "recognition",
-  },
-  {
-    title: "50+ Projects Completed",
-    description: "Successfully delivered over 50 client projects with 98% satisfaction rate",
-    year: "2022",
-    type: "milestone",
-  },
-  {
-    title: "Speaker at TechConf 2021",
-    description: "Presented on 'The Future of Web Design' to an audience of 500+ professionals",
+    title: "First Microsoft Learn Student Ambassador from College of Engineering Trivandrum",
+    description: "Selected as the first Microsoft Learn Student Ambassador at CET, leading tech initiatives and community engagement",
     year: "2021",
     type: "recognition",
   },
   {
-    title: "Open Source Contributor",
-    description: "100+ contributions to popular open-source design and development projects",
+    title: "DropPoint Crosses 40,000 Users and 1,000 Github Stars",
+    description: "Open-source personal project - DropPoint, achieves 1K+ stars on GitHub and over 40K+ total downloads",
     year: "2020-Present",
     type: "milestone",
-  },
-  {
-    title: "Hackathon Winner",
-    description: "First place in 48-hour design challenge with innovative e-learning platform",
-    year: "2020",
-    type: "award",
   },
 ];
 

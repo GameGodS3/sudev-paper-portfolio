@@ -6,6 +6,7 @@ import { LanguagesAndSkills } from "./components/LanguagesAndSkills";
 import { Volunteering } from "./components/Volunteering";
 import { Achievements } from "./components/Achievements";
 import { Hobbies } from "./components/Hobbies";
+import { Contact } from "./components/Contact";
 import { ChevronDown } from "lucide-react";
 import notebookBg from "./assets/notebook-bg.jpg";
 import { useEffect, useRef, useState } from "react";
@@ -178,6 +179,14 @@ export default function App() {
                     <div className="border-t-2 border-dashed border-gray-300 my-4" />
 
                     <Hobbies />
+
+                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+
+                    <Contact />
+
+                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+
+
 
                     {/* Footer */}
                     <footer className="py-12 text-center mt-16">

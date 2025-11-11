@@ -1,4 +1,4 @@
-import { Camera, Music, Book, Palette, Plane, Coffee } from "lucide-react";
+import { Music, Book, Palette } from "lucide-react";
 
 interface Hobby {
   name: string;
@@ -9,10 +9,10 @@ interface Hobby {
 
 const hobbies: Hobby[] = [
   {
-    name: "Photography",
-    description: "Capturing moments through landscape and street photography. Weekend adventures with my camera.",
-    icon: <Camera className="w-8 h-8" strokeWidth={1.5} />,
-    color: "blue",
+    name: "Reading",
+    description: "Avid reader of fiction, historical memoirs, and technology blogs. Currently exploring personal development.",
+    icon: <Book className="w-8 h-8" strokeWidth={1.5} />,
+    color: "black",
   },
   {
     name: "Music",
@@ -21,29 +21,12 @@ const hobbies: Hobby[] = [
     color: "red",
   },
   {
-    name: "Reading",
-    description: "Avid reader of design books, sci-fi novels, and technology blogs. Currently exploring philosophy.",
-    icon: <Book className="w-8 h-8" strokeWidth={1.5} />,
-    color: "black",
-  },
-  {
-    name: "Digital Art",
-    description: "Creating illustrations and experimenting with different digital art styles during free time.",
+    name: "Drawing & Painting",
+    description: "Experimenting with pencils & watercolors to create still life and landscapes. Currently exploring human character sketches.",
     icon: <Palette className="w-8 h-8" strokeWidth={1.5} />,
     color: "blue",
   },
-  {
-    name: "Travel",
-    description: "Exploring new places and cultures. Combining travel with photography for creative inspiration.",
-    icon: <Plane className="w-8 h-8" strokeWidth={1.5} />,
-    color: "red",
-  },
-  {
-    name: "Coffee Brewing",
-    description: "Enthusiast of specialty coffee. Experimenting with different brewing methods and beans.",
-    icon: <Coffee className="w-8 h-8" strokeWidth={1.5} />,
-    color: "black",
-  },
+  
 ];
 
 export function Hobbies() {
