@@ -1,4 +1,5 @@
-import { Code, ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   title: string;
@@ -7,6 +8,7 @@ interface Project {
   link?: string;
   github?: string;
   featured?: boolean;
+  articleId?: string;
 }
 
 const projects: Project[] = [
@@ -17,6 +19,7 @@ const projects: Project[] = [
     link: "https://example.com",
     // github: "https://github.com",
     featured: true,
+    articleId: "ai-email-personalisation",
   },
   {
     title: "Website Tracking System",
@@ -25,6 +28,7 @@ const projects: Project[] = [
     link: "https://example.com",
     // github: "https://github.com",
     featured: true,
+    articleId: "task-management-app",
   },
   {
     title: "DropPoint",
@@ -49,6 +53,14 @@ const projects: Project[] = [
 ];
 
 export function Projects() {
+  const navigate = useNavigate();
+
+  const handleLearnMore = (articleId?: string) => {
+    if (articleId) {
+      navigate(`/article/${articleId}`);
+    }
+  };
+
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto drop-shadow-sm bg-white/10 backdrop-blur-[2px]">
       <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
@@ -100,7 +112,16 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-4 font-['Patrick_Hand',_cursive] text-[16px]">
-                  {project.link && (
+                  {project.articleId && (
+                    <button
+                      onClick={() => handleLearnMore(project.articleId)}
+                      className="flex items-center gap-1 text-blue-700 hover:underline"
+                    >
+                      <ExternalLink className="w-4 h-4" strokeWidth={2} />
+                      Learn More
+                    </button>
+                  )}
+                  {project.link && !project.articleId && (
                     <a
                       href={project.link}
                       className="flex items-center gap-1 text-blue-700 hover:underline"
@@ -127,3 +148,4 @@ export function Projects() {
     </section>
   );
 }
+

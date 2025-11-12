@@ -216,33 +216,6 @@ function SocialLinkIcons() {
   );
 }
 
-// function Frame2() {
-//   return (
-//     <div className="absolute h-[52.317px] left-[-34px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[34px_-3px] mask-size-[172px_55px] top-[3px] w-[261.566px]" style={{ maskImage: `url('${imgFrame2}')` }}>
-//       <div className="absolute bottom-0 left-0 right-[-0.57%] top-[-2.57%]">
-//         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 264 54">
-//           <g id="Frame 2">
-//             <line id="Line 10" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 0 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 1" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 15.6833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 2" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 31.3665 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 3" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 47.0498 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 4" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 62.7331 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 5" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 78.4163 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 6" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 94.0996 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 7" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 109.783 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 12" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 125.466 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 9" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 141.149 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 13" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 156.833 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 14" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 172.516 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 15" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 188.199 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//             <line id="Line 16" stroke="var(--stroke-0, black)" strokeWidth="2" transform="matrix(0.740723 0.67181 -0.740723 0.67181 203.882 1.34362)" x2="77.8743" y1="-1" y2="-1" />
-//           </g>
-//         </svg>
-//       </div>
-//     </div>
-//   );
-// }
-
 function ButtonShadow() {
   return (
     <div className="absolute inset-0 pointer-events-none" data-name="Shadow">
@@ -259,7 +232,7 @@ function ButtonShadow() {
 
 function ButtonBody({ text, secondary }: { text: string, secondary?: boolean }) {
   return (
-    <div className={`relative ${secondary ? 'bg-white border-2 border-black' : 'bg-black border-2 border-transparent'} box-border flex flex-col items-center gap-[10px] items-start overflow-clip px-[16px] py-[12px] rounded-[8px] min-h-[54px] z-10`} data-name="ButtonBody">
+    <div className={`relative ${secondary ? 'bg-white border-2 border-black' : 'bg-black border-2 border-transparent'} box-border flex flex-col items-center gap-[10px] overflow-clip px-[16px] py-[12px] rounded-[8px] min-h-[54px] z-10`} data-name="ButtonBody">
       <p className={`font-['Gotham:Medium',_sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-center ${secondary ? 'text-black' : 'text-white'} whitespace-normal select-none`}>{text}</p>
     </div>
   );
