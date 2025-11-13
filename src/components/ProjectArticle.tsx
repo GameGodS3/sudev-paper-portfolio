@@ -1,12 +1,32 @@
 import { X, ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageModal } from "./ImageModal";
+
+type BulletPointData = {
+  type: "bullet" | "numbered";
+  items: string[];
+};
+
+type TableData = {
+  type: "table";
+  headers: string[];
+  rows: string[][];
+};
+
+type BlockquoteData = {
+  type: "blockquote";
+  text: string;
+  author?: string;
+};
+
+type ContentBlock = string | BulletPointData | TableData | BlockquoteData;
 
 export interface ArticleSection {
   id: string;
   title: string;
   level: 1 | 2 | 3; // h1, h2, h3
-  content: string[];
+  content: ContentBlock[];
   images?: {
     url: string;
     alt: string;
@@ -27,11 +47,12 @@ interface ProjectArticleProps {
 
 export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<{ url: string; alt: string; caption?: string } | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = article.sections.map(s => s.id);
-      
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i]);
         if (element) {
@@ -46,7 +67,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
 
     const articleContent = document.getElementById('article-content');
     articleContent?.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       articleContent?.removeEventListener('scroll', handleScroll);
     };
@@ -110,11 +131,10 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                   >
                     <button
                       onClick={() => scrollToSection(section.id)}
-                      className={`text-left w-full py-1.5 px-2 rounded font-['Patrick_Hand',_cursive] transition-colors ${
-                        activeSection === section.id
-                          ? 'bg-blue-100 text-blue-900 text-[16px]'
-                          : 'text-gray-700 hover:bg-gray-100 text-[15px]'
-                      }`}
+                      className={`text-left w-full py-1.5 px-2 rounded font-['Patrick_Hand',_cursive] transition-colors ${activeSection === section.id
+                        ? 'bg-blue-100 text-blue-900 text-[16px]'
+                        : 'text-gray-700 hover:bg-gray-100 text-[15px]'
+                        }`}
                     >
                       {section.title}
                     </button>
@@ -126,8 +146,8 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
         </div>
 
         {/* Article Content */}
-        <div id="article-content" className="flex-1 overflow-y-auto">
-          <div className="max-w-3xl mx-auto px-6 py-12">
+        <div id="article-content" className="flex-1 overflow-y-auto ">
+          <div className="max-w-3xl mx-auto px-6 py-12 bg-white/10 backdrop-blur-[2px] z-10">
             {/* Article Title */}
             <div className="mb-12 text-center">
               <h1 className="font-['There_Brat:Regular',_sans-serif] text-[56px] text-black mb-4">
@@ -163,18 +183,103 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
 
                 {/* Section Content - Paragraphs */}
                 <div className="space-y-4">
-                  {section.content.map((paragraph, pIndex) => (
+                  {section.content.map((contentBlock, pIndex) => (
                     <div key={pIndex}>
-                      <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed">
-                        {paragraph}
-                      </p>
-                      
+                      {/* Render paragraph */}
+                      {typeof contentBlock === "string" && (
+                        <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed">
+                          {contentBlock}
+                        </p>
+                      )}
+
+                      {/* Render bullet points or numbered list */}
+                      {typeof contentBlock === "object" &&
+                        "type" in contentBlock &&
+                        (contentBlock.type === "bullet" || contentBlock.type === "numbered") && (
+                          contentBlock.type === "bullet" ? (
+                            <ul className="list-disc list-inside space-y-2 ml-4">
+                              {contentBlock.items.map((item, itemIndex) => (
+                                <li
+                                  key={itemIndex}
+                                  className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <ol className="list-decimal list-inside space-y-2 ml-4">
+                              {contentBlock.items.map((item, itemIndex) => (
+                                <li
+                                  key={itemIndex}
+                                  className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ol>
+                          )
+                        )}
+
+                      {/* Render table */}
+                      {typeof contentBlock === "object" &&
+                        "type" in contentBlock &&
+                        contentBlock.type === "table" && (
+                          <div className="my-6 overflow-x-auto border-2 border-gray-300 bg-white p-3" style={{ transform: `rotate(${Math.random() * 0.5 - 0.25}deg)` }}>
+                            <table className="w-full border-collapse">
+                              <thead>
+                                <tr>
+                                  {contentBlock.headers.map((header, hIndex) => (
+                                    <th
+                                      key={hIndex}
+                                      className="border border-gray-300 bg-blue-50 px-4 py-2 font-['Caveat',_cursive] text-[16px] text-black text-left"
+                                    >
+                                      {header}
+                                    </th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {contentBlock.rows.map((row, rIndex) => (
+                                  <tr key={rIndex} className={rIndex % 2 === 0 ? "bg-white" : "bg-blue-50/30"}>
+                                    {row.map((cell, cIndex) => (
+                                      <td
+                                        key={cIndex}
+                                        className="border border-gray-300 px-4 py-2 font-['Patrick_Hand',_cursive] text-[16px] text-gray-700"
+                                      >
+                                        {cell}
+                                      </td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
+
+                      {/* Render blockquote */}
+                      {typeof contentBlock === "object" &&
+                        "type" in contentBlock &&
+                        contentBlock.type === "blockquote" && (
+                          <blockquote className="my-6 pl-6 border-l-4 border-blue-700 bg-blue-50/30 py-4 px-4" style={{ transform: `rotate(${Math.random() * 0.5 - 0.25}deg)` }}>
+                            <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-800 leading-relaxed italic">
+                              "{contentBlock.text}"
+                            </p>
+                            {contentBlock.author && (
+                              <p className="font-['Caveat',_cursive] text-[16px] text-gray-600 mt-2">
+                                — {contentBlock.author}
+                              </p>
+                            )}
+                          </blockquote>
+                        )}
+
                       {/* Insert images after certain paragraphs if they exist */}
                       {section.images && section.images[pIndex] && (
                         <div className="my-8">
-                          <div 
-                            className="border-2 border-gray-300 p-3 bg-white"
+                          <div
+                            className="border-2 border-gray-300 p-3 bg-white cursor-pointer hover:shadow-lg transition-shadow"
                             style={{ transform: `rotate(${Math.random() * 2 - 1}deg)` }}
+                            onClick={() => setSelectedImage(section.images![pIndex])}
                           >
                             <ImageWithFallback
                               src={section.images[pIndex].url}
@@ -213,6 +318,14 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
       </div>
 
       {/* Mobile sidebar toggle could be added here if needed */}
+      {selectedImage && (
+        <ImageModal
+          src={selectedImage.url}
+          alt={selectedImage.alt}
+          caption={selectedImage.caption}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </div>
   );
 }

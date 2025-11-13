@@ -28,7 +28,7 @@ export function ArticlePage() {
                     const containerRect = scrollContainer.getBoundingClientRect();
                     if (rect.top - containerRect.top <= 150) {
                         setActiveSection(sections[i]);
-                        const article = articleId
+                        break;
                     }
                 }
             }
@@ -130,8 +130,8 @@ export function ArticlePage() {
                                         <button
                                             onClick={() => scrollToSection(section.id)}
                                             className={`text-left w-full py-1.5 px-2 rounded font-['Patrick_Hand',_cursive] transition-colors ${activeSection === section.id
-                                                    ? "bg-blue-100 text-blue-900 text-[16px]"
-                                                    : "text-gray-700 hover:bg-gray-100 text-[15px]"
+                                                ? "bg-blue-100 text-blue-900 text-[16px]"
+                                                : "text-gray-700 hover:bg-gray-100 text-[15px]"
                                                 }`}
                                         >
                                             {section.title}
@@ -146,7 +146,7 @@ export function ArticlePage() {
                 {/* Article Content */}
                 <div
                     id="article-content"
-                    className="flex-1 overflow-y-auto max-h-[calc(100vh-73px)]"
+                    className="flex-1 overflow-y-auto max-h-[calc(100vh-73px)] "
                 >
                     <div className="max-w-3xl mx-auto px-6 py-12">
                         {/* Article Title */}
@@ -182,13 +182,97 @@ export function ArticlePage() {
                                     </h4>
                                 )}
 
-                                {/* Section Content - Paragraphs */}
+                                {/* Section Content - Paragraphs, Bullet Points, and Tables */}
                                 <div className="space-y-4">
-                                    {section.content.map((paragraph, pIndex) => (
+                                    {section.content.map((contentBlock, pIndex) => (
                                         <div key={pIndex}>
-                                            <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed">
-                                                {paragraph}
-                                            </p>
+                                            {/* Render paragraph */}
+                                            {typeof contentBlock === "string" && (
+                                                <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed">
+                                                    {contentBlock}
+                                                </p>
+                                            )}
+
+                                            {/* Render bullet points or numbered list */}
+                                            {typeof contentBlock === "object" &&
+                                                "type" in contentBlock &&
+                                                (contentBlock.type === "bullet" || contentBlock.type === "numbered") && (
+                                                    contentBlock.type === "bullet" ? (
+                                                        <ul className="list-disc list-inside space-y-2 ml-4">
+                                                            {contentBlock.items.map((item, itemIndex) => (
+                                                                <li
+                                                                    key={itemIndex}
+                                                                    className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                                                >
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    ) : (
+                                                        <ol className="list-decimal list-inside space-y-2 ml-4">
+                                                            {contentBlock.items.map((item, itemIndex) => (
+                                                                <li
+                                                                    key={itemIndex}
+                                                                    className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                                                >
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ol>
+                                                    )
+                                                )}
+
+                                            {/* Render table */}
+                                            {typeof contentBlock === "object" &&
+                                                "type" in contentBlock &&
+                                                contentBlock.type === "table" && (
+                                                    <div className="my-6 overflow-x-auto border-2 border-gray-300 bg-white p-3" style={{ transform: `rotate(${Math.random() * 0.5 - 0.25}deg)` }}>
+                                                        <table className="w-full border-collapse">
+                                                            <thead>
+                                                                <tr>
+                                                                    {contentBlock.headers.map((header, hIndex) => (
+                                                                        <th
+                                                                            key={hIndex}
+                                                                            className="border border-gray-300 bg-blue-50 px-4 py-2 font-['Caveat',_cursive] text-[16px] text-black text-left"
+                                                                        >
+                                                                            {header}
+                                                                        </th>
+                                                                    ))}
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {contentBlock.rows.map((row, rIndex) => (
+                                                                    <tr key={rIndex} className={rIndex % 2 === 0 ? "bg-white" : "bg-blue-50/30"}>
+                                                                        {row.map((cell, cIndex) => (
+                                                                            <td
+                                                                                key={cIndex}
+                                                                                className="border border-gray-300 px-4 py-2 font-['Patrick_Hand',_cursive] text-[16px] text-gray-700"
+                                                                            >
+                                                                                {cell}
+                                                                            </td>
+                                                                        ))}
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                )}
+
+                                            {/* Render blockquote */}
+                                            {typeof contentBlock === "object" &&
+                                                "type" in contentBlock &&
+                                                contentBlock.type === "blockquote" && (
+                                                    <blockquote className="my-6 pl-6 border-l-4 border-blue-700 bg-blue-50/30 py-4 px-4" style={{ transform: `rotate(${Math.random() * 0.5 - 0.25}deg)` }}>
+                                                        <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-800 leading-relaxed italic">
+                                                            "{contentBlock.text}"
+                                                        </p>
+                                                        {contentBlock.author && (
+                                                            <p className="font-['Caveat',_cursive] text-[16px] text-gray-600 mt-2">
+                                                                — {contentBlock.author}
+                                                            </p>
+                                                        )}
+                                                    </blockquote>
+                                                )}
 
                                             {/* Insert images after certain paragraphs if they exist */}
                                             {section.images && section.images[pIndex] && (

@@ -28,13 +28,13 @@ const projects: Project[] = [
     link: "https://example.com",
     // github: "https://github.com",
     featured: true,
-    articleId: "task-management-app",
+    articleId: "website-tracking",
   },
   {
     title: "DropPoint",
     description: "An open-source (GPLv3), cross-platform desktop utility application for macOS, Windows, and Linux that simplifies drag-and-drop file transfers by eliminating the need for side-by-side windows, a tool supported by over 40K+ downloads and 1K+ GitHub stars.",
     technologies: ["Electron.JS"],
-    link: "https://example.com",
+    link: "https://droppoint.netlify.app/",
     github: "https://github.com/GameGodS3/DropPoint",
   },
   {
