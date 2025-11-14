@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, MapPin, Star } from "lucide-react";
+import { Calendar, MapPin, Star } from "lucide-react";
 
 interface Experience {
   title: string;

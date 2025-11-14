@@ -1,5 +1,4 @@
-import { Trophy, Star, Award, Zap, Target, Rocket } from "lucide-react";
-import { StickyNote } from "./StickyNote";
+import { Trophy, Star, Zap, Rocket } from "lucide-react";
 
 interface Achievement {
   title: string;
@@ -35,12 +34,7 @@ const achievements: Achievement[] = [
   },
 ];
 
-const highlights = [
-  { text: "Published 15+ articles", icon: "📝" },
-  { text: "10k+ Dribbble followers", icon: "🎨" },
-  { text: "Mentor to 20+ designers", icon: "👥" },
-  { text: "Featured in Design Weekly", icon: "⭐" },
-];
+// highlights removed (unused)
 
 export function Achievements() {
   const getIcon = (type: string) => {

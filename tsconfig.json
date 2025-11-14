@@ -30,8 +30,10 @@
         }
     },
     "include": [
-        "**/*.ts",
-        "**/*.tsx"
+        "src/**/*"
+    ],
+    "exclude": [
+        "vite.config.ts"
     ],
     "references": [
         {

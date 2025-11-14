@@ -62,7 +62,7 @@ export function ArticlePage() {
                         Article Not Found
                     </h1>
                     <button
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/", { state: { scrollTo: "projects" } })}
                         className="flex items-center gap-2 font-['Patrick_Hand',_cursive] text-[18px] text-blue-700 hover:text-blue-900 transition-colors mx-auto"
                     >
                         <ChevronLeft className="w-5 h-5" strokeWidth={2} />
@@ -98,7 +98,7 @@ export function ArticlePage() {
             {/* Header */}
             <div className="z-10 border-b-2 border-black bg-gradient-to-r from-blue-50 to-white px-6 py-4 flex items-center justify-between sticky top-0">
                 <button
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/", { state: { scrollTo: "projects" } })}
                     className="flex items-center gap-2 font-['Patrick_Hand',_cursive] text-[18px] text-black hover:text-blue-700 transition-colors"
                 >
                     <ChevronLeft className="w-5 h-5" strokeWidth={2} />
@@ -151,7 +151,7 @@ export function ArticlePage() {
                     <div className="max-w-3xl mx-auto px-6 py-12">
                         {/* Article Title */}
                         <div className="mb-12 text-center">
-                            <h1 className="font-['There_Brat:Regular',_sans-serif] text-[56px] text-black mb-4">
+                            <h1 className="font-['There_Brat:Regular',_sans-serif] text-[40px] sm:text-[42px] lg:text-[56px] text-black mb-4 break-words">
                                 {article.title}
                             </h1>
                             {article.subtitle && (

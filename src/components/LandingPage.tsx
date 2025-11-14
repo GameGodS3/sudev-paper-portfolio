@@ -9,6 +9,7 @@ import { Contact } from "./Contact";
 import { ChevronDown } from "lucide-react";
 import notebookBg from "../assets/notebook-bg.jpg";
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useDesktopLandingAnimation } from "../animation/DesktopAnimation";
 
 export function LandingPage() {
@@ -16,6 +17,7 @@ export function LandingPage() {
     const [isExiting, setIsExiting] = useState(false);
     const [hideOverlay, setHideOverlay] = useState(false);
     const landingScopeRef = useRef<HTMLDivElement>(null);
+    const location = useLocation();
 
     const scrollToContent = () => {
         window.scrollTo({
@@ -94,6 +96,30 @@ export function LandingPage() {
 
     // Landing entrance animation (start only after loading overlay fully hides)
     useDesktopLandingAnimation(landingScopeRef, hideOverlay);
+
+    // If we navigated here with a scroll target (e.g. from an article), scroll to it
+    useEffect(() => {
+        const state: any = (location as any).state;
+        const target = state?.scrollTo as string | undefined;
+        if (!target) return;
+        // wait until overlay has hidden to allow scrolling
+        if (!hideOverlay) return;
+
+        const el = document.getElementById(target);
+        if (el) {
+            // small delay to ensure layout is settled
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 80);
+
+            // Clear the history state so we don't scroll again on refresh/back
+            try {
+                window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+            } catch (e) {
+                // ignore
+            }
+        }
+    }, [location, hideOverlay]);
 
     return (
         <div className="bg-white min-h-screen">

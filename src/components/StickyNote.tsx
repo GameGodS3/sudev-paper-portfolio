@@ -1,4 +1,4 @@
-import svgPaths from "../imports/svg-0v38ne8dkp.ts";
+// svgPaths import removed (unused)
 
 interface StickyNoteProps {
   children: React.ReactNode;

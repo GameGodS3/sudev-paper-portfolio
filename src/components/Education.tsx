@@ -1,4 +1,4 @@
-import { GraduationCap, Calendar, Award, CheckCircle2 } from "lucide-react";
+import { GraduationCap, Calendar } from "lucide-react";
 
 interface EducationItem {
   degree: string;
@@ -33,12 +33,7 @@ const education: EducationItem[] = [
   },
 ];
 
-const certifications = [
-  "AWS Certified Solutions Architect",
-  "Google UX Design Professional Certificate",
-  "Meta Front-End Developer Certificate",
-  "Adobe Certified Expert (ACE)",
-];
+// certifications removed (unused)
 
 export function Education() {
   return (
