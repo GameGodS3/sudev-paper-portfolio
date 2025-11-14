@@ -2,6 +2,7 @@ import { ChevronLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageModal } from "./ImageModal";
 import { projectArticles, ProjectArticleData } from "../../data/projectArticles";
 import notebookBg from "../assets/notebook-bg.jpg";
 
@@ -9,6 +10,7 @@ export function ArticlePage() {
     const { articleId } = useParams<{ articleId: string }>();
     const navigate = useNavigate();
     const [activeSection, setActiveSection] = useState<string>("");
+    const [modalImage, setModalImage] = useState<{ src: string; alt: string; caption?: string } | null>(null);
 
     const article: ProjectArticleData | undefined = articleId
         ? projectArticles[articleId]
@@ -275,27 +277,48 @@ export function ArticlePage() {
                                                 )}
 
                                             {/* Insert images after certain paragraphs if they exist */}
-                                            {section.images && section.images[pIndex] && (
-                                                <div className="my-8">
-                                                    <div
-                                                        className="border-2 border-gray-300 p-3 bg-white"
-                                                        style={{
-                                                            transform: `rotate(${Math.random() * 2 - 1}deg)`,
-                                                        }}
-                                                    >
-                                                        <ImageWithFallback
-                                                            src={section.images[pIndex].url}
-                                                            alt={section.images[pIndex].alt}
-                                                            className="w-full h-auto"
-                                                        />
-                                                        {section.images[pIndex].caption && (
-                                                            <p className="font-['Indie_Flower',_cursive] text-[14px] text-gray-600 text-center mt-2">
-                                                                {section.images[pIndex].caption}
-                                                            </p>
-                                                        )}
+                                            {section.images && section.images[pIndex] && (() => {
+                                                const image = section.images![pIndex]!;
+                                                return (
+                                                    <div className="my-8">
+                                                        <div
+                                                            className="border-2 border-gray-300 p-3 bg-white"
+                                                            style={{
+                                                                transform: `rotate(${Math.random() * 2 - 1}deg)`,
+                                                            }}
+                                                        >
+                                                            <ImageWithFallback
+                                                                src={image.url}
+                                                                alt={image.alt}
+                                                                className="w-full h-auto cursor-zoom-in"
+                                                                role="button"
+                                                                tabIndex={0}
+                                                                onClick={() =>
+                                                                    setModalImage({
+                                                                        src: image.url,
+                                                                        alt: image.alt || "",
+                                                                        caption: image.caption,
+                                                                    })
+                                                                }
+                                                                onKeyDown={(e) => {
+                                                                    if (e.key === "Enter" || e.key === " ") {
+                                                                        setModalImage({
+                                                                            src: image.url,
+                                                                            alt: image.alt || "",
+                                                                            caption: image.caption,
+                                                                        });
+                                                                    }
+                                                                }}
+                                                            />
+                                                            {image.caption && (
+                                                                <p className="font-['Indie_Flower',_cursive] text-[14px] text-gray-600 text-center mt-2">
+                                                                    {image.caption}
+                                                                </p>
+                                                            )}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
+                                                );
+                                            })()}
                                         </div>
                                     ))}
                                 </div>
@@ -322,6 +345,14 @@ export function ArticlePage() {
                     </div>
                 </div>
             </div>
+            {modalImage && (
+                <ImageModal
+                    src={modalImage.src}
+                    alt={modalImage.alt}
+                    caption={modalImage.caption}
+                    onClose={() => setModalImage(null)}
+                />
+            )}
         </div>
     );
 }
