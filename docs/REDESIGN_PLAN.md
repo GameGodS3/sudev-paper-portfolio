@@ -1,6 +1,6 @@
 # Notebook Redesign: Plan & Living Checklist
 
-> **Status:** 🟡 Draft, awaiting approval
+> **Status:** 🟢 Approved. Phases 0 and 1 done (awaiting Checkpoint 1 review); Phase 2 next
 > **Branch:** `redesign/notebook-cohesion`  →  PR into `main` when approved
 > **Goal:** Keep the professional-yet-semi-playful paper-notebook vibe, but make the whole site feel like *one* notebook that works well on phone, tablet and desktop.
 
@@ -14,7 +14,7 @@ Reviewed the live build at 390 / 820 / 1280 / 1920 px.
 
 | # | Area | Problem |
 |---|------|---------|
-| C1 | Cohesion | Notebook paper only exists in the hero; every section below is a plain white card. Theme disappears after the first screen. |
+| C1 | Cohesion | ~~Notebook paper only exists in the hero~~ **Corrected after checking real viewport screenshots:** the paper is a fixed layer behind the whole page, but each section laid a blurred white wash over it (`bg-white/10 backdrop-blur`), the JPG was stretched with `object-cover` so ruling spacing varied 40–60px by screen size, and the margin line ran through text. *(Full-page screenshots had misled me because they don't render fixed layers.)* |
 | C2 | Cohesion | 5 font families in play (Caveat, Patrick Hand, Indie Flower, There Brat, system sans). Sticky note and buttons fall back to system sans. |
 | C3 | Cohesion | 6+ accent colours with no meaning attached (blue, red, yellow, lavender, pink, green). |
 | C4 | Cohesion | Mixed component language: wobbly tags, boxed language badges, flat blue submit button, differently styled links. Random tilt angles. |
@@ -24,7 +24,7 @@ Reviewed the live build at 390 / 820 / 1280 / 1920 px.
 | C8 | Layout | Wide screens (≥1536 px): content card ends abruptly, ruled lines fade out. |
 | C9 | Layout | Phone: skills are a single endless column; page is ~12,700 px tall. Brush headings wrap to 2 lines and dominate the body text. |
 | C10 | Layout | Inconsistent section rhythm (Education left-aligned list, Achievements 3-col grid, uneven vertical gaps). |
-| C11 | A11y | Low-contrast grey handwriting for dates/locations; light condensed fonts at small sizes; small tap targets (social icons, "Learn More"). |
+| C11 | A11y | Dates/locations look faint mainly because of thin, light handwriting strokes at small sizes, not the colour value (`gray-600` already passes AA, verified). Fix is font weight/size, not just darker ink. Small tap targets (social icons, "Learn More"). |
 | C12 | A11y/UX | No section navigation on a very long page; no `prefers-reduced-motion` handling; loading overlay locks scroll with a fake progress bar. |
 | C13 | Perf | Google Fonts loaded via CSS `@import` (render-blocking); multi-MB JPGs for project images and profile photo. |
 | C14 | Content | Title says "Product Manager", sticky note says "AI Product Manager & Developer". Contact form includes phone and its destination is unclear. (Content changes are deferred until the resume is provided.) |
@@ -89,22 +89,25 @@ Tilt rule: a fixed set of 3 angles (−1.5°, 0°, +1.5°) assigned deterministi
 
 Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with reason). Each phase ends with a **preview checkpoint**: screenshots at 390 / 820 / 1280 / 1920 px shared for review before the next phase starts.
 
-### Phase 0: Setup
+### Phase 0: Setup ✅
 - [x] Create branch `redesign/notebook-cohesion` and push
 - [x] Confirm source builds and matches the live bundle hashes
-- [ ] Approve this plan (you)
-- [ ] Add `docs/screenshots/` baseline captures of the current site at 4 widths ("before")
-- [ ] Add a repeatable screenshot script (Playwright, `scripts/screenshots.mjs`) for before/after checkpoints
-- [ ] Decide on legacy root-level files (`App.tsx`, `components/`, `styles/`, duplicate of `src/`, unused Figma export): remove or leave? *(needs your call)*
+- [x] Approve this plan (you)
+- [x] Add `docs/screenshots/before/` baseline captures of the current site at 4 widths
+- [x] Add a repeatable screenshot script (`scripts/screenshots.mjs`; `--dev --path=/styleguide` for the dev-only style guide)
+- [x] Legacy root files: verified the build output is **byte-identical** without root `App.tsx`, `components/`, `imports/`, `styles/`, then removed them. **`data/` is kept**: `data/projectArticles.ts` and `data/articleImages/**` (the case studies and their images) are imported by `src/`. `Attributions.md` and `guidelines/` kept.
 
-### Phase 1: Foundation
-- [ ] CSS variables for ink palette, type scale, spacing in `src/styles/globals.css`; remove unused shadcn/dark-mode tokens that aren't used
-- [ ] Extend Tailwind config (colours, fonts, breakpoints, `container` max-width)
-- [ ] Font loading: drop `@import`, add preconnect + `swap`; consolidate to 3 families
-- [ ] Global base styles: body font/size/colour, link and focus styles, `prefers-reduced-motion`
-- [ ] Build shared components: `Section`, `PaperCard`, `Tag`, `StickyNote`, `InkButton`
-- [ ] Fixed notebook background layer (ruled lines + red margin) behind the whole page, scaling cleanly 320 → 2560 px
-- [ ] **Checkpoint 1:** foundation screenshots
+### Phase 1: Foundation ✅ (pending your review)
+- [x] CSS variables for ink palette, fluid type scale, spacing in `src/styles/globals.css`; removed the unused shadcn/dark-mode tokens and Tailwind-v4-only at-rules (the project uses Tailwind 3, so they were no-ops)
+- [x] Tailwind config: colours, 3 font roles, fluid font sizes, `max-w-page`, spacing and shadow tokens, 44px `min-h-tap`
+- [x] Font loading: removed the CSS `@import`; `<link rel=preconnect>` + `display=swap` in `index.html`. Display font gets `font-display: swap`
+- [~] Consolidate to 3 families: tokens and roles are defined (`font-display`, `font-hand`, `font-body`). **Indie Flower is still loaded** because the existing sections reference it; it is dropped in Phase 3 when they migrate
+- [x] Global base styles: body font/size/colour, focus-visible ring, balanced headings, smooth scroll and animation damping under `prefers-reduced-motion`
+- [x] Shared components in `src/components/paper/`: `Section`, `SectionDivider`, `PaperCard`, `Tag`, `InkButton`, `NotebookBackground`, `tiltFor`; `StickyNote` updated (token font, `className`). Not yet applied to sections (Phase 3)
+- [x] Notebook background redrawn in CSS: constant 32px ruling on every device, red margin hugs the content column (never crosses text), scrolls with the page. Removed the blurred white wash from every section
+- [x] Dev-only `/styleguide` route (not in production build) with palette, type scale, components and the **body-font comparison**
+- [x] **Checkpoint 1:** screenshots in `docs/screenshots/phase1/` (site at 390/820/1280/1920, style guide at 390/820/1280)
+- [ ] **Your call:** body font, Patrick Hand (current) vs Kalam. See the comparison in the style guide screenshots. Until you pick, `--font-body` stays Patrick Hand (one-line swap in `globals.css`)
 
 ### Phase 2: Hero (landing)
 - [ ] Replace absolutely-positioned Figma export (`imports/Desktop1.tsx`) with a responsive layout
@@ -189,12 +192,14 @@ Checks are run with Playwright (Chromium) screenshots; real-device behaviour (iO
 
 ## 7. Open questions
 
-1. **Legacy root files** (`App.tsx`, `components/`, `styles/` at repo root, a Figma-export duplicate of `src/`): delete in this redesign, or leave untouched?
-2. **Contact form:** where should submissions go (Formspree/Web3Forms/mailto)? Keep the phone field?
-3. **Volunteering section:** stays hidden?
-4. **Body font:** happy for me to choose between Patrick Hand and Kalam after a side-by-side on phone?
-5. **Dark mode:** out of scope (paper theme only). Confirm.
-6. **Loading screen:** keep a (shorter) intro, or remove entirely?
+All answered by the owner:
+
+1. ~~Legacy root files~~ → verified unused by the build and removed; `data/` (case studies) kept.
+2. ~~Contact form~~ → keep the existing Google Form submission untouched; visual changes only; phone field stays and is optional (already not `required`).
+3. ~~Volunteering~~ → stays hidden.
+4. **Body font** → owner will choose between Patrick Hand and Kalam from the style-guide comparison (Checkpoint 1).
+5. ~~Dark mode~~ → out of scope.
+6. ~~Loading screen~~ → keep as is. Revisit a shorter intro after standardisation and before the content update.
 
 ---
 
@@ -204,9 +209,18 @@ Checks are run with Playwright (Chromium) screenshots; real-device behaviour (iO
 |------|----------|-------|
 | 2026-10-09 | Work on `redesign/notebook-cohesion` in the source repo; PR to `main` only after user approval | User merges and publishes the build |
 | 2026-10-09 | Content changes deferred until resume and career brief arrive | Layout built to be data-driven |
+| 2026-10-09 | Legacy root `App.tsx`, `components/`, `imports/`, `styles/` removed; `data/` kept | Build output verified byte-identical; `data/` holds the case studies |
+| 2026-10-09 | Contact form: no logic changes, Google Form endpoint stays | Visual restyle only in Phase 3 |
+| 2026-10-09 | Volunteering stays hidden; no dark mode; loading screen unchanged | Per owner |
+| 2026-10-09 | Notebook paper drawn in CSS (32px pitch, margin hugs column, scrolls with page) | Replaces stretched JPG; `ArticlePage` still uses the JPG until Phase 4 |
+| 2026-10-09 | Body font choice deferred to owner at Checkpoint 1 | Default stays Patrick Hand |
 
 ## 9. Progress log
 
 | Date | Commit | Summary |
 |------|--------|---------|
-| 2026-10-09 | _this doc_ | Initial plan and checklist |
+| 2026-10-09 | `86b71da` | Initial plan and checklist |
+| 2026-10-09 | `be2cbb8` | Phase 0: remove unused legacy files, screenshot script, "before" baseline |
+| 2026-10-09 | _Phase 1 commit_ | Design tokens, Tailwind mapping, fonts, base styles, shared `paper/` components, CSS notebook background, dev style guide |
+
+**Known side effects of Phase 1 (to be tuned in later phases):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; hero is untouched (Phase 2).

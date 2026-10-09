@@ -7,7 +7,7 @@ import { Achievements } from "./Achievements";
 import { Hobbies } from "./Hobbies";
 import { Contact } from "./Contact";
 import { ChevronDown } from "lucide-react";
-import notebookBg from "../assets/notebook-bg.jpg";
+import { NotebookBackground } from "./paper";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDesktopLandingAnimation } from "../animation/DesktopAnimation";
@@ -122,7 +122,7 @@ export function LandingPage() {
     }, [location, hideOverlay]);
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-paper min-h-screen">
             {!hideOverlay && (
                 <div
                     className={
@@ -145,20 +145,8 @@ export function LandingPage() {
 
             {/* Content Sections with Notebook Background */}
             <div className="relative">
-                {/* Repeating notebook background */}
-                <div className="fixed inset-0 pointer-events-none z-0">
-                    <div className="absolute inset-0 opacity-50">
-                        <img
-                            src={notebookBg}
-                            alt=""
-                            className="w-screen h-full object-cover object-left-top"
-                            style={{
-                                objectFit: "cover",
-                                objectPosition: "left center",
-                            }}
-                        />
-                    </div>
-                </div>
+                {/* Notebook paper (CSS-drawn, spans the whole page and scrolls with it) */}
+                <NotebookBackground />
 
                 {/* Actual content */}
                 <div className="relative z-10 bg-transparent">

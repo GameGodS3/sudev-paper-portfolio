@@ -4,6 +4,7 @@ interface StickyNoteProps {
   children: React.ReactNode;
   rotation?: number;
   color?: string;
+  className?: string;
 }
 function getSoftShadowColor(color: string): string {
   // Convert hex → RGB
@@ -34,19 +35,19 @@ function getSoftShadowColor(color: string): string {
 }
 
 
-export function StickyNote({ children, rotation = 0, color = "#ffff99" }: StickyNoteProps) {
+export function StickyNote({ children, rotation = 0, color = "#ffff99", className = "" }: StickyNoteProps) {
   const shadowColor = getSoftShadowColor(color);
 
   return (
     <div
-      className="relative p-2 min-w-[180px]"
+      className={`relative p-2 min-w-[180px] ${className}`}
       style={{
         backgroundColor: color,
         transform: `rotate(${rotation}deg)`,
         boxShadow: `0px 0px 6px 0px rgba(${shadowColor}, 0.5)`,
       }}
     >
-      <div className="font-['Patrick_Hand',_cursive] text-[#816212] relative z-10">
+      <div className="font-body text-small text-sticky-ink relative z-10">
         {children}
       </div>
     </div>

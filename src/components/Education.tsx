@@ -37,7 +37,7 @@ const education: EducationItem[] = [
 
 export function Education() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto drop-shadow-sm bg-white/10 backdrop-blur-[2px]">
+    <section className="py-16 px-8 max-w-6xl mx-auto">
       <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
         Education
       </h2>
