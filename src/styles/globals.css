@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ------------------------------------------------------------------ *
- * Fonts. Google fonts (Caveat, Patrick Hand, Indie Flower) are loaded
+ * Fonts. Google fonts (Caveat, Kalam) are loaded
  * from <link> tags in index.html. Only the self-hosted display font is
  * declared here.
  * ------------------------------------------------------------------ */
@@ -45,7 +45,7 @@
   /* Type families: 3 roles. Swap --font-body to change the body face (one line). */
   --font-display: 'There Brat', Impact, 'Arial Black', sans-serif;
   --font-hand: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
-  --font-body: 'Patrick Hand', 'Segoe Print', 'Comic Sans MS', system-ui, sans-serif;
+  --font-body: 'Kalam', 'Segoe Print', 'Comic Sans MS', system-ui, sans-serif;
 
   /* Fluid type scale: min at ~320px viewport, max at ~1280px */
   --step-display: clamp(2.5rem, 1.7rem + 3.8vw, 4rem);      /* hero name */

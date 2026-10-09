@@ -38,11 +38,11 @@ const education: EducationItem[] = [
 export function Education() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-display mb-4 text-center text-black text-[50px]">
         Education
       </h2>
       <div className="text-center mb-12">
-        <span className="font-['Caveat',_cursive] text-[24px] text-gray-600">
+        <span className="font-hand text-[24px] text-gray-600">
           Never stop learning!
         </span>
       </div>
@@ -57,13 +57,13 @@ export function Education() {
               <GraduationCap className="w-8 h-8 text-blue-700" strokeWidth={1.5} />
             </div>
 
-            <h3 className="font-['Caveat',_cursive] text-[30px] text-black mb-1">
+            <h3 className="font-hand text-[30px] text-black mb-1">
               {edu.degree}
             </h3>
-            <div className="font-['Patrick_Hand',_cursive] text-[20px] text-gray-800 mb-2">
+            <div className="font-body text-[20px] text-gray-800 mb-2">
               {edu.institution}
             </div>
-            <div className="flex items-center gap-1 font-['Indie_Flower',_cursive] text-[16px] text-gray-600 mb-3">
+            <div className="flex items-center gap-1 font-body text-[16px] text-gray-600 mb-3">
               <Calendar className="w-4 h-4" strokeWidth={1.5} />
               {edu.period}
             </div>
@@ -71,7 +71,7 @@ export function Education() {
             {edu.details && (
               <ul className="space-y-1">
                 {edu.details.map((detail, i) => (
-                  <li key={i} className="flex gap-2 font-['Patrick_Hand',_cursive] text-[17px] text-gray-700">
+                  <li key={i} className="flex gap-2 font-body text-[17px] text-gray-700">
                     <span className="text-red-600 mt-1">✦</span>
                     <span>{detail}</span>
                   </li>
@@ -85,7 +85,7 @@ export function Education() {
       {/* <div className="mt-12">
         <div className="flex items-center gap-3 mb-6 justify-center">
           <Award className="w-7 h-7 text-red-600" strokeWidth={1.5} />
-          <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+          <h3 className="font-hand text-[32px] text-black">
             Certifications
           </h3>
         </div>
@@ -94,7 +94,7 @@ export function Education() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="flex gap-2 items-start font-['Patrick_Hand',_cursive] text-[18px] text-gray-700"
+              className="flex gap-2 items-start font-body text-[18px] text-gray-700"
             >
               <CheckCircle2 className="w-5 h-5 text-blue-700 mt-1 flex-shrink-0" strokeWidth={2} />
               <span>{cert}</span>

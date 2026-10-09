@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Calendar, MapPin, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { InkButton, NotebookBackground, PaperCard, Section, SectionDivider, Tag, tiltFor } from "./paper";
 import { StickyNote } from "./StickyNote";
 
@@ -19,50 +18,7 @@ const SWATCHES: [string, string, string][] = [
     ["sticky-ink", "var(--sticky-ink)", "text on sticky"],
 ];
 
-const SAMPLE_BULLETS = [
-    "Launched native website tracking to process millions of daily events for enterprise clients.",
-    "Established and led the entire QA process and company-wide user testing, cutting production bugs by 50%.",
-    "Created a comprehensive Help Center reducing support tickets by 95% and response time to under 12 hours.",
-];
-
-const FONT_CANDIDATES = [
-    { name: "Patrick Hand (current)", family: "'Patrick Hand'" },
-    { name: "Kalam", family: "'Kalam'" },
-];
-
-function FontSample({ name, family }: { name: string; family: string }) {
-    return (
-        <PaperCard className="!p-5">
-            <p className="mb-3 font-hand text-subtitle text-pen-blue">{name}</p>
-            <div style={{ fontFamily: family }}>
-                <div className="mb-1 text-lead text-ink">Inflection.io</div>
-                <div className="mb-3 flex flex-wrap gap-x-4 text-small text-ink-soft">
-                    <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4" />Aug 2023 - Sept 2025</span>
-                    <span className="inline-flex items-center gap-1"><MapPin className="h-4 w-4" />Bengaluru, KA, India</span>
-                </div>
-                <ul className="space-y-2 text-body text-ink-soft">
-                    {SAMPLE_BULLETS.map((b) => (
-                        <li key={b} className="flex gap-2"><span className="text-pen-blue">→</span><span>{b}</span></li>
-                    ))}
-                </ul>
-                <div className="mt-3 flex flex-wrap gap-2 text-small">
-                    <Tag>Spark Java</Tag><Tag>Apache Flink</Tag><Tag variant="level">Fluent</Tag>
-                </div>
-            </div>
-        </PaperCard>
-    );
-}
-
 export function StyleGuide() {
-    // Kalam is loaded here only, for the comparison; it is not part of the production font set.
-    useEffect(() => {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap";
-        document.head.appendChild(link);
-        return () => { link.remove(); };
-    }, []);
-
     return (
         <div className="relative min-h-screen bg-paper">
             <NotebookBackground />
@@ -88,11 +44,6 @@ export function StyleGuide() {
                         <p className="text-body">Body: Joined Inflection.io, an AI-driven B2B marketing automation startup.</p>
                         <p className="text-small text-ink-soft">Small: Aug 2023 - Sept 2025 · Bengaluru, KA, India</p>
                     </PaperCard>
-
-                    <h3 className="mb-4 font-hand text-lead">Body font comparison (real content, same sizes)</h3>
-                    <div className="mb-12 grid gap-5 md:grid-cols-2">
-                        {FONT_CANDIDATES.map((f) => <FontSample key={f.name} {...f} />)}
-                    </div>
 
                     <h3 className="mb-4 font-hand text-lead">Buttons</h3>
                     <div className="mb-12 flex flex-wrap gap-4">

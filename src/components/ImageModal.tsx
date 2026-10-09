@@ -304,7 +304,7 @@ export function ImageModal({ src, alt, caption, onClose }: ImageModalProps) {
             {/* Caption footer */}
             {caption && (
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <p className="text-white text-sm text-center font-['Patrick_Hand',_cursive]">
+                    <p className="text-white text-sm text-center font-body">
                         {caption}
                     </p>
                 </div>

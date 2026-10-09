@@ -63,11 +63,11 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-display mb-4 text-center text-black text-[50px]">
         Projects
       </h2>
       <div className="text-center mb-12">
-        <span className="font-['Caveat',_cursive] text-[24px] text-gray-600">
+        <span className="font-hand text-[24px] text-gray-600">
           Things I've built with passion & curiosity
         </span>
       </div>
@@ -87,7 +87,7 @@ export function Projects() {
             <div className="flex flex-col gap-4 items-start">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-['Caveat',_cursive] text-[28px] text-black">
+                  <h3 className="font-hand text-[28px] text-black">
                     {project.title}
                   </h3>
                   {project.featured && (
@@ -95,7 +95,7 @@ export function Projects() {
                   )}
                 </div>
 
-                <p className="font-['Patrick_Hand',_cursive] text-[17px] text-gray-700 mb-4">
+                <p className="font-body text-[17px] text-gray-700 mb-4">
                   {project.description}
                 </p>
 
@@ -103,7 +103,7 @@ export function Projects() {
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-blue-50 border-2 border-blue-700 font-['Indie_Flower',_cursive] text-[15px] text-blue-900"
+                      className="px-3 py-1 bg-blue-50 border-2 border-blue-700 font-body text-[15px] text-blue-900"
                       style={{ transform: `rotate(${Math.random() * 4 - 2}deg)` }}
                     >
                       {tech}
@@ -111,7 +111,7 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-4 font-['Patrick_Hand',_cursive] text-[16px]">
+                <div className="flex gap-4 font-body text-[16px]">
                   {project.articleId && (
                     <button
                       onClick={() => handleLearnMore(project.articleId)}

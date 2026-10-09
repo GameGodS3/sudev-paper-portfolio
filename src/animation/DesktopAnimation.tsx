@@ -13,6 +13,9 @@ export function useDesktopLandingAnimation(
 
     useGSAP(
         () => {
+            // Reduced motion: skip the entrance animation entirely and show the final state.
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
             // Initial states
 
             // Sub-intro

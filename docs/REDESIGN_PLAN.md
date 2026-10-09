@@ -1,6 +1,6 @@
 # Notebook Redesign: Plan & Living Checklist
 
-> **Status:** 🟢 Approved. Phases 0 and 1 done (awaiting Checkpoint 1 review); Phase 2 next
+> **Status:** 🟢 Approved. Phases 0, 1 and 2 done (awaiting Checkpoint 2 review); Phase 3 next
 > **Branch:** `redesign/notebook-cohesion`  →  PR into `main` when approved
 > **Goal:** Keep the professional-yet-semi-playful paper-notebook vibe, but make the whole site feel like *one* notebook that works well on phone, tablet and desktop.
 
@@ -97,29 +97,30 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with rea
 - [x] Add a repeatable screenshot script (`scripts/screenshots.mjs`; `--dev --path=/styleguide` for the dev-only style guide)
 - [x] Legacy root files: verified the build output is **byte-identical** without root `App.tsx`, `components/`, `imports/`, `styles/`, then removed them. **`data/` is kept**: `data/projectArticles.ts` and `data/articleImages/**` (the case studies and their images) are imported by `src/`. `Attributions.md` and `guidelines/` kept.
 
-### Phase 1: Foundation ✅ (pending your review)
+### Phase 1: Foundation ✅
 - [x] CSS variables for ink palette, fluid type scale, spacing in `src/styles/globals.css`; removed the unused shadcn/dark-mode tokens and Tailwind-v4-only at-rules (the project uses Tailwind 3, so they were no-ops)
 - [x] Tailwind config: colours, 3 font roles, fluid font sizes, `max-w-page`, spacing and shadow tokens, 44px `min-h-tap`
 - [x] Font loading: removed the CSS `@import`; `<link rel=preconnect>` + `display=swap` in `index.html`. Display font gets `font-display: swap`
-- [~] Consolidate to 3 families: tokens and roles are defined (`font-display`, `font-hand`, `font-body`). **Indie Flower is still loaded** because the existing sections reference it; it is dropped in Phase 3 when they migrate
+- [x] Consolidate to 3 families: `font-display` (There Brat), `font-hand` (Caveat), `font-body` (Kalam). Done in Phase 2: every section's hard-coded font class was swapped to these tokens and Patrick Hand / Indie Flower are no longer loaded
 - [x] Global base styles: body font/size/colour, focus-visible ring, balanced headings, smooth scroll and animation damping under `prefers-reduced-motion`
 - [x] Shared components in `src/components/paper/`: `Section`, `SectionDivider`, `PaperCard`, `Tag`, `InkButton`, `NotebookBackground`, `tiltFor`; `StickyNote` updated (token font, `className`). Not yet applied to sections (Phase 3)
 - [x] Notebook background redrawn in CSS: constant 32px ruling on every device, red margin hugs the content column (never crosses text), scrolls with the page. Removed the blurred white wash from every section
 - [x] Dev-only `/styleguide` route (not in production build) with palette, type scale, components and the **body-font comparison**
 - [x] **Checkpoint 1:** screenshots in `docs/screenshots/phase1/` (site at 390/820/1280/1920, style guide at 390/820/1280)
-- [ ] **Your call:** body font, Patrick Hand (current) vs Kalam. See the comparison in the style guide screenshots. Until you pick, `--font-body` stays Patrick Hand (one-line swap in `globals.css`)
+- [x] Body font: **Kalam** chosen by owner (`--font-body` in `globals.css`)
 
-### Phase 2: Hero (landing)
-- [ ] Replace absolutely-positioned Figma export (`imports/Desktop1.tsx`) with a responsive layout
-  - [ ] Phone: stacked (photo → greeting → name → role → CTAs → socials)
-  - [ ] Tablet: two-column photo / text split
-  - [ ] Desktop and wide: balanced composition with max-width, sticky note anchored deliberately
-- [ ] Name never collides with margin line, socials or email at any width (320–2560)
-- [ ] Email and socials as readable, ≥44 px tap targets (no tiny vertical-text email on phone)
-- [ ] Keep the entrance animation (GSAP) but re-target it to the new markup; respect `prefers-reduced-motion`
-- [ ] Rework loading overlay: shorter, doesn't lock scrolling longer than necessary
+### Phase 2: Hero (landing) ✅ (pending your review)
+- [x] Replace the absolutely-positioned design export (`imports/Desktop1.tsx`, now deleted) with one responsive `Hero` component
+  - [x] Phone: stacked (photo + sticky note → greeting → name → CTAs → socials + email)
+  - [x] Tablet and up: photo/note on the left, text left-aligned on the right (same layout at 820, 1280 and 1920; centred in the page column on wide screens)
+  - [x] Desktop and wide: constrained to the page column (max 1152px) so the composition stays together at 1920
+- [x] No collisions: name, margin line, socials and sticky note are in normal flow; the red margin now hugs the column; the sticky note is tucked onto the photo corner
+- [x] Socials and email: the vertical email is now a normal readable link; 44px tap targets; one consistent contact strip at every width (replaced the left rail / right-edge text). Icons now come from `lucide-react`
+- [x] GSAP entrance animation kept (same class hooks), re-targeted to the new markup; typewriter name uses a hidden "ghost" copy so layout never jumps; **skipped entirely under `prefers-reduced-motion`**
+- [x] Loading overlay left untouched (per owner); scroll arrow now scrolls to the real hero height
+- [x] Buttons: hand-drawn offset outline restored in `InkButton` (slightly off-square pen-traced shadow, moves on hover/press)
 - [ ] Unify role wording (pending your resume)
-- [ ] **Checkpoint 2:** hero at 4 widths
+- [x] **Checkpoint 2:** `docs/screenshots/phase2/` (390 / 820 / 1280 / 1920)
 
 ### Phase 3: Sections
 - [ ] Work Experience: single-rail timeline on phone/tablet; compact two-sided or single-rail on desktop without empty halves
@@ -213,7 +214,9 @@ All answered by the owner:
 | 2026-10-09 | Contact form: no logic changes, Google Form endpoint stays | Visual restyle only in Phase 3 |
 | 2026-10-09 | Volunteering stays hidden; no dark mode; loading screen unchanged | Per owner |
 | 2026-10-09 | Notebook paper drawn in CSS (32px pitch, margin hugs column, scrolls with page) | Replaces stretched JPG; `ArticlePage` still uses the JPG until Phase 4 |
-| 2026-10-09 | Body font choice deferred to owner at Checkpoint 1 | Default stays Patrick Hand |
+| 2026-10-09 | Body font: Kalam (owner's choice); all sections moved onto the 3 font-role tokens | Patrick Hand and Indie Flower dropped from loading |
+| 2026-10-09 | Hero: single contact strip (icons + visible email) at all widths instead of left rail + vertical email | Fewer special cases, better tap targets |
+| 2026-10-09 | Buttons keep a hand-drawn offset outline | Owner liked the scribbled shadow; implemented as part of `InkButton` |
 
 ## 9. Progress log
 
@@ -221,6 +224,7 @@ All answered by the owner:
 |------|--------|---------|
 | 2026-10-09 | `86b71da` | Initial plan and checklist |
 | 2026-10-09 | `be2cbb8` | Phase 0: remove unused legacy files, screenshot script, "before" baseline |
-| 2026-10-09 | _Phase 1 commit_ | Design tokens, Tailwind mapping, fonts, base styles, shared `paper/` components, CSS notebook background, dev style guide |
+| 2026-10-09 | `1db254b` | Phase 1: design tokens, Tailwind mapping, fonts, base styles, shared `paper/` components, CSS notebook background, dev style guide |
+| 2026-10-09 | _Phase 2 commit_ | Responsive `Hero`, Kalam + font tokens across sections, scribble button shadow, reduced-motion handling, removed `src/imports` |
 
-**Known side effects of Phase 1 (to be tuned in later phases):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; hero is untouched (Phase 2).
+**Known side effects of Phase 1 (to be tuned in later phases):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; ~~hero is untouched~~ (done in Phase 2).

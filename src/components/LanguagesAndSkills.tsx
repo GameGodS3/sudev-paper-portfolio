@@ -63,11 +63,11 @@ const toolsAndFrameworks = [
 export function LanguagesAndSkills() {
   return (
     <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-['There_Brat',_sans-serif] mb-4 text-center text-black text-[50px]">
+      <h2 className="font-display mb-4 text-center text-black text-[50px]">
         Languages & Skills
       </h2>
       <div className="text-center mb-12">
-        <span className="font-['Caveat',_cursive] text-[24px] text-gray-600">
+        <span className="font-hand text-[24px] text-gray-600">
           Tools of the trade & ways to communicate
         </span>
       </div>
@@ -77,7 +77,7 @@ export function LanguagesAndSkills() {
         <div>
           <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
             <Languages className="w-7 h-7 text-blue-700" strokeWidth={1.5} />
-            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+            <h3 className="font-hand text-[32px] text-black">
               Spoken Languages
             </h3>
           </div>
@@ -88,10 +88,10 @@ export function LanguagesAndSkills() {
                 key={index}
                 className="flex justify-between items-center border-b-2 border-dashed border-gray-300 pb-2"
               >
-                <span className="font-['Patrick_Hand',_cursive] text-[22px] text-black">
+                <span className="font-body text-[22px] text-black">
                   {lang.name}
                 </span>
-                <span className="font-['Indie_Flower',_cursive] text-[18px] px-3 py-1 bg-red-50 text-red-700 border-2 border-red-300">
+                <span className="font-body text-[18px] px-3 py-1 bg-red-50 text-red-700 border-2 border-red-300">
                   {lang.level}
                 </span>
               </div>
@@ -103,7 +103,7 @@ export function LanguagesAndSkills() {
         <div>
           <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
             <Code2 className="w-7 h-7 text-green-600" strokeWidth={1.5} />
-            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+            <h3 className="font-hand text-[32px] text-black">
               Core Strengths
             </h3>
           </div>
@@ -123,7 +123,7 @@ export function LanguagesAndSkills() {
         <div>
           <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
             <Code2 className="w-7 h-7 text-red-600" strokeWidth={1.5} />
-            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+            <h3 className="font-hand text-[32px] text-black">
               Technical Skills
             </h3>
           </div>
@@ -143,7 +143,7 @@ export function LanguagesAndSkills() {
         <div>
           <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
             <Code2 className="w-7 h-7 text-purple-600" strokeWidth={1.5} />
-            <h3 className="font-['Caveat',_cursive] text-[32px] text-black">
+            <h3 className="font-hand text-[32px] text-black">
               Tools & Frameworks
             </h3>
           </div>

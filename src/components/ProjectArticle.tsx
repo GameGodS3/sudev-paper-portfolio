@@ -99,7 +99,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
       <div className="border-b-2 border-black bg-gradient-to-r from-blue-50 to-white px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <button
           onClick={onClose}
-          className="flex items-center gap-2 font-['Patrick_Hand',_cursive] text-[18px] text-black hover:text-blue-700 transition-colors"
+          className="flex items-center gap-2 font-body text-[18px] text-black hover:text-blue-700 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" strokeWidth={2} />
           Back to Portfolio
@@ -117,7 +117,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
         {/* Sidebar Navigation */}
         <div className="hidden lg:block w-64 border-r-2 border-gray-200 bg-gradient-to-b from-red-50/30 to-white p-6 overflow-y-auto">
           <div className="sticky top-0">
-            <h3 className="font-['Caveat',_cursive] text-[24px] text-black mb-4 pb-2 border-b-2 border-dashed border-gray-300">
+            <h3 className="font-hand text-[24px] text-black mb-4 pb-2 border-b-2 border-dashed border-gray-300">
               Contents
             </h3>
             <nav>
@@ -131,7 +131,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                   >
                     <button
                       onClick={() => scrollToSection(section.id)}
-                      className={`text-left w-full py-1.5 px-2 rounded font-['Patrick_Hand',_cursive] transition-colors ${activeSection === section.id
+                      className={`text-left w-full py-1.5 px-2 rounded font-body transition-colors ${activeSection === section.id
                         ? 'bg-blue-100 text-blue-900 text-[16px]'
                         : 'text-gray-700 hover:bg-gray-100 text-[15px]'
                         }`}
@@ -154,7 +154,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                 {article.title}
               </h1>
               {article.subtitle && (
-                <p className="font-['Caveat',_cursive] text-[28px] text-gray-600">
+                <p className="font-hand text-[28px] text-gray-600">
                   {article.subtitle}
                 </p>
               )}
@@ -171,12 +171,12 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                   </h2>
                 )}
                 {section.level === 2 && (
-                  <h3 className="font-['Caveat',_cursive] text-[32px] text-black mb-4 mt-10">
+                  <h3 className="font-hand text-[32px] text-black mb-4 mt-10">
                     {section.title}
                   </h3>
                 )}
                 {section.level === 3 && (
-                  <h4 className="font-['Caveat',_cursive] text-[24px] text-gray-800 mb-3 mt-6">
+                  <h4 className="font-hand text-[24px] text-gray-800 mb-3 mt-6">
                     {section.title}
                   </h4>
                 )}
@@ -187,7 +187,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                     <div key={pIndex}>
                       {/* Render paragraph */}
                       {typeof contentBlock === "string" && (
-                        <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed">
+                        <p className="font-body text-[18px] text-gray-700 leading-relaxed">
                           {contentBlock}
                         </p>
                       )}
@@ -201,7 +201,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                               {contentBlock.items.map((item, itemIndex) => (
                                 <li
                                   key={itemIndex}
-                                  className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                  className="font-body text-[18px] text-gray-700 leading-relaxed"
                                 >
                                   {item}
                                 </li>
@@ -212,7 +212,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                               {contentBlock.items.map((item, itemIndex) => (
                                 <li
                                   key={itemIndex}
-                                  className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-700 leading-relaxed"
+                                  className="font-body text-[18px] text-gray-700 leading-relaxed"
                                 >
                                   {item}
                                 </li>
@@ -232,7 +232,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                                   {contentBlock.headers.map((header, hIndex) => (
                                     <th
                                       key={hIndex}
-                                      className="border border-gray-300 bg-blue-50 px-4 py-2 font-['Caveat',_cursive] text-[16px] text-black text-left"
+                                      className="border border-gray-300 bg-blue-50 px-4 py-2 font-hand text-[16px] text-black text-left"
                                     >
                                       {header}
                                     </th>
@@ -245,7 +245,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                                     {row.map((cell, cIndex) => (
                                       <td
                                         key={cIndex}
-                                        className="border border-gray-300 px-4 py-2 font-['Patrick_Hand',_cursive] text-[16px] text-gray-700"
+                                        className="border border-gray-300 px-4 py-2 font-body text-[16px] text-gray-700"
                                       >
                                         {cell}
                                       </td>
@@ -262,11 +262,11 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                         "type" in contentBlock &&
                         contentBlock.type === "blockquote" && (
                           <blockquote className="my-6 pl-6 border-l-4 border-blue-700 bg-blue-50/30 py-4 px-4" style={{ transform: `rotate(${Math.random() * 0.5 - 0.25}deg)` }}>
-                            <p className="font-['Patrick_Hand',_cursive] text-[18px] text-gray-800 leading-relaxed italic">
+                            <p className="font-body text-[18px] text-gray-800 leading-relaxed italic">
                               "{contentBlock.text}"
                             </p>
                             {contentBlock.author && (
-                              <p className="font-['Caveat',_cursive] text-[16px] text-gray-600 mt-2">
+                              <p className="font-hand text-[16px] text-gray-600 mt-2">
                                 — {contentBlock.author}
                               </p>
                             )}
@@ -287,7 +287,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
                               className="w-full h-auto"
                             />
                             {section.images[pIndex].caption && (
-                              <p className="font-['Indie_Flower',_cursive] text-[14px] text-gray-600 text-center mt-2">
+                              <p className="font-body text-[14px] text-gray-600 text-center mt-2">
                                 {section.images[pIndex].caption}
                               </p>
                             )}
@@ -308,7 +308,7 @@ export function ProjectArticle({ article, onClose }: ProjectArticleProps) {
             {/* End decoration */}
             <div className="mt-16 mb-8 text-center">
               <div className="inline-block p-4 bg-gradient-to-br from-blue-50 to-red-50 border-2 border-black" style={{ transform: 'rotate(-1deg)' }}>
-                <p className="font-['Caveat',_cursive] text-[24px] text-black">
+                <p className="font-hand text-[24px] text-black">
                   End of Article
                 </p>
               </div>
