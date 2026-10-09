@@ -112,7 +112,8 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with rea
 ### Phase 2: Hero (landing) ✅ (pending your review)
 - [x] Replace the absolutely-positioned design export (`imports/Desktop1.tsx`, now deleted) with one responsive `Hero` component
   - [x] Phone: stacked (photo + sticky note → greeting → name → CTAs → socials + email)
-  - [x] Tablet and up: photo/note on the left, text left-aligned on the right (same layout at 820, 1280 and 1920; centred in the page column on wide screens)
+  - [x] Tablet portrait (768–1023): phone-style stacked layout scaled up (bigger polaroid, one-line name). *Experiment suggested by owner; easy to revert by switching the `lg:` hero classes back to `md:`*
+  - [x] Laptop and up (≥1024): photo/note on the left, text left-aligned on the right
   - [x] Desktop and wide: constrained to the page column (max 1152px) so the composition stays together at 1920
 - [x] No collisions: name, margin line, socials and sticky note are in normal flow; the red margin now hugs the column; the sticky note is tucked onto the photo corner
 - [x] Socials and email: the vertical email is now a normal readable link; 44px tap targets; one consistent contact strip at every width (replaced the left rail / right-edge text). Icons now come from `lucide-react`
@@ -216,6 +217,7 @@ All answered by the owner:
 | 2026-10-09 | Notebook paper drawn in CSS (32px pitch, margin hugs column, scrolls with page) | Replaces stretched JPG; `ArticlePage` still uses the JPG until Phase 4 |
 | 2026-10-09 | Body font: Kalam (owner's choice); all sections moved onto the 3 font-role tokens | Patrick Hand and Indie Flower dropped from loading |
 | 2026-10-09 | Hero: single contact strip (icons + visible email) at all widths instead of left rail + vertical email | Fewer special cases, better tap targets |
+| 2026-10-09 | Hero: removed the redundant email icon (the visible email text is the mailto link); tablet portrait uses the stacked layout, side-by-side from 1024 | Owner's request / experiment |
 | 2026-10-09 | Buttons keep a hand-drawn offset outline | Owner liked the scribbled shadow; implemented as part of `InkButton` |
 
 ## 9. Progress log

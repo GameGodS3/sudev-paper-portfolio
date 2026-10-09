@@ -1,4 +1,4 @@
-import { AtSign, Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import type { ReactNode } from "react";
 import sudevProfilePic from "../assets/sudev_profile_pic.jpg";
 import { InkButton } from "./paper";
@@ -8,7 +8,6 @@ const EMAIL = "sudevssuresh@gmail.com";
 const RESUME_URL = "https://drive.google.com/file/d/1dCxQPgzDM4TKncP1FjeuqByIoLHVRMU_/view?usp=sharing";
 
 const SOCIALS: { href: string; label: string; icon: ReactNode }[] = [
-    { href: `mailto:${EMAIL}`, label: "Email", icon: <AtSign /> },
     { href: "https://linkedin.com/in/sudevssuresh", label: "LinkedIn", icon: <Linkedin /> },
     { href: "https://instagram.com/they.call.me.sudev", label: "Instagram", icon: <Instagram /> },
     { href: "https://github.com/GameGodS3", label: "GitHub", icon: <Github /> },
@@ -19,7 +18,7 @@ function scrollToContact() {
 }
 
 /**
- * Landing hero. One responsive layout (stacked on phone, photo + text side by side from md up)
+ * Landing hero. One responsive layout (stacked and centred on phone and tablet, photo + text side by side from lg up)
  * replaces the old fixed-coordinate design export.
  *
  * Class names `profile-pic`, `sticky-note-parent`, `sub-intro`, `fullname`, `social-icon`,
@@ -28,7 +27,7 @@ function scrollToContact() {
  */
 export function Hero() {
     return (
-        <div className="mx-auto flex w-full max-w-page flex-col items-center gap-10 px-gutter pb-28 pt-12 md:flex-row md:justify-center md:gap-12 md:pb-16 md:pt-16 lg:gap-20">
+        <div className="mx-auto flex w-full max-w-page flex-col items-center gap-12 px-gutter pb-28 pt-12 md:gap-16 md:pb-24 md:pt-16 lg:flex-row lg:justify-center lg:gap-20 lg:pb-16">
             {/* Photo + role note */}
             <div className="relative shrink-0">
                 <div className="profile-pic">
@@ -36,7 +35,7 @@ export function Hero() {
                         <img
                             src={sudevProfilePic}
                             alt="Portrait of Sudev"
-                            className="aspect-[4/5] w-[clamp(11rem,52vw,15rem)] object-cover object-[50%_20%] md:w-[clamp(14rem,30vw,19rem)]"
+                            className="aspect-[4/5] w-[clamp(11rem,52vw,15rem)] object-cover object-[50%_20%] md:w-[clamp(17rem,38vw,21rem)] lg:w-[clamp(15rem,26vw,19rem)]"
                         />
                     </figure>
                 </div>
@@ -58,7 +57,7 @@ export function Hero() {
             </div>
 
             {/* Text block */}
-            <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
+            <div className="flex min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
                 <p className="sub-intro font-hand text-subtitle text-pen-blue">Hello there, I'm</p>
 
                 {/* Ghost text reserves the final size so the typewriter never makes the layout jump */}
@@ -67,12 +66,12 @@ export function Hero() {
                     <span aria-hidden="true" className="fullname absolute inset-0">{NAME}</span>
                 </h1>
 
-                <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-5 md:justify-start">
+                <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-5 lg:justify-start">
                     <span className="button"><InkButton variant="solid" href={RESUME_URL} target="_blank" rel="noopener noreferrer">My Resume</InkButton></span>
                     <span className="button"><InkButton variant="outline" onClick={scrollToContact}>Contact Me</InkButton></span>
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 md:justify-start">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 lg:justify-start">
                     {SOCIALS.map((s) => (
                         <a
                             key={s.label}
