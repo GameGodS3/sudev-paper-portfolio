@@ -2,17 +2,18 @@ import type { CaseStudy } from "./types";
 
 const img = (file: string) => `neo-voicestack/${file}`;
 
-// Copy is final (see docs/case-studies/NEO-case-study-brief.md, section 5). Do not reword.
+// Copy is final (owner-supplied NEO-article.md). Do not reword.
+// Voice: objective and passive. No "I"/"we"/"my", no names; the only personal detail is hero meta "Role".
 export const neoVoicestack: CaseStudy = {
   slug: "neo-voicestack",
-  pageTitle: "NEO: an AI front desk for dental practices | Sudev SS",
+  pageTitle: "NEO: an AI front desk for dental practices",
   hero: {
     eyebrow: "VoiceStack · Nov 2025 – Nov 2026",
     title: "NEO: an AI front desk for dental practices, built to scale without custom code",
     summary:
-      "Every NEO bot used to be custom-built by engineers, practice by practice. As Product Manager, Sudev **replaced that with a configurable bot platform**, repositioned NEO as an overflow and after-hours assistant, and shipped the staff and owner experiences around it. NEO grew from **10–15 to ~100 practices**.",
+      "Every NEO bot used to be custom-built by engineers, practice by practice. That model was **replaced with a configurable bot platform**, NEO was repositioned as an overflow and after-hours assistant, and the staff and owner experiences around it were rebuilt. NEO grew from **10–15 to ~100 practices**.",
     meta: [
-      { label: "Role", value: "Product Manager, owner of NEO" },
+      { label: "Role", value: "Product Manager" },
       {
         label: "Team",
         value:
@@ -115,7 +116,7 @@ export const neoVoicestack: CaseStudy = {
     {
       type: "cards",
       number: "06",
-      eyebrow: "Role",
+      eyebrow: "Approach",
       heading: "Data-led, aligned before build, tested before launch",
       cards: [
         {

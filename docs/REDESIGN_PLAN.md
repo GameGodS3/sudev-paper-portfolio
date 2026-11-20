@@ -147,7 +147,8 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with rea
   - [x] First case study on it: NEO (`data/caseStudies/neo-voicestack.ts`), routed at `/article/neo-voicestack`, added to the Projects list
   - [x] Illustrations (11 SVGs, uncropped, full width) open in the existing zoom/pan lightbox; horizontal scroll inside the frame on small screens
   - [x] Old articles untouched and still served by `ArticlePage` (verified); routing via `ArticleRoute` (case studies first, fallback to old)
-  - [ ] **Not pushed yet:** waiting on owner's confidentiality check (repo is public; the page includes internal figures)
+  - [x] Confidentiality confirmed by owner; pushed to the redesign branch (production repo untouched until sign-off)
+  - [ ] Replace `10-warm-transfer.svg` with the owner's new version (current one contains the text "PM preference"; new file not yet received)
   - [ ] Later task: migrate the two existing articles to the new template (mapping is in the brief, section 7)
   - [ ] Bring `ImageModal` and the old `ArticlePage` onto the design system
 - [ ] Compress oversized images (profile photo, project images are 0.5–1.5 MB each); responsive `srcset`/`loading="lazy"`
@@ -230,6 +231,7 @@ All answered by the owner:
 | 2026-10-09 | Hero: single contact strip (icons + visible email) at all widths instead of left rail + vertical email | Fewer special cases, better tap targets |
 | 2026-10-09 | Hero: removed the redundant email icon (the visible email text is the mailto link); tablet portrait uses the stacked layout, side-by-side from 1024 | Owner's request / experiment |
 | 2026-11-20 | Case study pages use their own scoped design system (Inter, editorial) per the owner's brief, not the notebook theme | Scoped under `.cs`; the rest of the site is unaffected |
+| 2026-11-20 | **Voice rule for every case study:** objective and passive; no "I" / "we" / "my", no names, no "the PM". Only personal detail allowed is the hero meta "Role" field | NEO copy replaced with the owner's `NEO-article.md`; layout shows "Findings" (was "What we found"); tab title carries no name |
 | 2026-11-20 | NEO illustrations live in `data/articleImages/neo-voicestack/` so the existing image resolver and lightbox work unchanged | Brief and review screenshots are kept out of git |
 | 2026-10-09 | Buttons keep a hand-drawn offset outline | Owner liked the scribbled shadow; implemented as part of `InkButton` |
 

@@ -83,7 +83,7 @@ export function BlockRenderer({ block, onOpen }: { block: Block; onOpen: OpenFig
           )}
           {block.findings && (
             <>
-              <p className="cs-label cs-findings-label">What we found</p>
+              <p className="cs-label cs-findings-label">Findings</p>
               <ul className="cs-findings">
                 {block.findings.map((f) => (
                   <li key={f.title}>
