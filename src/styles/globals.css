@@ -52,11 +52,11 @@
   --margin-ink: #fdd0d4;        /* red margin line */
 
   /* Type families: 3 roles + one hero-only face. Swap --font-body to change the body face (one line).
-     Body text uses Inter (same face as the case study pages). Kalam is kept ONLY for the hero
+     Body text uses Rasa (trial; case study pages stay on Inter). Kalam is kept ONLY for the hero
      contact strip and call-to-action buttons. */
   --font-display: 'There Brat', Impact, 'Arial Black', sans-serif;
   --font-hand: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
-  --font-body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: Rasa, Georgia, 'Times New Roman', serif;   /* trial; Inter is the previous value */
   --font-kalam: 'Kalam', 'Segoe Print', 'Comic Sans MS', system-ui, sans-serif;
 
   /* Fluid type scale: min at ~320px viewport, max at ~1280px */
@@ -64,9 +64,9 @@
   --step-title: clamp(2.25rem, 1.75rem + 2.4vw, 3.5rem);    /* section titles */
   --step-heading: clamp(1.75rem, 1.5rem + 0.9vw, 2.125rem); /* handwritten card / role titles */
   --step-subtitle: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);/* handwritten subtitles */
-  --step-lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);  /* company / institution names */
-  --step-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);      /* 16 to 18px (Inter) */
-  --step-small: 0.9375rem;                                  /* meta, tags: 15px (Inter) */
+  --step-lead: clamp(1.375rem, 1.25rem + 0.55vw, 1.625rem); /* company / institution names */
+  --step-body: clamp(1.1875rem, 1.12rem + 0.3vw, 1.3125rem); /* 19 to 21px (Rasa runs small) */
+  --step-small: 1.0625rem;                                  /* meta, tags: 17px (Rasa runs small) */
 
   /* Layout */
   --page-max: 72rem;           /* 1152px content column */
