@@ -30,7 +30,7 @@ export default {
                 heading: ["var(--step-heading)", { lineHeight: "1.15" }],
                 subtitle: ["var(--step-subtitle)", { lineHeight: "1.25" }],
                 lead: ["var(--step-lead)", { lineHeight: "1.4" }],
-                body: ["var(--step-body)", { lineHeight: "1.5" }],
+                body: ["var(--step-body)", { lineHeight: "1.6" }],
                 small: ["var(--step-small)", { lineHeight: "1.5" }],
             },
             maxWidth: { page: "var(--page-max)" },
