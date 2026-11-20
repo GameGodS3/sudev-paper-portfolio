@@ -20,7 +20,7 @@ const VARIANTS: Record<Variant, string> = {
 
 const FACE =
     "relative inline-flex min-h-tap items-center justify-center gap-2 rounded-[6px_4px_7px_4px] border-2 px-5 py-2 " +
-    "font-body text-body leading-none no-underline " +
+    "font-kalam text-[1.0625rem] leading-none no-underline " +
     "transition-transform duration-200 ease-out " +
     "group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 " +
     "group-active:translate-x-[3px] group-active:translate-y-[3px]";

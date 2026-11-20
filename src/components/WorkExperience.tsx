@@ -66,7 +66,7 @@ function renderInlineFormatting(text: string) {
       parts.push(text.slice(lastIndex, match.index));
     }
     parts.push(
-      <strong key={`b-${idx}`} className="font-bold text-ink">
+      <strong key={`b-${idx}`} className="font-semibold text-ink">
         {match[1]}
       </strong>
     );

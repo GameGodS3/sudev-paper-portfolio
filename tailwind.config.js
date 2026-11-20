@@ -21,6 +21,7 @@ export default {
                 display: ["var(--font-display)"],
                 hand: ["var(--font-hand)"],
                 body: ["var(--font-body)"],
+                kalam: ["var(--font-kalam)"],
             },
             // Fluid type scale (values defined as clamp() in globals.css)
             fontSize: {

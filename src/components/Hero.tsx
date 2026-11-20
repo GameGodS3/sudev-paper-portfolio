@@ -84,7 +84,7 @@ export function Hero() {
                             {s.icon}
                         </a>
                     ))}
-                    <a href={`mailto:${EMAIL}`} className="email-address inline-flex min-h-tap items-center px-1 text-small text-ink-soft underline decoration-ink/30 underline-offset-4 transition-colors hover:text-pen-blue">
+                    <a href={`mailto:${EMAIL}`} className="email-address inline-flex min-h-tap items-center px-1 font-kalam text-[1rem] text-ink-soft underline decoration-ink/30 underline-offset-4 transition-colors hover:text-pen-blue">
                         {EMAIL}
                     </a>
                 </div>

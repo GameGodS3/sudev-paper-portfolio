@@ -51,19 +51,22 @@
   --rule-ink: #e4f2f3;          /* ruled notebook lines */
   --margin-ink: #fdd0d4;        /* red margin line */
 
-  /* Type families: 3 roles. Swap --font-body to change the body face (one line). */
+  /* Type families: 3 roles + one hero-only face. Swap --font-body to change the body face (one line).
+     Body text uses Inter (same face as the case study pages). Kalam is kept ONLY for the hero
+     contact strip and call-to-action buttons. */
   --font-display: 'There Brat', Impact, 'Arial Black', sans-serif;
   --font-hand: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
-  --font-body: 'Kalam', 'Segoe Print', 'Comic Sans MS', system-ui, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-kalam: 'Kalam', 'Segoe Print', 'Comic Sans MS', system-ui, sans-serif;
 
   /* Fluid type scale: min at ~320px viewport, max at ~1280px */
   --step-display: clamp(2.5rem, 1.7rem + 3.8vw, 4rem);      /* hero name */
   --step-title: clamp(2.25rem, 1.75rem + 2.4vw, 3.5rem);    /* section titles */
   --step-heading: clamp(1.75rem, 1.5rem + 0.9vw, 2.125rem); /* handwritten card / role titles */
   --step-subtitle: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);/* handwritten subtitles */
-  --step-lead: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);     /* role / card titles */
-  --step-body: clamp(1.0625rem, 1.03rem + 0.17vw, 1.1875rem);/* 17 to 19px */
-  --step-small: 1rem;                                       /* meta, tags: never below 16px */
+  --step-lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);  /* company / institution names */
+  --step-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);      /* 16 to 18px (Inter) */
+  --step-small: 0.9375rem;                                  /* meta, tags: 15px (Inter) */
 
   /* Layout */
   --page-max: 72rem;           /* 1152px content column */
