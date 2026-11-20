@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640">
+<title>How the work moved: data-led discovery and practice interviews, leadership alignment and a decision, CEO sign-off before anything was built, then specification with a prototype, engineering grooming and build, acceptance testing, and go-to-market planned with the CEO and sales.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="640" fill="#fff"/>
+<text x="40" y="48" class="k">PROCESS</text>
+<text x="40" y="76" class="h">Evidence first, sign-off before build, tested before launch</text>
+
+<!-- phase bands -->
+<g class="k">
+<text x="40" y="124">EVIDENCE + ALIGNMENT</text>
+<text x="616" y="124">BUILD</text>
+<text x="1000" y="124">LAUNCH</text>
+</g>
+<line x1="40" y1="134" x2="584" y2="134" stroke="#111" stroke-width="1.5"/>
+<line x1="616" y1="134" x2="968" y2="134" stroke="#111" stroke-width="1.5"/>
+<line x1="1000" y1="134" x2="1160" y2="134" stroke="#111" stroke-width="1.5"/>
+
+<!-- timeline -->
+<line x1="40" y1="190" x2="1160" y2="190" stroke="#111" stroke-width="1.5"/>
+<g style="font-size:12px;font-weight:700" text-anchor="middle">
+<circle cx="120" cy="190" r="14" fill="#111"/><text x="120" y="194" class="w">1</text>
+<circle cx="312" cy="190" r="14" fill="#111"/><text x="312" y="194" class="w">2</text>
+<circle cx="504" cy="190" r="14" fill="#111"/><text x="504" y="194" class="w">3</text>
+<circle cx="696" cy="190" r="14" fill="#111"/><text x="696" y="194" class="w">4</text>
+<circle cx="888" cy="190" r="14" fill="#111"/><text x="888" y="194" class="w">5</text>
+<circle cx="1080" cy="190" r="14" fill="#111"/><text x="1080" y="194" class="w">6</text>
+</g>
+<!-- gates -->
+<rect x="590" y="180" width="20" height="20" transform="rotate(45 600 190)" fill="#0F766E"/>
+<rect x="974" y="180" width="20" height="20" transform="rotate(45 984 190)" fill="#0F766E"/>
+<g style="font-size:12px;font-weight:600" text-anchor="middle" fill="#0F766E">
+<text x="600" y="150">CEO + leadership</text><text x="600" y="166">sign-off</text>
+<text x="984" y="150">Acceptance</text><text x="984" y="166">testing</text>
+</g>
+
+<g text-anchor="middle" class="h2">
+<text x="120" y="232">Discover</text><text x="312" y="232">Validate</text><text x="504" y="232">Align + decide</text>
+<text x="696" y="232">Specify</text><text x="888" y="232">Groom + build</text><text x="1080" y="232">Take to market</text>
+</g>
+
+<!-- cards -->
+<g class="s">
+<g transform="translate(40 252)"><rect width="160" height="230" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="12" y="26" font-weight="600" fill="#0F766E" style="fill:#0F766E">Data-led</text>
+<text x="12" y="50">AI-assisted analysis</text><text x="12" y="68">of 10,000 bot calls +</text><text x="12" y="86">3,000 human calls</text>
+<text x="12" y="116">Conversation patterns</text><text x="12" y="134">→ conversation design</text>
+<text x="12" y="164">Transfer + outcome</text><text x="12" y="182">data → where calls</text><text x="12" y="200">were lost</text></g>
+<g transform="translate(232 252)"><rect width="160" height="230" rx="4" class="r"/>
+<text x="12" y="26">Interviews with</text><text x="12" y="44">dental practices</text>
+<text x="12" y="74">Design-partner</text><text x="12" y="92">practice in the US</text>
+<text x="12" y="122">Customer success +</text><text x="12" y="140">implementation input</text>
+<text x="12" y="170">Competitor review</text></g>
+<g transform="translate(424 252)"><rect width="160" height="230" rx="4" class="r"/>
+<text x="12" y="26">Problem data + user</text><text x="12" y="44">findings presented</text><text x="12" y="62">to the CEO</text>
+<text x="12" y="92">90-day roadmap with</text><text x="12" y="110">written justification</text>
+<text x="12" y="140">Low-fi concept to</text><text x="12" y="158">make the case</text><text x="12" y="176">visually</text></g>
+<g transform="translate(616 252)"><rect width="160" height="230" rx="4" class="r"/>
+<text x="12" y="26">PRD with decision</text><text x="12" y="44">log: decided vs open</text>
+<text x="12" y="74">Prototype + annotated</text><text x="12" y="92">mockups handed to</text><text x="12" y="110">engineering with</text><text x="12" y="128">the spec</text>
+<text x="12" y="158">Compliance + edge</text><text x="12" y="176">cases flagged early</text></g>
+<g transform="translate(808 252)"><rect width="160" height="230" rx="4" class="r"/>
+<text x="12" y="26">Grooming with eng,</text><text x="12" y="44">QA, prompt engineers</text><text x="12" y="62">and architects</text>
+<text x="12" y="92">Spec revised on</text><text x="12" y="110">grooming feedback</text>
+<text x="12" y="140">Build tracked against</text><text x="12" y="158">acceptance criteria</text></g>
+<g transform="translate(1000 252)"><rect width="160" height="230" rx="4" class="r"/>
+<text x="12" y="26">GTM shaped with</text><text x="12" y="44">the CEO + sales</text>
+<text x="12" y="74">Demo to the US</text><text x="12" y="92">sales team</text>
+<text x="12" y="122">Renewal dashboard</text><text x="12" y="140">for practice owners</text>
+<text x="12" y="170">~100 practices,</text><text x="12" y="188">~120 locations</text></g>
+</g>
+
+<!-- loops -->
+<path d="M392 500 C 392 560, 200 560, 200 500" class="ad" marker-end="url(#ag)"/>
+<text x="296" y="580" text-anchor="middle" class="s">Findings checked with practices</text>
+<path d="M584 500 C 584 560, 424 560, 424 500" class="ad" marker-end="url(#ag)"/>
+<text x="504" y="600" text-anchor="middle" class="s">Concept declined → reworked</text>
+<text x="504" y="616" text-anchor="middle" class="s">before approval</text>
+<path d="M968 500 C 968 560, 776 560, 776 500" class="ad" marker-end="url(#ag)"/>
+<text x="872" y="580" text-anchor="middle" class="s">Grooming feedback → revised spec</text>
+</svg>

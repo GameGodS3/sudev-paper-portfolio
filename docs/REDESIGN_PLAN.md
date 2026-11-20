@@ -141,7 +141,15 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with rea
 ### Phase 4: Navigation & article pages
 - [ ] Index-tab section nav (sticky; collapses to a compact control on phone)
 - [ ] Smooth-scroll + active-section highlighting
-- [ ] Article pages (`/article/:id`) and `ImageModal` brought onto the same design system and made responsive
+- [~] Article pages: **new case study template (owner-supplied brief), built in parallel with Phase 3**
+  - [x] Block-based schema (`data/caseStudies/types.ts`): hero, impact tiles, `split`, `section`, `gridPaperStatement`, `cards`, `features`, `steps`, `outcome`, next link. A case study is pure data rendered by one `CaseStudyLayout`
+  - [x] Separate editorial design system (Inter, white sheet on grey frame, hairlines, pink grid-paper callouts), **scoped under `.cs`** in `src/styles/case-study.css`, so it does not restyle the notebook pages
+  - [x] First case study on it: NEO (`data/caseStudies/neo-voicestack.ts`), routed at `/article/neo-voicestack`, added to the Projects list
+  - [x] Illustrations (11 SVGs, uncropped, full width) open in the existing zoom/pan lightbox; horizontal scroll inside the frame on small screens
+  - [x] Old articles untouched and still served by `ArticlePage` (verified); routing via `ArticleRoute` (case studies first, fallback to old)
+  - [ ] **Not pushed yet:** waiting on owner's confidentiality check (repo is public; the page includes internal figures)
+  - [ ] Later task: migrate the two existing articles to the new template (mapping is in the brief, section 7)
+  - [ ] Bring `ImageModal` and the old `ArticlePage` onto the design system
 - [ ] Compress oversized images (profile photo, project images are 0.5–1.5 MB each); responsive `srcset`/`loading="lazy"`
 - [ ] **Checkpoint 4:** nav + article pages
 
@@ -221,6 +229,8 @@ All answered by the owner:
 | 2026-10-09 | Body font: Kalam (owner's choice); all sections moved onto the 3 font-role tokens | Patrick Hand and Indie Flower dropped from loading |
 | 2026-10-09 | Hero: single contact strip (icons + visible email) at all widths instead of left rail + vertical email | Fewer special cases, better tap targets |
 | 2026-10-09 | Hero: removed the redundant email icon (the visible email text is the mailto link); tablet portrait uses the stacked layout, side-by-side from 1024 | Owner's request / experiment |
+| 2026-11-20 | Case study pages use their own scoped design system (Inter, editorial) per the owner's brief, not the notebook theme | Scoped under `.cs`; the rest of the site is unaffected |
+| 2026-11-20 | NEO illustrations live in `data/articleImages/neo-voicestack/` so the existing image resolver and lightbox work unchanged | Brief and review screenshots are kept out of git |
 | 2026-10-09 | Buttons keep a hand-drawn offset outline | Owner liked the scribbled shadow; implemented as part of `InkButton` |
 
 ## 9. Progress log
@@ -232,6 +242,6 @@ All answered by the owner:
 | 2026-10-09 | `1db254b` | Phase 1: design tokens, Tailwind mapping, fonts, base styles, shared `paper/` components, CSS notebook background, dev style guide |
 | 2026-10-09 | `edcaa04` | Phase 2: responsive `Hero`, Kalam + font tokens across sections, scribble button shadow, reduced-motion handling, removed `src/imports` |
 | 2026-10-09 | `5149101` | Hero: drop email icon, stacked layout for tablet portrait |
-| 2026-11-20 | _Phase 3 commit_ | Sections migrated to shared components; Timeline, TextLink, tape cards; contact restyle (visual only); alpha-colour token fix |
+| 2026-11-20 | `d15f8dd` | Sections migrated to shared components; Timeline, TextLink, tape cards; contact restyle (visual only); alpha-colour token fix |
 
 **Known side effects of Phase 1 (resolved in Phases 2–3 unless noted):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; ~~hero is untouched~~ (done in Phase 2).

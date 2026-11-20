@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LandingPage } from "./components/LandingPage";
-import { ArticlePage } from "./components/ArticlePage";
+import { ArticleRoute } from "./components/ArticleRoute";
 import { lazy, Suspense } from "react";
 
 // Dev-only design-system reference page (tree-shaken out of production builds)
@@ -13,7 +13,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<LandingPage />} />
-                <Route path="/article/:articleId" element={<ArticlePage />} />
+                <Route path="/article/:articleId" element={<ArticleRoute />} />
                 {StyleGuide && (
                     <Route path="/styleguide" element={<Suspense fallback={null}><StyleGuide /></Suspense>} />
                 )}

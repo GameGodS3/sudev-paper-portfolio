@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640">
+<title>Scope decision matrix: what NEO did as a beta frontline receptionist versus after the relaunch as an overflow and after-hours assistant, with the two decision drivers and the resulting positioning.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="640" fill="#fff"/>
+<text x="40" y="48" class="k">KEY DECISION · SCOPE</text>
+<text x="40" y="76" class="h">From frontline receptionist to overflow and after-hours assistant</text>
+
+<!-- table -->
+<rect x="40" y="110" width="760" height="480" rx="4" class="c"/>
+<rect x="40" y="110" width="760" height="44" rx="4" fill="#fafafa"/>
+<line x1="40" y1="154" x2="800" y2="154" class="hl"/>
+<text x="60" y="138" class="k">CAPABILITY</text>
+<text x="340" y="138" class="k">BETA (FRONTLINE)</text>
+<text x="560" y="138" class="k">RELAUNCH</text>
+
+<g class="b">
+<text x="60" y="190">Appointment confirmation</text>
+<text x="60" y="238">Cancellation</text>
+<text x="60" y="286">General inquiries</text>
+<text x="60" y="334">Which calls NEO answers</text>
+<text x="60" y="382">Booking</text>
+<text x="60" y="430">Rescheduling</text>
+<text x="60" y="478">New patient handling</text>
+<text x="60" y="526">Insurance handling</text>
+<text x="60" y="574">Full booking automation</text>
+</g>
+<g class="hl">
+<line x1="60" y1="208" x2="780" y2="208"/><line x1="60" y1="256" x2="780" y2="256"/>
+<line x1="60" y1="304" x2="780" y2="304"/><line x1="60" y1="352" x2="780" y2="352"/>
+<line x1="60" y1="400" x2="780" y2="400"/><line x1="60" y1="448" x2="780" y2="448"/>
+<line x1="60" y1="496" x2="780" y2="496"/><line x1="60" y1="544" x2="780" y2="544"/>
+</g>
+<!-- beta column: all attempted -->
+<g class="m">
+<text x="340" y="190">Attempted</text><text x="340" y="238">Attempted</text><text x="340" y="286">Attempted</text>
+<text x="340" y="334">All inbound</text><text x="340" y="382">Attempted</text><text x="340" y="430">Attempted</text>
+<text x="340" y="478">Attempted</text><text x="340" y="526">Attempted</text><text x="340" y="574">Attempted</text>
+</g>
+<!-- relaunch pills -->
+<g style="font-size:12px;font-weight:600">
+<rect x="560" y="172" width="80" height="26" rx="13" fill="#E7F3F1"/><text x="600" y="190" text-anchor="middle" fill="#0F766E">Retained</text>
+<rect x="560" y="220" width="80" height="26" rx="13" fill="#E7F3F1"/><text x="600" y="238" text-anchor="middle" fill="#0F766E">Retained</text>
+<rect x="560" y="268" width="80" height="26" rx="13" fill="#E7F3F1"/><text x="600" y="286" text-anchor="middle" fill="#0F766E">Retained</text>
+<rect x="560" y="316" width="170" height="26" rx="13" fill="#E7F3F1"/><text x="645" y="334" text-anchor="middle" fill="#0F766E">After-hours + overflow</text>
+<rect x="560" y="364" width="150" height="26" rx="13" fill="#FEF4E6"/><text x="635" y="382" text-anchor="middle" fill="#B54708">Collect details only</text>
+<rect x="560" y="412" width="150" height="26" rx="13" fill="#FEF4E6"/><text x="635" y="430" text-anchor="middle" fill="#B54708">Collect details only</text>
+<rect x="560" y="460" width="150" height="26" rx="13" fill="#f0f0f0"/><text x="635" y="478" text-anchor="middle" fill="#595959">Deferred · add-on</text>
+<rect x="560" y="508" width="150" height="26" rx="13" fill="#f0f0f0"/><text x="635" y="526" text-anchor="middle" fill="#595959">Deferred · add-on</text>
+<rect x="560" y="556" width="150" height="26" rx="13" fill="#f0f0f0"/><text x="635" y="574" text-anchor="middle" fill="#595959">Deferred · add-on</text>
+</g>
+
+<!-- drivers -->
+<rect x="840" y="110" width="320" height="230" rx="4" class="r"/>
+<text x="860" y="144" class="k">DECISION DRIVERS</text>
+<text x="860" y="180" class="h2">1  Reputation damage</text>
+<text x="878" y="202" class="m">A beta bot deployed as the</text>
+<text x="878" y="220" class="m">frontline receptionist eroded</text>
+<text x="878" y="238" class="m">trust with practices</text>
+<text x="860" y="274" class="h2">2  Configuration complexity</text>
+<text x="878" y="296" class="m">Per-practice setup was slow</text>
+<text x="878" y="314" class="m">and did not scale</text>
+
+<rect x="840" y="360" width="320" height="230" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="860" y="394" class="k" style="fill:#0F766E">RESULTING POSITIONING</text>
+<text x="860" y="430" class="h2">Overflow + after-hours</text>
+<text x="860" y="450" class="h2">assistant at $149/month</text>
+<text x="860" y="486" class="m">Website claims reduced to</text>
+<text x="860" y="504" class="m">match actual capability</text>
+<text x="860" y="540" class="m">Deferred items kept as future</text>
+<text x="860" y="558" class="m">paid add-ons</text>
+</svg>

@@ -14,6 +14,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "NEO: AI front desk for dental practices",
+    description: "Replaced custom-built bots with a configurable bot platform and repositioned NEO as an overflow and after-hours assistant, growing from 10–15 to ~100 practices.",
+    technologies: ["Vapi", "Claude", "Claude Code", "Figma"],
+    featured: true,
+    articleId: "neo-voicestack",
+  },
+  {
     title: "Hyperpersonalised email generator",
     description: "LLM-based platform for crafting highly personalized outbound emails, utilizing full recipient business context to optimize performance for massive enterprise B2B SaaS marketing initiatives.",
     technologies: ["ChatGPT", "Spark Java", "MongoDB", "SingleStore"],

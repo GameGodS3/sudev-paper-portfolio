@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 790">
+<title>AI-assisted analysis of 10,000 bot calls and 3,000 human calls informed conversation design; transfer analysis showed 37% of transfers to staff rang out unanswered, rising to 51% at close of business; callers waited a median of about 32 seconds before hanging up.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="790" fill="#fff"/>
+<text x="40" y="48" class="k">DISCOVERY · AI-ASSISTED CALL ANALYSIS</text>
+<text x="40" y="76" class="h">What 13,000 calls showed</text>
+<rect x="40" y="110" width="1120" height="130" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<text x="64" y="146" class="k">CONVERSATION ANALYSIS</text>
+<text x="64" y="204" style="font-size:40px;font-weight:600" fill="#111">10,000</text>
+<text x="64" y="226" class="m">bot calls</text>
+<text x="260" y="204" style="font-size:40px;font-weight:600" fill="#111">3,000</text>
+<text x="260" y="226" class="m">human front-desk calls</text>
+<path d="M470 186 H 520" class="a" marker-end="url(#ar)"/>
+<rect x="530" y="160" width="190" height="52" rx="4" class="r"/><text x="546" y="182" class="h2">Patterns</text><text x="546" y="200" class="s">how staff really handle calls</text>
+<path d="M720 186 H 762" class="a" marker-end="url(#ar)"/>
+<rect x="770" y="160" width="190" height="52" rx="4" class="r"/><text x="786" y="182" class="h2">Conversation design</text><text x="786" y="200" class="s">flows + wording for NEO</text>
+<text x="980" y="182" class="s">Transcripts + metadata</text><text x="980" y="200" class="s">from CSV exports</text>
+<g transform="translate(0 176)">
+<text x="40" y="96" class="k">TRANSFER OUTCOMES</text>
+
+<!-- panel 1: outcome bar -->
+<rect x="40" y="110" width="540" height="200" rx="4" class="r"/>
+<text x="64" y="146" class="k">TRANSFERS FROM NEO TO STAFF</text>
+<rect x="64" y="172" width="309" height="44" fill="#d9d9d9"/>
+<rect x="373" y="172" width="183" height="44" fill="#B42318"/>
+<text x="80" y="200" class="h2">63% answered</text>
+<text x="389" y="200" class="h2 w" style="fill:#fff">37% rang out</text>
+<line x1="373" y1="230" x2="373" y2="246" stroke="#B42318" stroke-width="1.5"/>
+<line x1="556" y1="230" x2="556" y2="246" stroke="#B42318" stroke-width="1.5"/>
+<line x1="373" y1="246" x2="556" y2="246" stroke="#B42318" stroke-width="1.5"/>
+<text x="64" y="282" class="b">Unanswered transfers included callers ready to book</text>
+
+<!-- panel 2: miss rate by time -->
+<rect x="620" y="110" width="540" height="200" rx="4" class="r"/>
+<text x="644" y="146" class="k">MISS RATE · ALL HOURS VS CLOSE OF BUSINESS</text>
+<line x1="644" y1="276" x2="1136" y2="276" class="hl"/>
+
+<rect x="700" y="206" width="120" height="70" fill="#d9d9d9"/>
+<rect x="900" y="180" width="120" height="96" fill="#B42318"/>
+<text x="760" y="196" text-anchor="middle" class="h2">37%</text>
+<text x="960" y="170" text-anchor="middle" class="h2" style="fill:#B42318">51%</text>
+<text x="760" y="296" text-anchor="middle" class="s">All hours</text>
+<text x="960" y="296" text-anchor="middle" class="s">Close of business</text>
+
+<!-- panel 3: abandon time -->
+<rect x="40" y="340" width="540" height="160" rx="4" class="r"/>
+<text x="64" y="376" class="k">MEDIAN RING BEFORE CALLER HANGS UP</text>
+<line x1="64" y1="440" x2="556" y2="440" stroke="#111" stroke-width="1.5"/>
+<g class="s" text-anchor="middle">
+<line x1="64" y1="436" x2="64" y2="444" stroke="#111"/><text x="64" y="464">0s</text>
+<line x1="187" y1="436" x2="187" y2="444" stroke="#111"/><text x="187" y="464">10s</text>
+<line x1="310" y1="436" x2="310" y2="444" stroke="#111"/><text x="310" y="464">20s</text>
+<line x1="433" y1="436" x2="433" y2="444" stroke="#111"/><text x="433" y="464">30s</text>
+<line x1="556" y1="436" x2="556" y2="444" stroke="#111"/><text x="556" y="464">40s</text>
+</g>
+<rect x="64" y="424" width="394" height="10" fill="#B42318" opacity=".85"/>
+<circle cx="458" cy="429" r="6" fill="#B42318"/>
+<text x="458" y="410" text-anchor="middle" class="h2" style="fill:#B42318">~32s</text>
+
+<!-- panel 4: implication -->
+<rect x="620" y="340" width="540" height="160" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="644" y="376" class="k" style="fill:#0F766E">WHAT THE DATA POINTED TO</text>
+<text x="644" y="406" class="b">1. Handoffs to staff were a major point of loss.</text>
+<text x="644" y="432" class="b">2. Releasing the caller on transfer left them stranded.</text>
+<text x="644" y="458" class="b">3. NEO should hold the caller and recover if staff miss.</text>
+<text x="644" y="484" class="m">→ Became the Bot Warm Transfer with Whisper spec</text>
+
+<text x="40" y="560" class="s">Source: internal analysis of NEO call transcripts and transfer outcomes.</text>
+</g>
+</svg>

@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<title>NEO system overview: the configurable bot platform turns a practice's configuration into a deployed bot; NEO answers after-hours and overflow calls and sorts every call into fully completed, partially completed or needs human follow-up; missed calls are recovered by SMS; staff work from the AI Front Desk workspace and owners see value in the renewal dashboard. Numbered badges mark the six workstreams.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="720" fill="#fff"/>
+<text x="40" y="48" class="k">NEO · SYSTEM OVERVIEW</text>
+<text x="40" y="76" class="h">From configuration to call to follow-up</text>
+
+<!-- platform pipeline -->
+<text x="300" y="118" class="k">CONFIGURABLE BOT PLATFORM</text>
+<g class="b">
+<rect x="300" y="132" width="150" height="56" rx="4" class="r"/><text x="316" y="157">Implementation</text><text x="316" y="176" class="s">no code</text>
+<rect x="470" y="132" width="150" height="56" rx="4" class="r"/><text x="486" y="157">Configuration</text><text x="486" y="176" class="s">20+ inputs</text>
+<rect x="640" y="132" width="150" height="56" rx="4" class="r"/><text x="656" y="157">Standard template</text><text x="656" y="176" class="s">one model for all</text>
+<rect x="810" y="132" width="150" height="56" rx="4" class="r"/><text x="826" y="157">Rendered prompt</text><text x="826" y="176" class="s">automated</text>
+</g>
+<g class="a">
+<path d="M450 160 H 462" marker-end="url(#ar)"/><path d="M620 160 H 632" marker-end="url(#ar)"/><path d="M790 160 H 802" marker-end="url(#ar)"/>
+<path d="M885 188 C 885 220, 470 205, 470 248" marker-end="url(#ar)"/>
+</g>
+
+<!-- sources -->
+<text x="40" y="236" class="k">CALL ENTERS</text>
+<rect x="40" y="256" width="200" height="70" rx="4" class="r"/>
+<text x="56" y="284" class="h2">After-hours call</text><text x="56" y="306" class="m">Practice closed</text>
+<rect x="40" y="346" width="200" height="70" rx="4" class="r"/>
+<text x="56" y="374" class="h2">Overflow call</text><text x="56" y="396" class="m">Every line busy</text>
+<rect x="40" y="566" width="200" height="70" rx="4" class="r"/>
+<text x="56" y="594" class="h2">Missed call</text><text x="56" y="616" class="m">No conversation held</text>
+<path d="M240 291 H 292" class="a" marker-end="url(#ar)"/>
+<path d="M240 381 H 292" class="a" marker-end="url(#ar)"/>
+
+<!-- NEO -->
+<rect x="300" y="256" width="340" height="250" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<rect x="300" y="256" width="340" height="44" rx="4" fill="#111"/>
+<text x="318" y="284" class="w" style="font-size:15px;font-weight:600">NEO voice agent</text>
+<g class="b">
+<text x="318" y="332">Identifies the caller</text>
+<text x="318" y="360">Understands the intent</text>
+<text x="318" y="388">Confirms, cancels, answers</text>
+<text x="318" y="416">Collects booking details</text>
+<text x="318" y="444">Routes to the right person</text>
+<text x="318" y="472" class="m">(e.g. billing) during open hours</text>
+</g>
+
+<!-- SMS -->
+<rect x="300" y="566" width="340" height="70" rx="4" class="c"/>
+<text x="318" y="594" class="h2">SMS recovery</text>
+<text x="318" y="616" class="m">Texts the caller back to continue</text>
+<path d="M240 601 H 292" class="a" marker-end="url(#ar)"/>
+
+<!-- outcomes -->
+<text x="690" y="236" class="k">EVERY CALL SORTED</text>
+<rect x="690" y="256" width="230" height="70" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="706" y="284" class="h2" style="fill:#0F766E">Fully completed</text><text x="706" y="306" class="m">~40% of calls</text>
+<rect x="690" y="346" width="230" height="70" rx="4" fill="#FEF4E6" stroke="#B54708" stroke-width="1.5"/>
+<text x="706" y="374" class="h2" style="fill:#B54708">Partially completed</text><text x="706" y="396" class="m">~30%: details or routing</text>
+<rect x="690" y="436" width="230" height="70" rx="4" class="c"/>
+<text x="706" y="464" class="h2">Needs human follow-up</text><text x="706" y="486" class="m">Task for the next day</text>
+<g class="a">
+<path d="M640 291 H 682" marker-end="url(#ar)"/><path d="M640 381 H 682" marker-end="url(#ar)"/><path d="M640 471 H 682" marker-end="url(#ar)"/>
+<path d="M640 601 C 665 601, 665 490, 682 490" marker-end="url(#ar)"/>
+</g>
+<!-- warm transfer in progress -->
+<rect x="690" y="536" width="230" height="44" rx="4" fill="#fff" stroke="#8a8a8a" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="706" y="563" class="m">Warm transfer · in progress</text>
+
+<!-- surfaces -->
+<text x="970" y="236" class="k">STAFF + OWNERS</text>
+<rect x="970" y="256" width="190" height="160" rx="4" class="c"/>
+<text x="986" y="284" class="h2">AI Front Desk</text>
+<text x="986" y="306" class="m">Review completed calls,</text>
+<text x="986" y="324" class="m">follow up the rest with</text>
+<text x="986" y="342" class="m">summary, transcript and</text>
+<text x="986" y="360" class="m">captured details</text>
+<rect x="970" y="436" width="190" height="96" rx="4" class="c"/>
+<text x="986" y="464" class="h2">Renewal dashboard</text>
+<text x="986" y="486" class="m">The value story for</text>
+<text x="986" y="504" class="m">the practice owner</text>
+<g class="a">
+<path d="M920 291 C 945 291, 945 320, 962 320" marker-end="url(#ar)"/>
+<path d="M920 381 C 945 381, 945 340, 962 340" marker-end="url(#ar)"/>
+<path d="M920 471 C 945 471, 945 360, 962 360" marker-end="url(#ar)"/>
+<path d="M1065 416 V 428" marker-end="url(#ar)"/>
+</g>
+
+<!-- badges -->
+<g style="font-size:12px;font-weight:700" text-anchor="middle">
+<circle cx="640" cy="256" r="13" fill="#0F766E"/><text x="640" y="260" class="w">1</text>
+<circle cx="300" cy="132" r="13" fill="#0F766E"/><text x="300" y="136" class="w">2</text>
+<circle cx="1160" cy="256" r="13" fill="#0F766E"/><text x="1160" y="260" class="w">3</text>
+<circle cx="1160" cy="436" r="13" fill="#0F766E"/><text x="1160" y="440" class="w">4</text>
+<circle cx="640" cy="566" r="13" fill="#0F766E"/><text x="640" y="570" class="w">5</text>
+<circle cx="920" cy="536" r="13" fill="#8a8a8a"/><text x="920" y="540" class="w">6</text>
+</g>
+
+<line x1="40" y1="664" x2="1160" y2="664" class="hl"/>
+<g class="s">
+<text x="40" y="694"><tspan font-weight="700" fill="#0F766E">1</tspan>  Scope + positioning</text>
+<text x="220" y="694"><tspan font-weight="700" fill="#0F766E">2</tspan>  Configurable bot platform</text>
+<text x="440" y="694"><tspan font-weight="700" fill="#0F766E">3</tspan>  AI Front Desk UX</text>
+<text x="610" y="694"><tspan font-weight="700" fill="#0F766E">4</tspan>  Renewal dashboard</text>
+<text x="790" y="694"><tspan font-weight="700" fill="#0F766E">5</tspan>  SMS recovery</text>
+<text x="940" y="694"><tspan font-weight="700" fill="#8a8a8a">6</tspan>  Warm transfer (in progress)</text>
+</g>
+</svg>

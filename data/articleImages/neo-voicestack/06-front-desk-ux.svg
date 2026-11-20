@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<title>AI Front Desk workspace: calls are grouped into fully completed, partially completed and needs follow-up; opening a call that needs follow-up shows the summary, transcript and captured details, with quick actions to create a patient or appointment. Reported to save a small practice around 40–50 staff hours a month.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="700" fill="#fff"/>
+<text x="40" y="48" class="k">UX OVERHAUL · AI FRONT DESK WORKSPACE</text>
+<text x="40" y="76" class="h">One place to review what NEO handled and pick up what it couldn't</text>
+
+<!-- app frame -->
+<rect x="40" y="104" width="820" height="556" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<rect x="40" y="104" width="820" height="48" rx="4" fill="#fafafa"/>
+<line x1="40" y1="152" x2="860" y2="152" class="hl"/>
+<text x="60" y="134" class="h2">AI Front Desk</text>
+<text x="840" y="134" text-anchor="end" class="s">Last 7 days · All locations</text>
+
+<!-- bucket tabs -->
+<g>
+<rect x="60" y="170" width="250" height="76" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="76" y="196" class="s" style="fill:#0F766E">FULLY COMPLETED</text>
+<text x="76" y="232" style="font-size:24px;font-weight:600" fill="#0F766E">~40%</text>
+<rect x="326" y="170" width="250" height="76" rx="4" fill="#FEF4E6" stroke="#B54708" stroke-width="1.5"/>
+<text x="342" y="196" class="s" style="fill:#B54708">PARTIALLY COMPLETED</text>
+<text x="342" y="232" style="font-size:24px;font-weight:600" fill="#B54708">~30%</text>
+<rect x="592" y="170" width="248" height="76" rx="4" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="608" y="196" class="s" style="fill:#111;font-weight:600">NEEDS FOLLOW-UP</text>
+<text x="608" y="232" style="font-size:24px;font-weight:600" fill="#111">the rest</text>
+</g>
+
+<!-- call list -->
+<g>
+<text x="60" y="280" class="k">NEEDS FOLLOW-UP</text>
+<rect x="60" y="294" width="300" height="62" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<rect x="76" y="310" width="140" height="10" fill="#111"/><rect x="76" y="330" width="200" height="8" fill="#d9d9d9"/>
+<text x="344" y="320" text-anchor="end" class="s">7:12 PM</text>
+<rect x="60" y="364" width="300" height="62" rx="4" class="r"/>
+<rect x="76" y="380" width="120" height="10" fill="#bdbdbd"/><rect x="76" y="400" width="180" height="8" fill="#e6e6e6"/>
+<text x="344" y="390" text-anchor="end" class="s">6:48 PM</text>
+<rect x="60" y="434" width="300" height="62" rx="4" class="r"/>
+<rect x="76" y="450" width="150" height="10" fill="#bdbdbd"/><rect x="76" y="470" width="160" height="8" fill="#e6e6e6"/>
+<text x="344" y="460" text-anchor="end" class="s">Yesterday</text>
+<rect x="60" y="504" width="300" height="62" rx="4" class="r"/>
+<rect x="76" y="520" width="110" height="10" fill="#bdbdbd"/><rect x="76" y="540" width="190" height="8" fill="#e6e6e6"/>
+<text x="344" y="530" text-anchor="end" class="s">Yesterday</text>
+</g>
+
+<!-- detail panel -->
+<rect x="380" y="264" width="460" height="376" rx="4" class="c"/>
+<g class="m">
+<text x="400" y="296">Summary</text><text x="480" y="296">Transcript</text>
+</g>
+<text x="572" y="296" class="h2" style="fill:#0F766E">Captured details</text>
+<rect x="572" y="304" width="122" height="2.5" fill="#0F766E"/>
+<line x1="380" y1="306" x2="840" y2="306" class="hl"/>
+<g class="m">
+<text x="400" y="340">Caller</text><text x="400" y="372">Intent</text><text x="400" y="404">Preferred time</text><text x="400" y="436">Phone</text><text x="400" y="468">Insurance</text>
+</g>
+<g class="b" font-weight="600">
+<text x="540" y="340">Existing patient</text><text x="540" y="372">Book a cleaning</text><text x="540" y="404">Weekday mornings</text><text x="540" y="436">(555) 010-0000</text>
+</g>
+<text x="540" y="468" class="m" font-style="italic">Not captured</text>
+<line x1="400" y1="494" x2="820" y2="494" class="hl"/>
+<text x="400" y="524" class="s">Quick actions from what NEO captured</text>
+<rect x="400" y="540" width="190" height="40" rx="4" fill="#111"/>
+<text x="495" y="565" text-anchor="middle" class="w" style="font-size:13px;font-weight:600">Create appointment</text>
+<rect x="602" y="540" width="160" height="40" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+<text x="682" y="565" text-anchor="middle" style="font-size:13px;font-weight:600">Create patient</text>
+<text x="400" y="614" class="s">Unfinished calls become next-day tasks for the front desk</text>
+
+<!-- notes -->
+<text x="900" y="122" class="k">WHAT CHANGED</text>
+<g>
+<text x="900" y="160" class="h2">Sorted by what staff must do</text>
+<text x="900" y="182" class="m">Completed calls to review,</text>
+<text x="900" y="200" class="m">the rest to follow up</text>
+<line x1="900" y1="222" x2="1160" y2="222" class="hl"/>
+<text x="900" y="252" class="h2">Context in one panel</text>
+<text x="900" y="274" class="m">Summary, transcript and</text>
+<text x="900" y="292" class="m">captured details together</text>
+<line x1="900" y1="314" x2="1160" y2="314" class="hl"/>
+<text x="900" y="344" class="h2">Action, not just records</text>
+<text x="900" y="366" class="m">Create the patient or the</text>
+<text x="900" y="384" class="m">appointment from the call</text>
+<line x1="900" y1="406" x2="1160" y2="406" class="hl"/>
+<text x="900" y="436" class="h2">Honest gaps</text>
+<text x="900" y="458" class="m">"Not captured" instead of</text>
+<text x="900" y="476" class="m">a guess</text>
+</g>
+<rect x="900" y="520" width="260" height="140" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="920" y="552" class="k" style="fill:#0F766E">REPORTED IMPACT</text>
+<text x="920" y="600" style="font-size:36px;font-weight:600" fill="#111">40–50 hrs</text>
+<text x="920" y="628" class="m">of staff time saved a month</text>
+<text x="920" y="646" class="m">at a small practice</text>
+</svg>

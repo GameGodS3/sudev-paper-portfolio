@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<title>Sequence diagram of Bot Warm Transfer with Whisper: NEO holds the caller, rings staff and whispers context; if staff answer the call connects, if not NEO returns to the caller to self-serve or take a message. Side panel lists locked decisions and the open telephony architecture question.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="700" fill="#fff"/>
+<text x="40" y="48" class="k">SPEC · BOT WARM TRANSFER WITH WHISPER</text>
+<rect x="1000" y="32" width="160" height="26" rx="13" fill="#f0f0f0"/><text x="1080" y="50" text-anchor="middle" style="font-size:12px;font-weight:600" fill="#595959">In progress at handover</text>
+<text x="40" y="76" class="h">The caller is never released into an unanswered ring</text>
+
+<!-- lifelines -->
+<g text-anchor="middle">
+<rect x="70" y="104" width="140" height="40" rx="4" class="r"/><text x="140" y="129" class="h2">Caller</text>
+<rect x="330" y="104" width="140" height="40" rx="4" fill="#111"/><text x="400" y="129" class="h2 w" style="fill:#fff">NEO</text>
+<rect x="590" y="104" width="140" height="40" rx="4" class="r"/><text x="660" y="129" class="h2">Staff</text>
+</g>
+<g stroke="#c8c8c8" stroke-width="1.5" stroke-dasharray="4 4">
+<line x1="140" y1="144" x2="140" y2="660"/><line x1="400" y1="144" x2="400" y2="660"/><line x1="660" y1="144" x2="660" y2="660"/>
+</g>
+
+<!-- messages -->
+<g class="a">
+<path d="M140 180 H 396" marker-end="url(#ar)"/>
+<path d="M400 216 H 144" marker-end="url(#ar)"/>
+<path d="M400 252 H 656" marker-end="url(#ar)"/>
+<path d="M400 288 H 656" marker-end="url(#ar)"/>
+</g>
+<g class="s">
+<text x="150" y="172">Needs a person</text>
+<text x="250" y="208">"Connecting you now"</text>
+<text x="410" y="244">Ring staff (caller stays on hold)</text>
+<text x="410" y="280">Whisper: who's calling + why</text>
+</g>
+
+<!-- alt frame -->
+<rect x="60" y="310" width="700" height="340" fill="none" stroke="#111" stroke-width="1.5"/>
+<rect x="60" y="310" width="54" height="24" fill="#111"/><text x="87" y="327" text-anchor="middle" class="w" style="font-size:12px;font-weight:700">alt</text>
+<text x="124" y="327" class="s">[staff answers]</text>
+<path d="M656 360 H 404" class="a" marker-end="url(#ar)"/>
+<text x="420" y="352" class="s">Picks up, already briefed</text>
+<path d="M400 396 H 144" class="a" marker-end="url(#ar)"/>
+<text x="180" y="388" class="s">Connected to staff</text>
+<rect x="470" y="408" width="190" height="26" rx="13" fill="#E7F3F1"/><text x="565" y="426" text-anchor="middle" style="font-size:12px;font-weight:600" fill="#0F766E">Transfer Answered</text>
+
+<line x1="60" y1="450" x2="760" y2="450" stroke="#111" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="74" y="472" class="s">[no answer]</text>
+<path d="M400 500 H 144" class="a" marker-end="url(#ar)"/>
+<text x="170" y="492" class="s">Returns, apologises</text>
+<path d="M140 536 H 396" class="a" marker-end="url(#ar)"/>
+<text x="160" y="528" class="s">Continues with NEO</text>
+<rect x="420" y="520" width="230" height="26" rx="13" fill="#FEF4E6"/><text x="535" y="538" text-anchor="middle" style="font-size:12px;font-weight:600" fill="#B54708">Self-serves or takes a message</text>
+
+<line x1="60" y1="566" x2="760" y2="566" stroke="#111" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="74" y="588" class="s">[caller hangs up on hold]</text>
+<rect x="420" y="604" width="160" height="26" rx="13" fill="#FDECEC"/><text x="500" y="622" text-anchor="middle" style="font-size:12px;font-weight:600" fill="#B42318">Transfer Missed</text>
+
+<!-- decision panel -->
+<rect x="800" y="104" width="360" height="546" rx="4" class="r"/>
+<text x="820" y="138" class="k">DECISIONS LOCKED</text>
+<g class="b">
+<text x="820" y="172">✓  One transfer attempt per call;</text>
+<text x="842" y="192">no re-attempt after a failure</text>
+<text x="820" y="226">✓  Applies to named transfers too</text>
+<text x="820" y="260">✓  Staff answer then bounce the</text>
+<text x="842" y="280">call: still "Transfer Answered"</text>
+<text x="820" y="314">✓  Caller drops during hold:</text>
+<text x="842" y="334">existing "Transfer Missed" status</text>
+</g>
+<line x1="820" y1="362" x2="1140" y2="362" class="hl"/>
+<text x="820" y="394" class="k" style="fill:#B54708">OPEN QUESTIONS</text>
+<g class="b">
+<text x="820" y="428">●  Telephony architecture</text>
+<text x="842" y="452" class="m">Path 1: hold + parallel ring</text>
+<text x="842" y="472" class="m">(PM preference)</text>
+<text x="842" y="496" class="m">Path 2: transfer, then back-transfer</text>
+<text x="842" y="516" class="m">(only if a platform limit forces it)</text>
+<text x="820" y="552">●  "Press # to skip" for staff</text>
+</g>
+<line x1="820" y1="580" x2="1140" y2="580" class="hl"/>
+<text x="820" y="612" class="s">Size: L · independent of other roadmap features</text>
+</svg>

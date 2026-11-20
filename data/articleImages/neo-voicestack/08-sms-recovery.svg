@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<title>SMS Recovery (Text Bot) model: a workflow trigger on missed-call statuses starts a thread anchored to the original call; the thread contains sessions separated by pauses, with a session nudge near 30 minutes of silence and a thread nudge before 24-hour expiry; the outcome is generated once when the thread ends; human takeover forces termination. Compliance gaps flagged alongside.</title>
+<defs><style>
+text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.k{font-size:12px;font-weight:600;letter-spacing:.08em;fill:#595959}
+.h{font-size:18px;font-weight:600;fill:#111}
+.h2{font-size:15px;font-weight:600;fill:#111}
+.b{font-size:14px;fill:#111}
+.m{font-size:13px;fill:#595959}
+.s{font-size:12px;fill:#595959}
+.w{fill:#fff}
+.c{fill:#fff;stroke:#e6e6e6;stroke-width:1.5}
+.r{fill:#fafafa;stroke:#e6e6e6;stroke-width:1.5}
+.a{stroke:#111;stroke-width:1.5;fill:none}
+.ad{stroke:#8a8a8a;stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.hl{stroke:#e6e6e6;stroke-width:1.5}
+</style>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8a8a8a"/></marker>
+</defs>
+
+<rect width="1200" height="700" fill="#fff"/>
+<text x="40" y="48" class="k">SPEC · SMS RECOVERY (TEXT BOT)</text>
+<text x="40" y="76" class="h">A missed call becomes a text conversation, tracked on the original call</text>
+
+<!-- trigger rule -->
+<text x="40" y="126" class="k">1 · TRIGGER RULE (WORKFLOW BUILDER)</text>
+<rect x="40" y="142" width="1120" height="70" rx="4" class="r"/>
+<g style="font-size:13px;font-weight:600">
+<rect x="60" y="160" width="62" height="34" rx="4" fill="#111"/><text x="91" y="182" text-anchor="middle" class="w">WHEN</text>
+<rect x="132" y="160" width="300" height="34" rx="4" fill="#fff" stroke="#e6e6e6" stroke-width="1.5"/><text x="148" y="182">Call status is Missed (one per workflow)</text>
+<rect x="442" y="160" width="52" height="34" rx="4" fill="#111"/><text x="468" y="182" text-anchor="middle" class="w">AND</text>
+<rect x="504" y="160" width="190" height="34" rx="4" fill="#fff" stroke="#e6e6e6" stroke-width="1.5"/><text x="520" y="182">Offline Call is True</text>
+<rect x="704" y="160" width="62" height="34" rx="4" fill="#111"/><text x="735" y="182" text-anchor="middle" class="w">THEN</text>
+<rect x="776" y="160" width="150" height="34" rx="4" fill="#0F766E"/><text x="851" y="182" text-anchor="middle" class="w">Trigger Textbot</text>
+</g>
+<text x="944" y="174" class="s">AND-only conditions.</text>
+<text x="944" y="192" class="s">Unsupported sets grey it out.</text>
+
+<!-- thread timeline -->
+<text x="40" y="262" class="k">2 · THREAD → SESSIONS → OUTCOME</text>
+<rect x="40" y="278" width="1120" height="230" rx="4" class="c"/>
+<text x="60" y="310" class="h2">Thread</text>
+<text x="124" y="310" class="m">anchored to the originating call · expires at 24h</text>
+<line x1="60" y1="380" x2="1050" y2="380" stroke="#111" stroke-width="1.5"/>
+<!-- sessions -->
+<rect x="80" y="352" width="260" height="56" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="96" y="376" class="h2" style="fill:#0F766E">Session 1</text>
+<text x="96" y="396" class="s">Greeting → patient replies</text>
+<rect x="350" y="360" width="150" height="40" rx="4" fill="#fff" stroke="#c8c8c8" stroke-dasharray="4 3" stroke-width="1.5"/>
+<text x="425" y="385" text-anchor="middle" class="s">Paused (silence)</text>
+<rect x="510" y="352" width="260" height="56" rx="4" fill="#E7F3F1" stroke="#0F766E" stroke-width="1.5"/>
+<text x="526" y="376" class="h2" style="fill:#0F766E">Session 2</text>
+<text x="526" y="396" class="s">Patient returns, same thread</text>
+<rect x="780" y="360" width="150" height="40" rx="4" fill="#fff" stroke="#c8c8c8" stroke-dasharray="4 3" stroke-width="1.5"/>
+<text x="855" y="385" text-anchor="middle" class="s">Paused</text>
+<!-- end -->
+<rect x="1060" y="340" width="84" height="80" rx="4" fill="#111"/>
+<text x="1102" y="372" text-anchor="middle" class="w" style="font-size:13px;font-weight:600">Outcome</text>
+<text x="1102" y="392" text-anchor="middle" fill="#bdbdbd" style="font-size:11px">once, at</text>
+<text x="1102" y="406" text-anchor="middle" fill="#bdbdbd" style="font-size:11px">thread end</text>
+<!-- nudges -->
+<g class="s">
+<path d="M345 350 V 330" stroke="#B54708" stroke-width="1.5"/><circle cx="345" cy="326" r="4" fill="#B54708"/>
+<text x="352" y="330" fill="#B54708" style="fill:#B54708">Session nudge ~30 min silence</text>
+<path d="M985 350 V 330" stroke="#B54708" stroke-width="1.5"/><circle cx="985" cy="326" r="4" fill="#B54708"/>
+<text x="935" y="320" fill="#B54708" style="fill:#B54708">Thread nudge before 24h</text>
+</g>
+<text x="60" y="446" class="m">Provisional summary at each session close · final outcome + reason only at thread resolution</text>
+<text x="60" y="476" class="m">Human takeover = forced thread end · patient asking for a person alerts the team, bot stays until takeover</text>
+
+<!-- learning + compliance -->
+<text x="40" y="558" class="k">3 · MODEL CHOSEN</text>
+<rect x="40" y="574" width="540" height="96" rx="4" class="r"/>
+<text x="60" y="604" class="b"><tspan fill="#B42318" style="fill:#B42318">✕</tspan>  Stopwatch: 30 min silence = new conversation</text>
+<text x="80" y="624" class="s">Breaks the patient experience and double-counts outcomes</text>
+<text x="60" y="652" class="b"><tspan fill="#0F766E" style="fill:#0F766E">✓</tspan>  Need-based: silence pauses, the need stays open</text>
+
+<text x="620" y="558" class="k">4 · PRODUCTION GAPS FLAGGED</text>
+<rect x="620" y="574" width="540" height="96" rx="4" class="r"/>
+<g style="font-size:12px;font-weight:600" fill="#B54708">
+<rect x="640" y="592" width="104" height="26" rx="13" fill="#FEF4E6"/><text x="692" y="609" text-anchor="middle">TCPA / HIPAA</text>
+<rect x="752" y="592" width="98" height="26" rx="13" fill="#FEF4E6"/><text x="801" y="609" text-anchor="middle">Quiet hours</text>
+<rect x="858" y="592" width="150" height="26" rx="13" fill="#FEF4E6"/><text x="933" y="609" text-anchor="middle">Landline textability</text>
+<rect x="640" y="628" width="140" height="26" rx="13" fill="#FEF4E6"/><text x="710" y="645" text-anchor="middle">Frequency capping</text>
+<rect x="788" y="628" width="200" height="26" rx="13" fill="#FEF4E6"/><text x="888" y="645" text-anchor="middle">Known vs unknown callers</text>
+</g>
+</svg>
