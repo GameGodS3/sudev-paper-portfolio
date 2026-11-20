@@ -7,7 +7,7 @@ import { Achievements } from "./Achievements";
 import { Hobbies } from "./Hobbies";
 import { Contact } from "./Contact";
 import { ChevronDown } from "lucide-react";
-import { NotebookBackground } from "./paper";
+import { NotebookBackground, PaperCard, SectionDivider } from "./paper";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDesktopLandingAnimation } from "../animation/DesktopAnimation";
@@ -169,53 +169,45 @@ export function LandingPage() {
 
                     <WorkExperience />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     <Projects />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     <LanguagesAndSkills />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     <Education />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     {/* <Volunteering />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" /> */}
+                    <SectionDivider /> */}
 
                     <Achievements />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     <Hobbies />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
                     <Contact />
 
-                    <div className="border-t-2 border-dashed border-gray-300 my-4" />
+                    <SectionDivider />
 
 
 
                     {/* Footer */}
-                    <footer className="py-12 text-center mt-16">
-                        <div className="max-w-md mx-auto">
-                            <div className="inline-block p-6 bg-gradient-to-br from-blue-50 to-red-50 border-2 border-black" style={{ transform: 'rotate(-1deg)' }}>
-                                <p className="font-hand text-[28px] text-black mb-2">
-                                    Thanks for visiting my portfolio!
-                                </p>
-                                <p className="font-body text-[16px] text-gray-700 mb-3">
-                                    Let's create something amazing together
-                                </p>
-                                <p className="font-body text-[14px] text-gray-600">
-                                    © 2025 Sudev Suresh Sreedevi
-                                </p>
-                            </div>
-                        </div>
+                    <footer className="px-gutter pb-16 pt-14 text-center">
+                        <PaperCard tape tilt={-1.5} className="mx-auto max-w-md">
+                            <p className="mb-2 font-hand text-subtitle text-ink">Thanks for visiting my portfolio!</p>
+                            <p className="mb-3 text-body text-ink-soft">Let's create something amazing together</p>
+                            <p className="text-small text-ink-soft">© 2025 Sudev Suresh Sreedevi</p>
+                        </PaperCard>
                     </footer>
                 </div>
             </div>

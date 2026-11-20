@@ -123,17 +123,20 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` done · `[-]` dropped (with rea
 - [ ] Unify role wording (pending your resume)
 - [x] **Checkpoint 2:** `docs/screenshots/phase2/` (390 / 820 / 1280 / 1920)
 
-### Phase 3: Sections
-- [ ] Work Experience: single-rail timeline on phone/tablet; compact two-sided or single-rail on desktop without empty halves
-- [ ] Projects: consistent `PaperCard`, tag and link styles; 1 col phone / 2 col tablet+; unify the "Learn more"/"Source" links
-- [ ] Languages & Skills: wrapping sticky chips (2-col on phone), colour legend, language levels as `Tag`
-- [ ] Education: align with shared timeline/card rhythm
-- [ ] Achievements: 1 → 2 → 3 columns with consistent card design
-- [ ] Hobbies: same card system
-- [ ] Volunteering: currently commented out in `LandingPage`; keep hidden unless you want it back
-- [ ] Contact: restyle form with `InkButton` and paper inputs; clarify submit behaviour *(see Open questions)*
-- [ ] Footer: align with system
-- [ ] **Checkpoint 3:** all sections at 4 widths
+### Phase 3: Sections ✅ (pending your review)
+- [x] Every section now uses the shared `Section` (same width, gutters, rhythm, heading style, `id` for the Phase 4 nav) and a shared `SectionDivider`
+- [x] Work Experience: one left rail at every width. Tablet/phone: stacked. Laptop+: "who/when" column on the left, bullets on the right. No more empty half-columns, and it scales if roles are added (`Timeline` / `TimelineItem`, also used by Education)
+- [x] Projects: `PaperCard` with masking tape, shared `Tag` chips, one `TextLink` style for "Learn more" / "Source code"; equal-height cards, 1 col → 2 col at md
+- [x] Languages & Skills: deterministic tilt (`tiltFor`, no more `Math.random()`), chips wrap instead of forcing a single column on phone, colour legend swatch beside each group heading, language levels as `Tag`
+- [x] Education: shares the timeline with Work
+- [x] Achievements and Hobbies: `PaperCard` + tape, 1 col → 3 col at lg, consistent icon/year/tag treatment
+- [x] Volunteering: stays hidden. Its file is untouched and still has the old styling (unused)
+- [x] Contact: visual restyle only. **Form `action`, `method`, `name` attributes and `required` flags are unchanged.** Added `<label htmlFor>`, an "(optional)" hint on Phone, 44px inputs, and the shared `InkButton` (type=submit) for Send
+- [x] Footer: now a taped `PaperCard`
+- [x] Fixed a token bug found during review: opacity utilities (`bg-ink/25` etc.) didn't generate because colours were plain CSS variables. Palette is now stored as RGB channels (`--ink-rgb`...) so Tailwind alpha works
+- [x] Gutter/margin tuned so phone content clears the red margin line
+- [x] Result: phone page height 13,350px → ~10,300px (-23%)
+- [x] **Checkpoint 3:** `docs/screenshots/phase3/` (390 / 820 / 1280 / 1920)
 
 ### Phase 4: Navigation & article pages
 - [ ] Index-tab section nav (sticky; collapses to a compact control on phone)
@@ -227,6 +230,8 @@ All answered by the owner:
 | 2026-10-09 | `86b71da` | Initial plan and checklist |
 | 2026-10-09 | `be2cbb8` | Phase 0: remove unused legacy files, screenshot script, "before" baseline |
 | 2026-10-09 | `1db254b` | Phase 1: design tokens, Tailwind mapping, fonts, base styles, shared `paper/` components, CSS notebook background, dev style guide |
-| 2026-10-09 | _Phase 2 commit_ | Responsive `Hero`, Kalam + font tokens across sections, scribble button shadow, reduced-motion handling, removed `src/imports` |
+| 2026-10-09 | `edcaa04` | Phase 2: responsive `Hero`, Kalam + font tokens across sections, scribble button shadow, reduced-motion handling, removed `src/imports` |
+| 2026-10-09 | `5149101` | Hero: drop email icon, stacked layout for tablet portrait |
+| 2026-11-20 | _Phase 3 commit_ | Sections migrated to shared components; Timeline, TextLink, tape cards; contact restyle (visual only); alpha-colour token fix |
 
-**Known side effects of Phase 1 (to be tuned in later phases):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; ~~hero is untouched~~ (done in Phase 2).
+**Known side effects of Phase 1 (resolved in Phases 2–3 unless noted):** page is ~340px taller on phone (global `line-height: 1.6`); section headings are still fixed `50px` until sections migrate to `Section` (Phase 3); skill sticky notes still use `Math.random()` rotation until Phase 3; ~~hero is untouched~~ (done in Phase 2).

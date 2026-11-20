@@ -29,18 +29,27 @@
  * See docs/REDESIGN_PLAN.md for the reasoning.
  * ------------------------------------------------------------------ */
 :root {
-  /* Ink palette */
-  --paper: #fefefc;            /* page */
-  --rule-ink: #e4f2f3;         /* ruled notebook lines */
-  --margin-ink: #fdd0d4;       /* red margin line */
-  --ink: #111111;              /* headings, primary text */
-  --ink-soft: #3f4452;         /* secondary text (AA on paper) */
-  --ink-faint: rgb(0 0 0 / 0.12); /* default borders */
-  --pen-blue: #1d4ed8;         /* links, bullets, primary actions */
-  --pen-blue-dark: #1e40af;
-  --pen-red: #b91c1c;          /* highlights, stars */
-  --highlight: #ffff99;        /* sticky notes / highlighter */
-  --sticky-ink: #6b4f0e;       /* text on sticky notes */
+  /* Ink palette. Channels are kept separate (--*-rgb) so Tailwind opacity utilities like bg-ink/25 work. */
+  --paper-rgb: 254 254 252;     /* page */
+  --ink-rgb: 17 17 17;          /* headings, primary text */
+  --ink-soft-rgb: 63 68 82;     /* secondary text (AA on paper) */
+  --pen-blue-rgb: 29 78 216;    /* links, bullets, primary actions */
+  --pen-blue-dark-rgb: 30 64 175;
+  --pen-red-rgb: 185 28 28;     /* highlights, stars */
+  --highlight-rgb: 255 255 153; /* sticky notes / highlighter */
+  --sticky-ink-rgb: 107 79 14;  /* text on sticky notes */
+
+  --paper: rgb(var(--paper-rgb));
+  --ink: rgb(var(--ink-rgb));
+  --ink-soft: rgb(var(--ink-soft-rgb));
+  --ink-faint: rgb(0 0 0 / 0.12);   /* default borders */
+  --pen-blue: rgb(var(--pen-blue-rgb));
+  --pen-blue-dark: rgb(var(--pen-blue-dark-rgb));
+  --pen-red: rgb(var(--pen-red-rgb));
+  --highlight: rgb(var(--highlight-rgb));
+  --sticky-ink: rgb(var(--sticky-ink-rgb));
+  --rule-ink: #e4f2f3;          /* ruled notebook lines */
+  --margin-ink: #fdd0d4;        /* red margin line */
 
   /* Type families: 3 roles. Swap --font-body to change the body face (one line). */
   --font-display: 'There Brat', Impact, 'Arial Black', sans-serif;
@@ -50,6 +59,7 @@
   /* Fluid type scale: min at ~320px viewport, max at ~1280px */
   --step-display: clamp(2.5rem, 1.7rem + 3.8vw, 4rem);      /* hero name */
   --step-title: clamp(2.25rem, 1.75rem + 2.4vw, 3.5rem);    /* section titles */
+  --step-heading: clamp(1.75rem, 1.5rem + 0.9vw, 2.125rem); /* handwritten card / role titles */
   --step-subtitle: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);/* handwritten subtitles */
   --step-lead: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);     /* role / card titles */
   --step-body: clamp(1.0625rem, 1.03rem + 0.17vw, 1.1875rem);/* 17 to 19px */
@@ -57,7 +67,7 @@
 
   /* Layout */
   --page-max: 72rem;           /* 1152px content column */
-  --gutter: clamp(1rem, 0.4rem + 2.6vw, 2rem);
+  --gutter: clamp(1.25rem, 0.6rem + 2.6vw, 2rem);
   --section-y: clamp(3rem, 2rem + 4vw, 5rem);
   --line: 32px;                /* notebook rule spacing: constant on every device */
 }
@@ -115,7 +125,7 @@
  * it never runs through text.
  * ------------------------------------------------------------------ */
 .notebook-bg {
-  --margin-x: max(0.75rem, calc((100% - var(--page-max)) / 2 + 0.75rem));
+  --margin-x: max(0.5rem, calc((100% - var(--page-max)) / 2 + 0.5rem));
   background-color: var(--paper);
   background-image:
     linear-gradient(

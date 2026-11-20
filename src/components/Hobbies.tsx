@@ -1,4 +1,5 @@
 import { Music, Book, Palette } from "lucide-react";
+import { PaperCard, Section } from "./paper";
 
 interface Hobby {
   name: string;
@@ -29,68 +30,34 @@ const hobbies: Hobby[] = [
   
 ];
 
+const HOBBY_TONES: Record<string, string> = {
+  blue: "bg-blue-100 text-pen-blue",
+  red: "bg-red-100 text-pen-red",
+  black: "bg-gray-100 text-ink",
+};
+
 export function Hobbies() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-display mb-4 text-center text-black text-[50px]">
-        Hobbies & Interests
-      </h2>
-      <div className="text-center mb-12">
-        <span className="font-hand text-[24px] text-gray-600">
-          What I do when I'm not coding...
-        </span>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {hobbies.map((hobby, index) => (
-          <div
-            key={index}
-            className="relative"
-            style={{
-              transform: `rotate(${index % 2 === 0 ? '1deg' : '-1deg'})`,
-            }}
-          >
-            <div className="text-center">
-              <div
-                className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${hobby.color === 'blue' ? 'bg-blue-100 text-blue-700' :
-                    hobby.color === 'red' ? 'bg-red-100 text-red-600' :
-                      'bg-gray-100 text-black'
-                  }`}
-              >
-                {hobby.icon}
-              </div>
-
-              <h3 className="font-hand text-[28px] text-black mb-2">
-                {hobby.name}
-              </h3>
-
-              <p className="font-body text-[17px] text-gray-700">
-                {hobby.description}
-              </p>
-
-              {/* Decorative arrow or line */}
-              <div className="mt-4 flex justify-center">
-                <div className={`w-12 h-0.5 ${hobby.color === 'blue' ? 'bg-blue-700' :
-                    hobby.color === 'red' ? 'bg-red-600' :
-                      'bg-black'
-                  }`} />
-              </div>
+    <Section id="hobbies" title="Hobbies & Interests" subtitle="What I do when I'm not coding...">
+      <div className="grid items-stretch gap-x-6 gap-y-10 lg:grid-cols-3">
+        {hobbies.map((hobby) => (
+          <PaperCard key={hobby.name} tape className="flex h-full flex-col items-center text-center">
+            <div className={`mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full ${HOBBY_TONES[hobby.color] ?? HOBBY_TONES.black}`}>
+              {hobby.icon}
             </div>
-          </div>
+            <h3 className="mb-2 font-hand text-heading text-ink">{hobby.name}</h3>
+            <p className="text-body text-ink-soft">{hobby.description}</p>
+          </PaperCard>
         ))}
       </div>
 
       {/* Fun quote */}
-      <div className="mt-16 text-center max-w-2xl mx-auto">
-        <div className="relative inline-block p-6 bg-blue-50 border-l-4 border-blue-700" style={{ transform: 'rotate(-0.5deg)' }}>
-          <p className="font-hand text-[26px] text-black mb-2">
-            "Design is not just what it looks like and feels like. Design is how it works."
-          </p>
-          <p className="font-body text-[16px] text-gray-600">
-            - Steve Jobs
-          </p>
-        </div>
-      </div>
-    </section>
+      <figure className="mx-auto mt-14 max-w-2xl border-l-4 border-pen-blue bg-blue-50/70 px-6 py-5">
+        <blockquote className="font-hand text-subtitle text-ink">
+          "Design is not just what it looks like and feels like. Design is how it works."
+        </blockquote>
+        <figcaption className="mt-2 text-small text-ink-soft">- Steve Jobs</figcaption>
+      </figure>
+    </Section>
   );
 }

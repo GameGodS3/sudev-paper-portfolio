@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { PaperCard, Section, Tag, TextLink } from "./paper";
 
 interface Project {
   title: string;
@@ -55,97 +56,42 @@ const projects: Project[] = [
 export function Projects() {
   const navigate = useNavigate();
 
-  const handleLearnMore = (articleId?: string) => {
-    if (articleId) {
-      navigate(`/article/${articleId}`);
-    }
-  };
-
   return (
-    <section id="projects" className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-display mb-4 text-center text-black text-[50px]">
-        Projects
-      </h2>
-      <div className="text-center mb-12">
-        <span className="font-hand text-[24px] text-gray-600">
-          Things I've built with passion & curiosity
-        </span>
-      </div>
+    <Section id="projects" title="Projects" subtitle="Things I've built with passion & curiosity">
+      <div className="grid items-stretch gap-x-8 gap-y-10 md:grid-cols-2">
+        {projects.map((project) => (
+          <PaperCard key={project.title} tape className="flex h-full flex-col">
+            <h3 className="mb-2 font-hand text-heading text-ink">
+              {project.title}
+              {project.featured && (
+                <Sparkles aria-label="Featured" className="ml-2 inline-block h-5 w-5 -translate-y-0.5 fill-pen-red text-pen-red" />
+              )}
+            </h3>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="relative p-6"
-            style={{
-              transform: `rotate(${index % 2 === 0 ? '-0.5deg' : '0.5deg'})`,
-            }}
-          >
-            {/* Underline effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+            <p className="mb-4 text-body text-ink-soft">{project.description}</p>
 
-            <div className="flex flex-col gap-4 items-start">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-hand text-[28px] text-black">
-                    {project.title}
-                  </h3>
-                  {project.featured && (
-                    <Sparkles className="w-5 h-5 text-red-600 fill-red-600" />
-                  )}
-                </div>
+            <ul className="mb-4 flex flex-wrap gap-2" aria-label="Technologies">
+              {project.technologies.map((tech) => (
+                <li key={tech}><Tag>{tech}</Tag></li>
+              ))}
+            </ul>
 
-                <p className="font-body text-[17px] text-gray-700 mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-blue-50 border-2 border-blue-700 font-body text-[15px] text-blue-900"
-                      style={{ transform: `rotate(${Math.random() * 4 - 2}deg)` }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-4 font-body text-[16px]">
-                  {project.articleId && (
-                    <button
-                      onClick={() => handleLearnMore(project.articleId)}
-                      className="flex items-center gap-1 text-blue-700 hover:underline"
-                    >
-                      <ExternalLink className="w-4 h-4" strokeWidth={2} />
-                      Learn More
-                    </button>
-                  )}
-                  {project.link && !project.articleId && (
-                    <a
-                      href={project.link}
-                      className="flex items-center gap-1 text-blue-700 hover:underline"
-                    >
-                      <ExternalLink className="w-4 h-4" strokeWidth={2} />
-                      Learn More
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      className="flex items-center gap-1 text-black hover:underline"
-                    >
-                      <Github className="w-4 h-4" strokeWidth={2} />
-                      Source Code
-                    </a>
-                  )}
-                </div>
-              </div>
+            <div className="mt-auto flex flex-wrap gap-x-5">
+              {project.articleId && (
+                <TextLink icon={<ExternalLink strokeWidth={2} />} onClick={() => navigate(`/article/${project.articleId}`)}>
+                  Learn more
+                </TextLink>
+              )}
+              {project.link && !project.articleId && (
+                <TextLink icon={<ExternalLink strokeWidth={2} />} href={project.link}>Learn more</TextLink>
+              )}
+              {project.github && (
+                <TextLink icon={<Github strokeWidth={2} />} href={project.github}>Source code</TextLink>
+              )}
             </div>
-          </div>
+          </PaperCard>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
-

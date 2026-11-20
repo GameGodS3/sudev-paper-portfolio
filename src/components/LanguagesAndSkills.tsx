@@ -1,5 +1,6 @@
 import { StickyNote } from "./StickyNote";
-import { Languages, Code2 } from "lucide-react";
+import { Languages } from "lucide-react";
+import { Section, Tag, tiltFor } from "./paper";
 
 const spokenLanguages = [
   { name: "English", level: "Fluent" },
@@ -60,105 +61,57 @@ const toolsAndFrameworks = [
 
 
 
+// Colour = group. The swatch beside each heading is the legend for its notes.
+const NOTE_COLORS = { strengths: "#FFFF99", technical: "#CCCCFF", tools: "#FFD1DC" } as const;
+
+function NoteGroup({ title, items, color }: { title: string; items: string[]; color: string }) {
+  return (
+    <div>
+      <h3 className="mb-6 flex items-center gap-3 font-hand text-heading text-ink">
+        <span
+          aria-hidden="true"
+          className="h-5 w-5 shrink-0 -rotate-6 border border-ink/20 shadow-sm"
+          style={{ backgroundColor: color }}
+        />
+        {title}
+      </h3>
+      <ul className="flex flex-wrap gap-x-4 gap-y-5">
+        {items.map((item, i) => (
+          <li key={item} className="max-w-full">
+            <StickyNote rotation={tiltFor(i)} color={color}>
+              <span className="block text-center leading-snug">{item}</span>
+            </StickyNote>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function LanguagesAndSkills() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-display mb-4 text-center text-black text-[50px]">
-        Languages & Skills
-      </h2>
-      <div className="text-center mb-12">
-        <span className="font-hand text-[24px] text-gray-600">
-          Tools of the trade & ways to communicate
-        </span>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-16">
+    <Section id="skills" title="Languages & Skills" subtitle="Tools of the trade & ways to communicate">
+      <div className="grid gap-x-12 gap-y-14 md:grid-cols-2 lg:gap-x-16">
         {/* Spoken Languages */}
         <div>
-          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-            <Languages className="w-7 h-7 text-blue-700" strokeWidth={1.5} />
-            <h3 className="font-hand text-[32px] text-black">
-              Spoken Languages
-            </h3>
-          </div>
-
-          <div className="space-y-4">
-            {spokenLanguages.map((lang, index) => (
-              <div
-                key={index}
-                className="flex justify-between items-center border-b-2 border-dashed border-gray-300 pb-2"
-              >
-                <span className="font-body text-[22px] text-black">
-                  {lang.name}
-                </span>
-                <span className="font-body text-[18px] px-3 py-1 bg-red-50 text-red-700 border-2 border-red-300">
-                  {lang.level}
-                </span>
-              </div>
+          <h3 className="mb-6 flex items-center gap-3 font-hand text-heading text-ink">
+            <Languages aria-hidden="true" className="h-6 w-6 shrink-0 text-pen-blue" strokeWidth={1.75} />
+            Spoken Languages
+          </h3>
+          <ul>
+            {spokenLanguages.map((lang) => (
+              <li key={lang.name} className="flex items-center justify-between gap-4 border-b-2 border-dashed border-ink/20 py-3">
+                <span className="text-lead text-ink">{lang.name}</span>
+                <Tag variant="level">{lang.level}</Tag>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        {/* Core Strengths - Sticky Notes */}
-        <div>
-          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-            <Code2 className="w-7 h-7 text-green-600" strokeWidth={1.5} />
-            <h3 className="font-hand text-[32px] text-black">
-              Core Strengths
-            </h3>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            {coreStrengths.map((strength, index) => (
-              <div key={index} className="inline-block">
-                <StickyNote rotation={Math.random() * 6 - 3}>
-                  <p className="text-[17px] text-center whitespace-nowrap">{strength}</p>
-                </StickyNote>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Technical Skills - Sticky Notes */}
-        <div>
-          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-            <Code2 className="w-7 h-7 text-red-600" strokeWidth={1.5} />
-            <h3 className="font-hand text-[32px] text-black">
-              Technical Skills
-            </h3>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            {technicalSkills.map((skill, index) => (
-              <div key={index} className="inline-block">
-                <StickyNote rotation={Math.random() * 6 - 3} color="#CCCCFF">
-                  <p className="text-[17px] text-center whitespace-nowrap">{skill}</p>
-                </StickyNote>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tools & Frameworks - Sticky Notes */}
-        <div>
-          <div className="flex items-center gap-3 mb-8 justify-center md:justify-start">
-            <Code2 className="w-7 h-7 text-purple-600" strokeWidth={1.5} />
-            <h3 className="font-hand text-[32px] text-black">
-              Tools & Frameworks
-            </h3>
-          </div>
-
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            {toolsAndFrameworks.map((tool, index) => (
-              <div key={index} className="inline-block">
-                <StickyNote rotation={Math.random() * 6 - 3} color="#FFD1DC">
-                  <p className="text-[17px] text-center whitespace-nowrap">{tool}</p>
-                </StickyNote>
-              </div>
-            ))}
-          </div>
-        </div>
+        <NoteGroup title="Core Strengths" items={coreStrengths} color={NOTE_COLORS.strengths} />
+        <NoteGroup title="Technical Skills" items={technicalSkills} color={NOTE_COLORS.technical} />
+        <NoteGroup title="Tools & Frameworks" items={toolsAndFrameworks} color={NOTE_COLORS.tools} />
       </div>
-    </section>
+    </Section>
   );
 }

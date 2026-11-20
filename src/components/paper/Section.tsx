@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface SectionProps {
     id?: string;
     title: string;
-    subtitle?: string;
+    subtitle?: ReactNode;
     children: ReactNode;
     className?: string;
 }
@@ -17,7 +17,7 @@ export function Section({ id, title, subtitle, children, className = "" }: Secti
         <section id={id} className={`mx-auto w-full max-w-page px-gutter py-section ${className}`}>
             <header className="mb-10 text-center md:mb-14">
                 <h2 className="font-display text-title text-ink">{title}</h2>
-                {subtitle && <p className="mt-3 font-hand text-subtitle text-ink-soft">{subtitle}</p>}
+                {subtitle && <p className="mt-3 inline-flex items-center justify-center gap-2 font-hand text-subtitle text-ink-soft">{subtitle}</p>}
             </header>
             {children}
         </section>

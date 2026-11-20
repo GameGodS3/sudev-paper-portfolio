@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Star } from "lucide-react";
+import { Section, Timeline, TimelineItem } from "./paper";
 
 interface Experience {
   title: string;
@@ -65,7 +66,7 @@ function renderInlineFormatting(text: string) {
       parts.push(text.slice(lastIndex, match.index));
     }
     parts.push(
-      <strong key={`b-${idx}`} className="font-semibold">
+      <strong key={`b-${idx}`} className="font-bold text-ink">
         {match[1]}
       </strong>
     );
@@ -82,70 +83,44 @@ function renderInlineFormatting(text: string) {
 
 export function WorkExperience() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-display mb-4 text-center text-black text-[50px]">
-        Work Experience
-      </h2>
-      <div className="text-center mb-12">
-        <span className="font-hand text-[24px] text-gray-600">
-          My professional journey so far...
-        </span>
-      </div>
-
-      <div className="relative space-y-12">
-        {/* Timeline line */}
-        <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-300 -z-10 md:left-1/2 md:-ml-px" />
-
-        {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className="relative"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-0 top-0 md:left-1/2 md:-ml-3">
-              <div className={`w-6 h-6 rounded-full border-4 ${exp.highlight ? 'border-blue-700 bg-blue-700' : 'border-black bg-white'}`} />
-            </div>
-
-            {/* Content card - alternating sides on desktop */}
-            <div className={`md:w-[calc(50%-2rem)] ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-              <div className="relative">
-                {/* Handwritten title */}
-                <h3 className="font-hand text-[32px] text-black mb-2">
+    <Section id="work" title="Work Experience" subtitle="My professional journey so far...">
+      <Timeline>
+        {experiences.map((exp) => (
+          <TimelineItem key={`${exp.company}-${exp.period}`} highlight={exp.highlight}>
+            {/* Roles read as: who/when on the left, what I did on the right (stacked on phone and tablet) */}
+            <div className="grid gap-x-12 gap-y-4 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)]">
+              <div>
+                <h3 className="font-hand text-heading text-ink">
                   {exp.title}
                   {exp.highlight && (
-                    <Star className="inline-block ml-2 w-5 h-5 fill-red-600 text-red-600" />
+                    <Star aria-label="Current or featured role" className="ml-2 inline-block h-5 w-5 -translate-y-0.5 fill-pen-red text-pen-red" />
                   )}
                 </h3>
-
-                <div className="font-body text-[20px] text-black mb-1">
-                  {exp.company}
-                </div>
-
-                <div className="flex flex-wrap gap-3 mb-4 font-body text-[16px] text-gray-600">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" strokeWidth={1.5} />
+                <p className="mt-1 text-lead leading-snug text-ink">{exp.company}</p>
+                <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-small text-ink-soft">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     {exp.period}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-4 h-4" strokeWidth={1.5} />
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                     {exp.location}
                   </span>
-                </div>
-
-                {/* Description with handwritten font */}
-                <ul className="space-y-2">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="flex gap-2 font-body text-[17px] text-gray-700">
-                      <span className="text-blue-700 mt-1">→</span>
-                      <span>{renderInlineFormatting(item)}</span>
-                    </li>
-                  ))}
-                </ul>
+                </p>
               </div>
+
+              <ul className="space-y-3 text-body text-ink-soft">
+                {exp.description.map((item, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span aria-hidden="true" className="mt-px text-pen-blue">→</span>
+                    <span>{renderInlineFormatting(item)}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          </TimelineItem>
         ))}
-      </div>
-    </section>
+      </Timeline>
+    </Section>
   );
 }

@@ -5,3 +5,5 @@ export { Tag } from "./Tag";
 export { InkButton } from "./InkButton";
 export { tiltFor } from "./tilt";
 export type { Tilt } from "./tilt";
+export { TextLink } from "./TextLink";
+export { Timeline, TimelineItem } from "./Timeline";

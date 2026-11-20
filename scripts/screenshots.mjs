@@ -23,8 +23,13 @@ function findChromium() {
   if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
   const base = process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/pw-browsers';
   if (!existsSync(base)) return undefined;
-  const dir = readdirSync(base).find((d) => /^chromium-\d+/.test(d));
-  return dir ? join(base, dir, 'chrome-linux', 'chrome') : undefined;
+  for (const d of readdirSync(base).filter((n) => /^chromium-\d+/.test(n))) {
+    for (const sub of ['chrome-linux64', 'chrome-linux']) {
+      const p = join(base, d, sub, 'chrome');
+      if (existsSync(p)) return p;
+    }
+  }
+  return undefined;
 }
 
 const server = dev

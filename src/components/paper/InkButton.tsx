@@ -4,6 +4,7 @@ type Variant = "solid" | "outline" | "pen";
 
 interface BaseProps {
     variant?: Variant;
+    fullWidth?: boolean;
     children: ReactNode;
     className?: string;
 }
@@ -33,10 +34,10 @@ const SCRIBBLE =
 
 /** The single call-to-action style (buttons and button-like links). */
 export function InkButton(props: ButtonProps | AnchorProps) {
-    const { variant = "solid", className = "", children, ...rest } = props;
-    const cls = `${FACE} ${VARIANTS[variant]} ${className}`;
+    const { variant = "solid", fullWidth = false, className = "", children, ...rest } = props;
+    const cls = `${FACE} ${VARIANTS[variant]} ${fullWidth ? "w-full" : ""} ${className}`;
     return (
-        <span className="group relative inline-flex">
+        <span className={`group relative ${fullWidth ? "flex w-full pr-[6px] pb-[6px]" : "inline-flex"}`}>
             <span aria-hidden="true" className={SCRIBBLE} />
             {"href" in rest && rest.href !== undefined ? (
                 <a className={cls} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>{children}</a>

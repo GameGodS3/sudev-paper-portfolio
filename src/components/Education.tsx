@@ -1,4 +1,5 @@
 import { GraduationCap, Calendar } from "lucide-react";
+import { Section, Timeline, TimelineItem } from "./paper";
 
 interface EducationItem {
   degree: string;
@@ -37,71 +38,30 @@ const education: EducationItem[] = [
 
 export function Education() {
   return (
-    <section className="py-16 px-8 max-w-6xl mx-auto">
-      <h2 className="font-display mb-4 text-center text-black text-[50px]">
-        Education
-      </h2>
-      <div className="text-center mb-12">
-        <span className="font-hand text-[24px] text-gray-600">
-          Never stop learning!
-        </span>
-      </div>
-
-      <div className="space-y-8 mb-12">
-        {education.map((edu, index) => (
-          <div
-            key={index}
-            className="relative pl-12"
-          >
-            <div className="absolute left-0 top-2">
-              <GraduationCap className="w-8 h-8 text-blue-700" strokeWidth={1.5} />
-            </div>
-
-            <h3 className="font-hand text-[30px] text-black mb-1">
-              {edu.degree}
-            </h3>
-            <div className="font-body text-[20px] text-gray-800 mb-2">
-              {edu.institution}
-            </div>
-            <div className="flex items-center gap-1 font-body text-[16px] text-gray-600 mb-3">
-              <Calendar className="w-4 h-4" strokeWidth={1.5} />
+    <Section id="education" title="Education" subtitle="Never stop learning!">
+      <Timeline>
+        {education.map((edu) => (
+          <TimelineItem key={edu.degree} icon={<GraduationCap strokeWidth={1.75} />}>
+            <h3 className="font-hand text-heading text-ink">{edu.degree}</h3>
+            <p className="mt-1 text-lead leading-snug text-ink">{edu.institution}</p>
+            <p className="mt-2 inline-flex items-center gap-1.5 text-small text-ink-soft">
+              <Calendar className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               {edu.period}
-            </div>
+            </p>
 
             {edu.details && (
-              <ul className="space-y-1">
-                {edu.details.map((detail, i) => (
-                  <li key={i} className="flex gap-2 font-body text-[17px] text-gray-700">
-                    <span className="text-red-600 mt-1">✦</span>
+              <ul className="mt-3 space-y-2 text-body text-ink-soft">
+                {edu.details.map((detail) => (
+                  <li key={detail} className="flex gap-3">
+                    <span aria-hidden="true" className="mt-px text-pen-red">✦</span>
                     <span>{detail}</span>
                   </li>
                 ))}
               </ul>
             )}
-          </div>
+          </TimelineItem>
         ))}
-      </div>
-
-      {/* <div className="mt-12">
-        <div className="flex items-center gap-3 mb-6 justify-center">
-          <Award className="w-7 h-7 text-red-600" strokeWidth={1.5} />
-          <h3 className="font-hand text-[32px] text-black">
-            Certifications
-          </h3>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-          {certifications.map((cert, index) => (
-            <div
-              key={index}
-              className="flex gap-2 items-start font-body text-[18px] text-gray-700"
-            >
-              <CheckCircle2 className="w-5 h-5 text-blue-700 mt-1 flex-shrink-0" strokeWidth={2} />
-              <span>{cert}</span>
-            </div>
-          ))}
-        </div>
-      </div> */}
-    </section>
+      </Timeline>
+    </Section>
   );
 }

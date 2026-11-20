@@ -8,15 +8,14 @@ export default {
         extend: {
             // Design tokens live in src/styles/globals.css (:root). Tailwind only maps names to them.
             colors: {
-                paper: "var(--paper)",
-                ink: "var(--ink)",
-                "ink-soft": "var(--ink-soft)",
-                "ink-faint": "var(--ink-faint)",
-                "pen-blue": "var(--pen-blue)",
-                "pen-blue-dark": "var(--pen-blue-dark)",
-                "pen-red": "var(--pen-red)",
-                highlight: "var(--highlight)",
-                "sticky-ink": "var(--sticky-ink)",
+                paper: "rgb(var(--paper-rgb) / <alpha-value>)",
+                ink: "rgb(var(--ink-rgb) / <alpha-value>)",
+                "ink-soft": "rgb(var(--ink-soft-rgb) / <alpha-value>)",
+                "pen-blue": "rgb(var(--pen-blue-rgb) / <alpha-value>)",
+                "pen-blue-dark": "rgb(var(--pen-blue-dark-rgb) / <alpha-value>)",
+                "pen-red": "rgb(var(--pen-red-rgb) / <alpha-value>)",
+                highlight: "rgb(var(--highlight-rgb) / <alpha-value>)",
+                "sticky-ink": "rgb(var(--sticky-ink-rgb) / <alpha-value>)",
             },
             fontFamily: {
                 display: ["var(--font-display)"],
@@ -27,6 +26,7 @@ export default {
             fontSize: {
                 display: ["var(--step-display)", { lineHeight: "1.05" }],
                 title: ["var(--step-title)", { lineHeight: "1.15" }],
+                heading: ["var(--step-heading)", { lineHeight: "1.15" }],
                 subtitle: ["var(--step-subtitle)", { lineHeight: "1.25" }],
                 lead: ["var(--step-lead)", { lineHeight: "1.4" }],
                 body: ["var(--step-body)", { lineHeight: "1.6" }],
